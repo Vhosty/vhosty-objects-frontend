@@ -1,0 +1,884 @@
+*
+	margin: 0
+	padding: 0
+
+	box-sizing: border-box
+
+body
+	font-family: 'Ubuntu', sans-serif
+	font-size: 20px
+	background-color: #F3F4F5
+	color: $black
+
+	overflow-x: hidden
+
+div
+	&::-webkit-scrollbar
+		width: 3px
+		height: 4px
+		background-color: #CFE2E1
+
+	&::-webkit-scrollbar-thumb
+		background-color: $darkMainColor
+		border-radius: 3px
+
+	&::-webkit-scrollbar-thumb:hover
+		background-color: $darkMainColor
+
+	&::-ms-scrollbar
+		width: 3px
+		height: 4px
+		background-color: #CFE2E1
+
+	&::-ms-scrollbar-thumb
+		background-color: $darkMainColor
+		border-radius: 3px
+
+	&::-ms-scrollbar-thumb:hover
+		background-color: $darkMainColor
+
+// container
+.container
+	width: 90%
+	height: 100%
+
+	max-width: 1200px
+
+	margin: 0 auto
+
+// title
+h1, h2, h3, h4, h5, h6
+	font-weight: 700
+	line-height: 1.3em
+
+	& > span
+		color: $mainColor
+
+// description
+p
+	line-height: 1.6em
+
+	& > a
+		color: $mainColor
+
+.description
+	font-size: 20px
+
+// link
+a
+	text-decoration: none
+	color: $black
+
+// input
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active
+	-webkit-box-shadow: 0 0 0 30px rgba(225, 225, 225, 0.2) inset !important
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+  -webkit-appearance: none
+
+input
+	outline: none
+	font-family: 'Ubuntu', sans-serif
+
+// btn
+button
+	user-select: none
+	font-family: 'Ubuntu', sans-serif
+	border: none
+
+.btn
+	text-align: center
+	
+	display: inline-flex
+	justify-content: center
+	align-items: center
+
+	cursor: pointer
+
+	padding: 20px 60px
+
+	font-size: 20px
+	font-weight: 700
+	color: $white
+
+	background: $mainGradient
+	background-size: 200%
+
+	border-radius: 100px
+
+	+transition
+
+	&:hover
+		background-position: center
+
+	&:active
+		background-position: right
+
+	&.border
+		font-size: 15px
+		padding: 17px 35px
+		border-radius: 35px 0px
+
+	&.small
+		padding: 15px 45px
+
+	&.disabled
+		pointer-events: none
+		color: $gray
+		background: $lightGray
+
+.btn-light
+	display: inline-flex
+	justify-content: center
+	align-items: center
+
+	cursor: pointer
+
+	padding: 20px 60px
+
+	font-size: 20px
+	font-weight: 700
+
+	color: $darkMainColor
+	background-color: $white
+
+	border-radius: 100px
+
+	white-space: nowrap
+
+	+transition
+
+	&.active
+		color: $white
+		background-color: $darkMainColor
+
+		&:hover
+			background-color: $darkMainColor
+
+	&:hover
+		background-color: #F2FAFA
+
+	&.small
+		padding: 15px 45px
+
+.btn-white
+	display: inline-flex
+	justify-content: center
+	align-items: center
+
+	cursor: pointer
+
+	padding: 20px 60px
+
+	font-size: 20px
+	font-weight: 700
+	color: $black
+
+	background-color: #F3F4F5
+
+	border-radius: 100px
+
+	+transition
+
+	&:hover
+		background-color: #F0F0F0
+
+	&.small
+		padding: 15px 55px
+
+	&.disabled
+		pointer-events: none
+		color: $gray
+		background: $lightGray
+
+.btn-line
+	text-decoration: underline
+
+	cursor: pointer
+
+	font-size: 20px
+	color: $mainColor
+
+	background-color: transparent
+
+	border-radius: 100px
+
+	+transition
+
+	&:hover
+		color: $darkMainColor
+
+// input
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active
+	-webkit-box-shadow: 0 0 0 30px white inset !important
+
+.input
+	width: 100%
+
+	&-title
+		display: flex
+		align-items: center
+
+		&__title
+			font-size: 20px
+			margin-bottom: 5px
+
+	&-field
+		position: relative
+		width: 100%
+
+		&.small > input
+			padding: 13px 25px
+
+		&.small-placeholder > input
+			font-size: 15px
+
+			&::placeholder
+				font-size: 15px
+
+		&__input
+			font-size: 20px
+			color: $black
+
+			border-radius: 100px
+			padding: 18px 25px
+			width: 100%
+
+			background-color: transparent
+			border: 2px solid $lightGray
+
+			+transition
+
+			&::placeholder
+				user-select: none
+				color: $lightGray
+
+			&.disabled
+				color: $gray
+				pointer-events: none
+				background-color: #F3F4F5
+
+			&.error
+				border: 2px solid $red
+
+				&::placeholder
+					color: $red
+
+		&__fixlabel
+			user-select: none
+
+			top: 50%
+			right: 20px
+
+			transform: translateY(-50%)
+
+			position: absolute
+
+		&.small-placeholder &__fixlabel
+			font-size: 15px
+
+		&-icon
+			cursor: pointer
+
+			display: flex
+			justify-content: center
+			align-items: center
+
+			top: 53%
+			right: 20px
+
+			transform: translateY(-50%)
+
+			position: absolute
+
+	&__btn
+		margin-left: 20px
+
+		cursor: pointer
+		border: none
+		background-color: transparent
+
+	&__error
+		margin-top: 5px
+		font-size: 15px
+		color: $red
+
+		+openPopup
+
+// input-range
+.input-range
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+	&-slider
+		width: 55%
+
+	&-input
+		width: 35%
+
+.rc-slider-handle
+	&:active, &:focus
+		box-shadow: none !important
+
+// popup
+.popup
+	+openPopup
+
+	&.close
+		+closePopup
+
+// title-icon
+.title-icon
+	display: flex
+	align-items: center
+
+	&.mb
+		margin-bottom: 20px
+
+	& > svg
+		width: 20px
+		height: 20px
+
+		margin-right: 15px
+
+	&__title
+		user-select: none
+		font-size: 20px
+
+		&.bold
+			font-weight: 500
+
+// checkbox 
+.checkbox-wrapper
+	display: flex
+	align-items: center
+
+	position: relative
+
+.checkbox
+	position: absolute
+	z-index: -1
+	opacity: 0
+
+	&__label
+		cursor: pointer
+		display: inline-flex
+		align-items: center
+		user-select: none
+		+transition
+
+		&__text
+			& > a
+				margin-left: 3px
+				color: $mainColor
+
+			& > img
+				width: 50px
+
+				margin-left: 10px
+
+			& > svg
+				width: 20px
+				margin-left: 10px
+
+				&:first-child
+					margin-left: 5px
+
+				&:last-child
+					margin-right: 10px
+
+		&.small
+			font-size: 15px
+
+	&__label::before
+		content: ''
+		display: inline-block
+
+		min-width: 30px
+		height: 30px
+
+		border: 1px solid $lightGray
+		border-radius: 10px
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: 16px 12px
+		margin-right: 10px
+		+transition
+
+	&:checked+label::before
+		background-image: url("data:image/svg+xml,%3Csvg width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.25 1L5.5 11L1.75 7.25' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+
+		border: 1px solid $mainColor
+		background-color: $mainColor
+
+	&-message
+		position: relative
+
+		margin-left: 15px
+
+		&-icon
+			display: flex
+			justify-content: center
+			align-items: center
+
+			&__svgActive
+				display: flex
+				align-items: center
+				justify-content: center
+
+				opacity: 0
+
+				z-index: 1
+				position: absolute
+				cursor: pointer
+
+				+transition
+
+				&.active
+					opacity: 1
+
+		&__text
+			padding: 20px
+
+			font-size: 15px
+			color: $white
+			background-color: $mainColor
+
+			width: 320px
+			position: absolute
+
+			bottom: 5px
+
+			left: 35px
+
+			+borderRadius
+
+// select
+.select
+	top: 0
+	left: 0
+
+	position: absolute
+
+	z-index: 1
+
+	width: 100%
+
+	padding: 15px 25px
+	background-color: $white
+
+	+transition
+	+borderRadius
+
+	&__title
+		font-size: 20px
+		margin-bottom: 5px
+
+	&-height
+		height: 60px
+
+	&.active
+		+boxShadow
+
+	&.border
+		border: 2px solid $lightGray
+
+		&.active
+			box-shadow: none
+
+	&.small
+		padding: 10px 25px
+
+	&-wrapper
+		cursor: pointer
+
+		width: 100%
+		min-height: 60px
+
+		position: relative
+
+	&-title
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+		+transition
+
+		&__title
+			user-select: none
+
+		&-icon
+			+transition
+
+			&.rotate
+				transform: rotate(180deg)
+
+	&-list
+		&__item
+			margin-top: 20px
+			user-select: none
+
+			+transition
+
+			&.active
+				color: $mainColor
+
+			&:hover
+				color: $mainColor
+
+// stars
+.stars
+	& > svg
+		width: 15px
+		margin-right: 5px
+
+// calendar
+.calendar
+	cursor: pointer
+
+	width: 100%
+
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+	padding: 13px 25px
+	border: 2px solid $lightGray
+	border-radius: 100px
+
+	&-wrapper
+		position: relative
+
+	&-period
+		display: flex
+		align-items: center
+
+		&__from, &__to
+			user-select: none
+
+		&__line
+			margin: 0 15px
+			background-color: $mainColor
+
+			width: 20px
+			height: 2px
+			border-radius: 100px
+
+	&__count
+		color: $gray
+		user-select: none
+
+	&-icon
+		+transition
+
+		&.rotate
+			transform: rotate(180deg)
+
+	// select
+	&-select
+		position: absolute
+
+		padding: 20px
+
+		right: 0
+		top: 70px
+
+		z-index: 2
+
+		width: 350px
+		height: 350px
+
+		background-color: $white
+
+		+boxShadow
+		+borderRadius
+
+		&-top
+			display: flex
+			justify-content: space-between
+			align-items: center
+
+			&__title
+				user-select: none
+
+			&-arrow-btn
+				cursor: pointer
+
+				display: flex
+				justify-content: center
+				align-items: center
+
+				width: 40px
+				height: 40px
+
+				border: 1px solid $lightGray
+
+				border-radius: 10px
+
+				&.disabled
+					pointer-events: none
+
+					& > svg
+						stroke: $lightMainColor
+
+				& > svg
+					stroke: $mainColor
+					+transition
+
+		&-days
+			display: flex
+			flex-wrap: wrap
+
+			+open
+
+			&-title
+				margin-top: 5px
+
+				display: flex
+
+				&__title
+					width: calc( 100% / 7 - 8px )
+					height: 36px
+
+					margin: 4px
+
+					display: flex
+					justify-content: center
+					align-items: center
+
+					user-select: none
+					color: $gray
+
+			&__day
+				cursor: pointer
+
+				width: calc( 100% / 7 - 8px )
+				height: 36px
+
+				margin: 4px
+
+				font-size: 15px
+
+				display: flex
+				justify-content: center
+				align-items: center
+
+				user-select: none
+				border-radius: 50%
+
+				+transition
+
+				&:last-child
+					margin-bottom: 0
+
+				&:hover
+					background-color: #E6F6F6
+
+				&.included
+					background-color: #E6F6F6
+
+				&.active
+					color: $white
+					background-color: $mainColor
+
+				&.disabled
+					color: $lightGray
+					pointer-events: none
+
+// count
+.count
+	display: flex
+	align-items: center
+
+	&__btn
+		cursor: pointer
+
+		display: flex
+		justify-content: center
+		align-items: center
+
+		width: 50px
+		height: 50px
+
+		border: 1px solid $lightGray
+
+		background-color: $white
+
+		border-radius: 10px
+
+		&.disabled
+			pointer-events: none
+
+			& > svg
+				stroke: $lightMainColor
+
+		& > svg
+			stroke: $mainColor
+			+transition
+
+	&__title
+		margin: 0 25px
+		user-select: none
+
+// service-icon
+.service-icon
+	display: flex
+	align-items: center
+
+	&.marginBottom
+		margin-bottom: 10px
+
+	&__title
+		display: flex
+		align-items: center
+
+		font-size: 15px
+
+		font-weight: 500
+
+	&__title > svg
+		width: 18px
+		fill: $mainColor
+
+		margin-right: 10px
+
+	&__messageIcon
+		position: relative
+		cursor: pointer
+
+		& > svg
+			width: 20px
+			stroke: $mainColor
+
+			margin-left: 10px
+
+		&__fill
+			fill: $mainColor
+
+	&__messageText
+		user-select: none
+
+		z-index: 1
+
+		padding: 20px
+		width: 320px
+
+		display: block
+
+		position: absolute
+
+		bottom: 15px
+		left: 35px
+
+		font-size: 15px
+		color: $white
+		background-color: $mainColor
+
+		+borderRadius
+
+	&.green &__messageText
+		background-color: $darkMainGreen
+
+	&.green &__title
+		color: $darkMainGreen
+
+		& > svg
+			fill: $darkMainGreen
+
+	&.green &__messageIcon
+		& > svg
+			stroke: $darkMainGreen
+
+		&__fill
+			fill: $darkMainGreen
+
+	&.disabled &__title
+		color: $darkGray
+
+		& > svg
+			fill: $darkGray
+
+// tab
+.tab
+	padding-bottom: 30px
+	margin-bottom: 30px
+
+	border-bottom: 1px solid $lightGray
+
+	&:last-child
+		margin-bottom: 0
+
+	&__title
+		user-select: none
+		cursor: pointer
+
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		color: $darkMainColor
+
+		&.visible
+			& > svg
+				transform: rotate(180deg)
+
+		& > svg
+			width: 20px
+			+transition
+
+	&__description
+		width: 90%
+		color: $gray
+
+		margin-top: 25px
+		font-size: 15px
+
+// location
+.location
+	&__title
+		color: $darkMainColor
+		margin-bottom: 5px
+
+		& > svg
+			margin-left: 15px
+
+	&__subtitle
+		font-size: 15px
+
+// policy-checkbox
+.policy-checkbox
+	margin-top: 20px
+
+// owl-slider
+#object-page-slider-images .owl-stage-outer
+	overflow: visible
+
+.owl-dots
+	margin-top: 75px
+
+	display: flex
+	justify-content: center
+	align-items: center
+
+.owl-carousel button.owl-dot
+	background-color: #B0CCCB
+
+	min-width: 10px
+	height: 10px
+
+	margin: 0 15px
+
+	border-radius: 50%
+
+	+transition
+
+	&.active
+		background-color: $darkMainColor

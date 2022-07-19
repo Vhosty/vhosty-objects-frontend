@@ -1,0 +1,434 @@
+// media
+@media screen and ( max-width: 1200px )
+	// header-transparent
+	.header-transparent
+		&-block
+			&-user
+				&__btn
+					display: none
+
+				&__btn-mobile
+					display: block
+
+	// home
+	.home
+		// services
+		&-services
+			&-list
+				width: 100%
+
+			&-img
+				margin: 50px auto 0 auto
+
+				width: 500px
+				position: static
+
+		// connect
+		&-connect
+			&-img
+				width: 400px
+
+			&-text
+				width: 60%
+
+		// success-business
+		&-success-business
+			&-img
+				top: 50%
+				left: -50px
+
+				transform: translateY(-50%)
+
+				width: 400px
+
+				&__img
+					width: 100%
+
+			&-text
+				width: 65%
+
+		// email
+		&-email
+			&-form
+				&-text
+					&__subtitle
+						max-width: 100%
+
+				&-wrapper
+					width: 100%
+
+@media screen and ( max-width: 1000px )
+	// interface
+	.btn-light
+		padding: 15px 35px
+		font-size: 20px
+
+	// home
+	.home
+		// payments-models
+		&-payments-models
+			&-btn
+				padding-bottom: 15px
+
+				&__btn
+					margin: 0 10px
+
+	// footer
+	.footer
+		&-block-wrapper
+			flex-direction: column
+
+		&-block
+			&-content
+				width: 100%
+
+				display: flex
+				justify-content: space-between
+				align-items: flex-start
+
+				margin-bottom: 50px
+
+			&-social
+				margin-top: 0
+
+			&-menu
+				width: 100%
+
+				display: flex
+				justify-content: space-between
+
+			&__link
+				margin-bottom: 15px
+
+				&:last-child
+					margin-bottom: 0
+
+@media screen and ( max-width: 900px )
+	// header-transparent
+	.header-transparent
+		&-bg
+			height: 600px
+
+		&-block
+			&-search, &__pass
+				display: none
+
+	// home
+	.home
+		// main
+		&-main
+			&-wrapper
+				margin-bottom: 125px
+
+			&-text
+				padding-top: 0
+
+				&__title
+					& > span
+						display: block
+
+		// payments-models
+		&-payments-models
+			&-btn
+				justify-content: flex-start
+
+			&-img
+				margin-top: 25px
+
+				width: 90% !important
+
+				&__img
+					&.desktop
+						display: none
+
+					&.middleMobile
+						display: block
+
+		// connect
+		&-connect
+			&-wrapper
+				flex-direction: column
+
+			&-text
+				order: 2
+
+				margin-top: 50px
+				width: 100%
+
+			&-img
+				order: 1
+
+		// success-business
+		&-success-business
+			&-wrapper
+				display: flex
+				flex-direction: column
+				align-items: center
+
+			&-img
+				margin-top: 50px
+
+				width: 90%
+
+				transform: translateY(0)
+
+				order: 2
+
+				display: block
+
+				position: static
+
+			&-text
+				width: 100%
+				order: 1
+
+		// steps
+		&-steps
+			&-wrapper
+				flex-direction: column
+
+			&-block
+				width: 100%
+
+				&:nth-child(odd)
+					width: 100%
+					margin-right: 0
+
+@media screen and ( max-width: 800px )
+	// home
+	.home
+		// services
+		&-services
+			&-img
+				width: 300px
+
+		// feedbacks
+		&-feedbacks
+			&-title
+				max-width: 100%
+
+				&__title
+					font-size: 20px
+
+			&-blocks-wrapper
+				display: none
+
+			&-blocks-wrapper-slider-mobile
+				margin-top: 25px
+
+				display: block
+
+			&-block
+				width: 500px
+
+		// cooperation
+		&-cooperation
+			&__title
+				font-size: 20px
+
+				max-width: 100%
+
+			&-logos
+				margin: 75px 0
+
+				&-img
+					margin: 0 25px
+
+		// email
+		&-email
+			&-form
+				padding: 30px
+
+				&-field
+					&-input
+						width: 49%
+
+					&__btn
+						width: 100%
+
+						&.desktop
+							display: none
+
+						&.mobile
+							margin-top: 25px
+
+							display: block
+
+@media screen and ( max-width: 600px )
+	// home
+	.home
+		// feedbacks
+		&-feedbacks
+			&-block
+				width: 300px
+
+				margin: 0 10px
+
+				&-text
+					&-avatar
+						min-width: 40px
+						height: 40px
+
+	// footer
+	.footer
+		&-block
+			&-menu
+				flex-direction: column
+				align-items: center
+				text-align: center
+
+				&-item
+					margin-bottom: 25px
+
+					&:last-child
+						margin-bottom: 0
+
+			&-social
+				&__item
+					margin-right: 10px
+
+			&__link
+				text-align: center
+
+@media screen and ( max-width: 500px )
+	// interface
+	.btn
+		padding: 20px
+		font-size: 17px
+
+	.btn-light
+		font-size: 15px
+
+	// header-transparent
+	.header-transparent
+		padding: 25px 0
+
+	// home
+	.home
+		&-main
+			&-text
+				padding-top: 25px
+
+				&__title
+					font-size: 32px
+
+				&__btn
+					margin-top: 50px
+
+		// services
+		&-services
+			margin-bottom: 75px
+
+			&-wrapper
+				padding: 30px
+
+			&-list
+				&__title
+					font-size: 20px
+
+				&-item
+					align-items: flex-start
+					font-size: 15px
+
+			&-img
+				width: 200px
+
+		// connect
+		&-connect
+			margin-bottom: 75px
+
+			&-text
+				&__title
+					font-size: 20px
+					margin-bottom: 20px
+
+				&__description
+					font-size: 15px
+
+				&__btn
+					width: 100%
+
+			&-img
+				width: 100%
+
+		// payments-models
+		&-payments-models
+			margin-bottom: 75px
+
+			&__title
+				font-size: 20px
+				margin-bottom: 25px
+
+			&-img
+				width: 95% !important
+
+				&__img
+					&.middleMobile
+						display: none
+
+					&.smallMobile
+						display: block
+
+		// success-business
+		&-success-business
+			margin-bottom: 75px
+
+			&-wrapper
+				padding: 30px
+
+			&-text
+				&__title
+					font-size: 20px
+
+				&__description
+					font-size: 15px
+
+				&__btn
+					width: 100%
+
+		// steps
+		&-steps
+			margin-bottom: 75px
+
+			&-block
+				margin-bottom: 25px
+
+				&-icon
+					min-width: 70px
+
+					& > svg
+						width: 65px
+
+				&-text
+					margin-left: 15px
+
+					&__title
+						font-size: 20px
+
+					&__description
+						font-size: 15px
+
+		// cooperation
+		&-cooperation
+			margin-bottom: 75px
+
+		// email
+		&-email
+			&-form
+				&-text
+					&__title
+						font-size: 20px
+
+					&__subtitle
+						font-size: 15px
+
+				&-field
+					margin-top: 25px
+					flex-direction: column
+
+					&-input
+						margin-bottom: 15px
+						width: 100%
+
+						&:last-child
+							margin-bottom: 0

@@ -1,0 +1,354 @@
+// home
+.home
+	// main
+	&-main
+		&-wrapper
+			margin-bottom: 175px
+
+		&-text
+			color: $white
+			padding-top: 25px
+
+			&__title
+				font-size: 48px
+				margin-bottom: 15px
+
+				& > span
+					color: $mainGreen
+
+			&__btn
+				margin-top: 90px
+
+	// services
+	&-services
+		margin-bottom: 125px
+
+		&-wrapper
+			position: relative
+
+			padding: 50px
+			background-color: $white
+
+			+borderRadius
+
+		&-list
+			width: 55%
+
+			&__title
+				margin-bottom: 50px
+
+				& > span
+					color: $mainColor
+
+			&-item
+				display: flex
+				align-items: center
+
+				margin-bottom: 35px
+
+				&-icon
+					margin-right: 25px
+
+		&-img
+			top: 0
+			right: -150px
+			position: absolute
+
+			&__img
+				width: 100%
+
+	// feedbacks
+	&-feedbacks
+		margin-bottom: 100px
+
+		&-title
+			max-width: 75%
+
+			&__title
+				font-size: 32px
+
+		&-blocks-wrapper
+			display: flex
+			align-items: center
+			justify-content: center
+
+			margin-top: 50px
+
+		&-blocks-wrapper-slider-mobile
+			display: none
+			margin-top: 50px
+
+		&-block
+			width: 400px
+			background-color: $white
+
+			margin: 0 25px
+
+			overflow: hidden
+
+			+borderRadius
+
+			&-cover
+				height: 230px
+				+backgroundSetting
+
+			&-text
+				display: flex
+				align-items: flex-start
+
+				padding: 25px
+
+				&-avatar
+					min-width: 50px
+					height: 50px
+
+					margin-right: 10px
+
+					border-radius: 50%
+
+					+backgroundSetting
+
+				&-block
+					&__name
+						margin-top: 5px
+						color: $darkMainColor
+						font-size: 20px
+
+					&__description
+						margin-top: 10px
+						font-size: 15px
+
+					&__subtitle
+						margin-top: 10px
+
+						font-size: 15px
+						color: $gray
+
+	// connect
+	&-connect
+		margin-bottom: 150px
+
+		&-wrapper
+			display: flex
+			align-items: center
+			justify-content: space-between
+
+		&-text
+			width: 45%
+
+			&__title
+				font-size: 32px
+				margin-bottom: 30px
+
+			&__description
+				margin-bottom: 50px
+
+				& > span
+					color: $mainColor
+
+		&-img
+			width: 600px
+
+			&__img
+				user-select: none
+				pointer-events: none
+
+				width: 100%
+
+	// payments-models
+	&-payments-models
+		margin-bottom: 100px
+
+		&-wrapper
+			display: flex
+			flex-direction: column
+			align-items: center
+
+			text-align: center
+
+		&__title
+			font-size: 32px
+			margin-bottom: 50px
+
+		&-btn
+			width: 100%
+
+			overflow-x: auto
+
+			display: flex
+			justify-content: center
+
+			&__btn
+				margin: 0 15px
+
+		&-img
+			margin-top: 75px
+			width: 80%
+
+			&__img
+				width: 100%
+
+				user-select: none
+				pointer-events: none
+
+				&.middleMobile
+					display: none
+
+				&.smallMobile
+					display: none
+
+	// success-business
+	&-success-business
+		position: relative
+
+		margin-bottom: 200px
+
+		&-wrapper
+			padding: 50px
+			background-color: $white
+
+			+borderRadius
+
+		&-img
+			top: -75px
+			left: 5%
+
+			position: absolute
+
+		&-text
+			margin-left: auto
+			width: 50%
+
+			text-align: right
+
+			&__title
+				margin-bottom: 30px
+
+			&__description
+				margin-bottom: 50px
+
+				& > span
+					color: $mainColor
+
+	// steps
+	&-steps
+		margin-bottom: 100px
+
+		&-wrapper
+			display: flex
+			flex-wrap: wrap
+
+		&-block
+			width: 50%
+
+			display: flex
+			align-items: center
+
+			margin-bottom: 75px
+
+			&:nth-child(odd)
+				width: calc( 50% - 50px )
+				margin-right: 50px
+
+			&-icon
+				display: flex
+				justify-content: center
+
+				min-width: 120px
+
+			&-text
+				margin-left: 50px
+
+				&__title
+					margin-bottom: 15px
+
+	// cooperation
+	&-cooperation
+		margin-bottom: 150px
+
+		&-wrapper
+			text-align: center
+
+		&__title
+			font-size: 32px
+
+			max-width: 50%
+			margin: 0 auto
+
+		&-logos
+			display: flex
+			align-items: center
+			justify-content: center
+
+			margin: 100px 0
+
+			&-img
+				margin: 0 50px
+
+				&__img
+					user-select: none
+					pointer-events: none
+
+		&__btn
+			margin: 0 auto
+
+	// email
+	&-email
+		margin: 300px 0 0 0
+
+		height: 500px
+
+		+backgroundSetting
+
+		&-wrapper
+			position: relative
+
+		&-form
+			width: 100%
+			position: absolute
+
+			left: 0
+			top: -185px
+
+			display: flex
+			flex-direction: column
+			align-items: center
+
+			background-color: $white
+			padding: 50px
+
+			+borderRadius
+
+			&-text
+				display: flex
+				flex-direction: column
+				align-items: center
+				text-align: center
+
+				&__title
+					font-size: 32px
+					margin-bottom: 15px
+
+				&__subtitle
+					max-width: 60%
+
+			&-wrapper
+				width: 75%
+
+			&-field
+				margin-top: 50px
+
+				width: 100%
+
+				display: flex
+				align-items: flex-start
+				justify-content: space-between
+
+				&-input
+					width: 35%
+
+				&__btn
+					width: 27%
+
+					&.mobile
+						display: none
