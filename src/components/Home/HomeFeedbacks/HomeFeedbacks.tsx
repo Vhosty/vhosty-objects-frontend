@@ -20,7 +20,7 @@ const HomeFeedbacks: React.FC = () => {
                 <div className="home-feedbacks-title">
                     <h2 className="home-feedbacks-title__title">
                         Многие <span>убедились</span> в преимуществах нашего
-                        сервиса и <span>доверили</span> нам свои объекты
+                        сервиса <br /> и <span>доверили</span> нам свои объекты
                     </h2>
                 </div>
             </div>

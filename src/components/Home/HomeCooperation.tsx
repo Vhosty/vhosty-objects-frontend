@@ -9,11 +9,15 @@ const HomeCooperation: React.FC = () => {
         <section className="home-cooperation">
             <div className="home-cooperation-wrapper">
                 <h2 className="home-cooperation__title">
-                    С нами <span>уже работают</span> как сетевые, так и
+                    С нами <span>уже работают</span> как сетевые, <br /> так и
                     независимые отели. <span>Присоединяйтесь!</span>
                 </h2>
                 <div className="home-cooperation-logos">
-                    <Marquee gradient={false} speed={50} pauseOnHover={true}>
+                    <Marquee
+                        gradientColor={[243, 244, 245]}
+                        speed={50}
+                        pauseOnHover={true}
+                    >
                         {Array(10)
                             .fill(0)
                             .map((_, index) => (

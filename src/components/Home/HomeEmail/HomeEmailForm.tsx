@@ -46,12 +46,7 @@ const HomeEmailForm: React.FC<
                             component={RenderInput}
                             type="phone"
                             name="phone"
-                            label="Номер телефона"
-                            {...(createTextMask({
-                                pattern: "+7 999 999 99-99",
-                                guide: false,
-                                stripMask: false,
-                            }) as any)}
+                            label="8 989 999 99 99"
                         />
                     </div>
 
@@ -76,7 +71,6 @@ const HomeEmailForm: React.FC<
                     disabled={invalid || submitting || pristine || isPending}
                 >
                     {isPending ? "Загрузка" : "Отправить"}
-                    Отправить
                 </button>
             </div>
         </form>

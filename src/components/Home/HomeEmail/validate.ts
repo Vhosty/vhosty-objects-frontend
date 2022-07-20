@@ -38,8 +38,10 @@ export const validate = (values: validateValues) => {
 
 	if (!values.phone) {
 		errors.phone = "Поле не может быть пустым";
-	} else if (values.phone.length !== 16) {
-		errors.phone = "Поле не может быть пустым";
+	} else if (values.phone.length > max) {
+		errors.email = `Не более ${max} символов`;
+	} else if (values.phone.length < min) {
+		errors.email = `Не менее ${min} символов`;
 	}
 
     return errors;

@@ -37,51 +37,58 @@ const HomePaymentsModels: React.FC = () => {
 
     return (
         <section className="home-payments-models">
-            <div className="home-payments-models-wrapper">
-                <h2 className="home-payments-models__title">
-                    <span>Модели оплаты</span> для вашего бизнеса
-                </h2>
-                <div className="home-payments-models-btn">
+            <div className="container">
+                <div className="home-payments-models-wrapper">
+                    <h2 className="home-payments-models__title">
+                        <span>Модели оплаты</span> для вашего бизнеса
+                    </h2>
+                    <div className="home-payments-models-btn">
+                        {items.map((item, index) => (
+                            <button
+                                className={`btn-light home-payments-models-btn__btn ${
+                                    currentIndexItem === index ? "active" : ""
+                                }`}
+                                onClick={() => setCurrentIndexItem(index)}
+                                key={`home-payments-models-btn__btn-${index}`}
+                            >
+                                {item.titleBtn}
+                            </button>
+                        ))}
+					</div>
+					
                     {items.map((item, index) => (
-                        <button
-                            className={`btn-light home-payments-models-btn__btn ${
+                        <div
+                            className={`home-payments-models-img ${
                                 currentIndexItem === index ? "active" : ""
                             }`}
-                            onClick={() => setCurrentIndexItem(index)}
-                            key={`home-payments-models-btn__btn-${index}`}
+                            key={`home-payments-models-img-${index}`}
+                            style={
+                                item.widthProccent
+                                    ? {
+                                          width: `${item.widthProccent}%`,
+                                      }
+                                    : {}
+                            }
                         >
-                            {item.titleBtn}
-                        </button>
+                            <img
+                                src={item.desktopImage}
+                                alt=""
+                                className="home-payments-models-img__img desktop"
+                            />
+
+                            <img
+                                src={item.mobileMiddleImage}
+                                alt=""
+                                className="home-payments-models-img__img middleMobile"
+                            />
+
+                            <img
+                                src={item.mobileSmallImage}
+                                alt=""
+                                className="home-payments-models-img__img smallMobile"
+                            />
+                        </div>
                     ))}
-                </div>
-
-                <div
-                    className="home-payments-models-img"
-                    style={
-                        items[currentIndexItem].widthProccent
-                            ? {
-                                  width: `${items[currentIndexItem].widthProccent}%`,
-                              }
-                            : {}
-                    }
-                >
-                    <img
-                        src={items[currentIndexItem].desktopImage}
-                        alt=""
-                        className="home-payments-models-img__img desktop"
-                    />
-
-                    <img
-                        src={items[currentIndexItem].mobileMiddleImage}
-                        alt=""
-                        className="home-payments-models-img__img middleMobile"
-                    />
-
-                    <img
-                        src={items[currentIndexItem].mobileSmallImage}
-                        alt=""
-                        className="home-payments-models-img__img smallMobile"
-                    />
                 </div>
             </div>
         </section>

@@ -49,11 +49,6 @@ const RequestRegisterForm: React.FC<{} & InjectedFormProps<{}, {}>> = ({
                             name="phone"
                             label="8 989 999 99 99"
                             title="Номер телефона"
-                            {...(createTextMask({
-                                pattern: "+7 999 999 99-99",
-                                guide: false,
-                                stripMask: false,
-                            }) as any)}
                         />
                     </div>
 

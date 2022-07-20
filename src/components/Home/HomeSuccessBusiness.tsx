@@ -33,7 +33,7 @@ const HomeSuccessBusiness: React.FC = () => {
                             to="#request_register"
                             className="btn home-success-business-text__btn"
                         >
-                            Оставить заявку
+                            Оставить контактные данные
                         </Link>
                     </div>
                 </div>

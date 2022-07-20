@@ -17,11 +17,17 @@
 			&-list
 				width: 100%
 
-			&-img
-				margin: 50px auto 0 auto
+				&-item
+					&:nth-last-child(2), &:nth-last-child(1)
+						width: 60%
 
-				width: 500px
-				position: static
+			&-img
+				width: 35%
+
+				top: auto
+
+				bottom: 0
+				right: 0
 
 		// connect
 		&-connect
@@ -71,7 +77,7 @@
 				padding-bottom: 15px
 
 				&__btn
-					margin: 0 10px
+					margin-right: 10px
 
 	// footer
 	.footer
@@ -112,6 +118,9 @@
 		&-block
 			&-search, &__pass
 				display: none
+
+		&__link
+			display: none
 
 	// home
 	.home
@@ -160,27 +169,16 @@
 
 		// success-business
 		&-success-business
-			&-wrapper
-				display: flex
-				flex-direction: column
-				align-items: center
-
 			&-img
-				margin-top: 50px
+				width: 30%
 
-				width: 90%
+				top: 30px
+				left: -10px
 
 				transform: translateY(0)
 
-				order: 2
-
-				display: block
-
-				position: static
-
 			&-text
-				width: 100%
-				order: 1
+				width: 80%
 
 		// steps
 		&-steps
@@ -254,6 +252,49 @@
 
 							display: block
 
+@media screen and ( max-width: 750px )
+	// home
+	.home
+		&-success-business
+			&-wrapper
+				display: flex
+				flex-direction: column
+				align-items: center
+
+			&-img
+				margin-top: 50px
+
+				width: 90%
+
+				transform: translateY(0)
+
+				order: 2
+
+				display: block
+
+				position: static
+
+			&-text
+				width: 100%
+				order: 1
+
+@media screen and ( max-width: 700px )
+	// home
+	.home
+		// services
+		&-services
+			&-list
+				&-item
+					&:nth-last-child(2), &:nth-last-child(1)
+						width: 100%
+
+			&-img
+				margin: 50px auto 0 auto
+
+				width: 100%
+
+				position: static
+
 @media screen and ( max-width: 600px )
 	// home
 	.home
@@ -303,6 +344,9 @@
 	.header-transparent
 		padding: 25px 0
 
+		&-bg
+			background-position: center right
+
 	// home
 	.home
 		&-main
@@ -313,11 +357,13 @@
 					font-size: 32px
 
 				&__btn
+					width: 100%
 					margin-top: 50px
 
 		// services
 		&-services
 			margin-bottom: 75px
+			padding-bottom: 0
 
 			&-wrapper
 				padding: 30px
@@ -325,6 +371,7 @@
 			&-list
 				&__title
 					font-size: 20px
+					margin-bottom: 25px
 
 				&-item
 					align-items: flex-start
@@ -411,6 +458,9 @@
 		// cooperation
 		&-cooperation
 			margin-bottom: 75px
+
+			&__btn
+				width: 95%
 
 		// email
 		&-email
