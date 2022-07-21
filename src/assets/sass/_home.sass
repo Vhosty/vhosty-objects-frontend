@@ -214,11 +214,13 @@
 
 	// success-business
 	&-success-business
-		position: relative
-
 		margin-bottom: 200px
 
 		&-wrapper
+			position: relative
+
+			display: flex
+
 			padding: 50px
 			background-color: $white
 
@@ -228,22 +230,23 @@
 			width: 40%
 
 			top: -75px
-			left: 5%
+			left: -75px
 
 			position: absolute
 
 		&-text
-			margin-left: auto
-			width: 60%
-
 			text-align: right
 
 			&__title
 				margin-bottom: 30px
+				width: 60%
+				margin-left: auto
 
 			&__description
 				margin-left: auto
 				margin-bottom: 50px
+				width: 60%
+				margin-left: auto
 
 				& > span
 					font-weight: 500

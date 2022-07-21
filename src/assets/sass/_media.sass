@@ -1,4 +1,13 @@
 // media
+@media screen and ( max-width: 1300px )
+	// home
+	.home
+		&-main
+			&-text
+				&__title
+					& > span
+						display: block
+
 @media screen and ( max-width: 1200px )
 	// header-transparent
 	.header-transparent
@@ -18,7 +27,7 @@
 				width: 100%
 
 				&-item
-					&:nth-last-child(2), &:nth-last-child(1)
+					&:nth-last-child(1), &:nth-last-child(2), &:nth-last-child(3)
 						width: 60%
 
 			&-img
@@ -49,9 +58,6 @@
 
 				&__img
 					width: 100%
-
-			&-text
-				width: 65%
 
 		// email
 		&-email
@@ -132,10 +138,6 @@
 			&-text
 				padding-top: 0
 
-				&__title
-					& > span
-						display: block
-
 		// payments-models
 		&-payments-models
 			&-btn
@@ -170,15 +172,15 @@
 		// success-business
 		&-success-business
 			&-img
-				width: 30%
+				width: 45%
 
-				top: 30px
-				left: -10px
+				// top: 50%
+				left: -50px
 
-				transform: translateY(0)
+				// transform: translateY(0)
 
 			&-text
-				width: 80%
+				width: 100%
 
 		// steps
 		&-steps
@@ -197,6 +199,11 @@
 	.home
 		// services
 		&-services
+			&-list
+				&-item
+					&:nth-last-child(3)
+						width: 100%
+
 			&-img
 				width: 300px
 
@@ -275,8 +282,13 @@
 				position: static
 
 			&-text
-				width: 100%
 				order: 1
+
+				&__title
+					width: 100%
+
+				&__description
+					width: 100%
 
 @media screen and ( max-width: 700px )
 	// home

@@ -1,6 +1,6 @@
 import React from "react";
 
-import MainServicesImage from '../../assets/images/main-services-image.png'
+import MainServicesImage from "../../assets/images/main-services-image.png";
 
 const HomeServices: React.FC = () => {
     return (
@@ -50,7 +50,6 @@ const HomeServices: React.FC = () => {
                             разрешения вопросов и возможность сообщить о
                             нарушениях со стороны гостя
                         </div>
-
                         <div className="home-services-list-item">
                             <div className="home-services-list-item-icon">
                                 <svg
@@ -73,7 +72,6 @@ const HomeServices: React.FC = () => {
                             Возможность учесть все специфические особенности
                             вашего уникального объекта
                         </div>
-
                         <div className="home-services-list-item">
                             <div className="home-services-list-item-icon">
                                 <svg

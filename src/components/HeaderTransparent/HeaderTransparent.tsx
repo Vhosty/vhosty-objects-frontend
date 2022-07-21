@@ -37,12 +37,12 @@ const HeaderTransparent: React.FC<HeaderTransparentProps> = ({bgImage}) => {
                     </Link>
                 </div>
 
-                <Link
+                {/* <Link
                     to="#request_register"
                     className="btn small header-transparent__link"
                 >
                     Оставить заявку
-                </Link>
+                </Link> */}
 
                 {/* <HeaderTransparentSearch />
 
