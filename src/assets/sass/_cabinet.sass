@@ -1,0 +1,364 @@
+// cabinet
+.cabinet
+	margin-bottom: 100px
+
+	&-menu
+		display: flex
+		align-items: center
+		justify-content: center
+
+		margin-bottom: 50px
+
+		&-item
+			display: flex
+			align-items: center
+
+			margin: 0 25px
+
+			&.active &__title
+				color: $mainGreen
+
+			&.active &-icon > svg
+				fill: $mainGreen
+
+			&-icon
+				display: flex
+				align-items: center
+				justify-content: center
+
+				& > svg
+					width: 25px
+					fill: $white
+
+					+transition
+
+			&__title
+				margin-left: 10px
+				color: $white
+
+				+transition
+
+	&-block
+		background-color: $white
+
+		+borderRadius
+		+open
+
+		&-padding
+			padding: 50px
+
+		&-padding-top
+			padding: 50px 50px 0 50px
+
+		&-padding-bottom
+			padding: 0 50px 50px 50px
+
+		&-text
+			&__title
+				font-size: 32px
+				margin-bottom: 20px
+
+			&__subtitle
+				color: $gray
+
+		&-main
+			&-notifications
+				margin-top: 30px
+
+				display: flex
+				justify-content: space-between
+
+				&-block
+					display: flex
+					flex-direction: column
+					align-items: flex-start
+					justify-content: space-between
+
+					position: relative
+
+					padding: 25px
+					width: 31%
+
+					background: #CCECEC
+
+					+borderRadius
+
+					&.gradient
+						background: linear-gradient(133.36deg, #76DD87 9.4%, #00A0A0 70.69%), #00A0A0
+
+					&.gradient &-text__title
+						color: $white
+
+					&.gradient &-text__description
+						color: $white
+
+					&-text
+						&__title
+							color: $darkMainColor
+							font-size: 18px
+							margin-bottom: 10px
+
+						&__description
+							width: 90%
+
+							font-size: 15px
+							margin-bottom: 25px
+
+							& > span
+								font-weight: 500
+
+					&__img
+						z-index: 1
+
+						user-select: none
+						pointer-events: none
+
+						position: absolute
+
+						width: 160px
+
+						right: -35px
+						bottom: -25px
+
+			&-reserv
+				padding-bottom: 50px
+
+				&-filters
+					display: flex
+					justify-content: space-between
+					align-items: center
+
+					&-btn
+						display: flex
+
+						&__btn
+							display: inline-flex
+							justify-content: center
+							align-items: center
+
+							cursor: pointer
+
+							padding: 15px 45px
+
+							font-size: 15px
+
+							font-weight: 500
+							color: $darkMainColor
+							background-color: $white
+
+							border-radius: 100px
+							border: 1px solid $borderGray
+
+							white-space: nowrap
+
+							margin-right: 15px
+
+							+transition
+
+							&:last-child
+								margin-right: 0
+
+							&:hover
+								color: $white
+								background-color: $darkMainColor
+
+							&.active
+								color: $white
+								background-color: $darkMainColor
+
+							& > span
+								color: #88B7B3
+
+					&__all
+						font-size: 15px
+						color: $darkMainColor
+
+						border-bottom: 1px solid $darkMainColor
+
+		&-reserv
+			&-titles
+				display: flex
+				justify-content: space-between
+				align-items: center
+
+				padding: 20px 30px
+
+				background-color: #E6F6F6
+
+				&__item
+					font-size: 15px
+
+					&.object
+						width: 240px
+
+					&.guests
+						width: 150px
+
+					&.from, &.to
+						width: 100px
+
+					&.status
+						width: 60px
+
+					&.price
+						width: 70px
+
+					&.commission
+						width: 70px
+
+					&.booking
+						width: 120px
+
+			&-item
+				display: flex
+				justify-content: space-between
+
+				position: relative
+
+				padding: 20px 30px
+
+				&::before
+					content: ""
+
+					position: absolute
+
+					bottom: 0
+					left: 50%
+
+					transform: translateX(-50%)
+
+					width: calc( 100% - 40px )
+					height: 1px
+
+					background-color: $borderGray
+
+				&-block
+					&-object
+						display: flex
+
+						width: 240px
+
+						&-cover
+							display: flex
+							justify-content: center
+							align-items: center
+
+							position: relative
+
+							min-width: 40px
+							height: 40px
+
+							border-radius: 8px
+
+							overflow: hidden
+
+							+backgroundSetting
+
+							&-icon
+								display: flex
+								justify-content: center
+								align-items: center
+
+								z-index: 1
+
+							&-plaecholder
+								top: 0
+								left: 0
+
+								position: absolute
+
+								width: 100%
+								height: 100%
+
+								background-color: $blackTransparent
+
+						&-text
+							margin-left: 10px
+
+							display: flex
+							flex-direction: column
+							justify-content: space-between
+							align-items: flex-start
+
+							&__title
+								font-size: 15px
+
+								overflow: hidden
+								display: -webkit-box
+								-webkit-line-clamp: 2
+								-webkit-box-orient: vertical
+
+							&__link
+								display: inline-block
+								margin-top: 10px
+
+								font-size: 15px
+								color: $darkMainColor
+
+								border-bottom: 1px solid $darkMainColor
+
+								+transition
+
+								&:hover
+									color: $mainColor
+									border-bottom: 1px solid $mainColor
+
+					&-guests
+						width: 150px
+
+						display: flex
+						flex-direction: column
+						justify-content: space-between
+						align-items: flex-start
+
+						&__title
+							font-size: 15px
+
+						&__subtitle
+							margin-top: 10px
+
+							font-size: 15px
+							color: $gray
+
+					&-from, &-to
+						width: 100px
+
+						&__title
+							font-size: 15px
+
+					&-status
+						width: 60px
+
+						&__title
+							font-size: 15px
+
+							&.cancel
+								color: $darkMainRed
+
+					&-price
+						width: 70px
+
+						&__title
+							font-size: 15px
+
+					&-commission
+						width: 70px
+
+						&__title
+							font-size: 15px
+
+					&-booking
+						width: 120px
+
+						display: flex
+						flex-direction: column
+						justify-content: space-between
+						align-items: flex-start
+
+						&__number
+							color: $darkMainColor
+							font-size: 15px
+
+						&__date
+							color: $gray
+							font-size: 15px

@@ -55,5 +55,21 @@ export { default as ReglogSuccess } from "./Reglog/ReglogSuccess";
 // RequestRegister
 export { default as RequestRegisterForm } from "./RequestRegister/RequestRegisterForm";
 
+// Cabinet
+export { default as CabinetMenu } from "./Cabinet/CabinetMenu";
+// CabinetMain
+export { default as CabinetMain } from "./Cabinet/CabinetMain/CabinetMain";
+// CabinetMainNotifications
+export { default as CabinetMainNotifications } from "./Cabinet/CabinetMain/CabinetMainNotifications/CabinetMainNotifications";
+export { default as CabinetMainNotificationsConfirmed } from "./Cabinet/CabinetMain/CabinetMainNotifications/CabinetMainNotificationsConfirmed";
+export { default as CabinetMainNotificationsAbout } from "./Cabinet/CabinetMain/CabinetMainNotifications/CabinetMainNotificationsAbout";
+export { default as CabinetMainNotificationsPayment } from "./Cabinet/CabinetMain/CabinetMainNotifications/CabinetMainNotificationsPayment";
+// CabinetMainReserv
+export { default as CabinetMainReserv } from "./Cabinet/CabinetMain/CabinetMainReserv/CabinetMainReserv";
+export { default as CabinetMainReservFilters } from "./Cabinet/CabinetMain/CabinetMainReserv/CabinetMainReservFilters";
+// CabinetReserv
+export { default as CabinetReservItemTitle } from "./Cabinet/CabinetReserv/CabinetReservItemTitle";
+export { default as CabinetReservItem } from "./Cabinet/CabinetReserv/CabinetReservItem";
+
 // Footer
 export { default as Footer } from "./Footer/Footer";

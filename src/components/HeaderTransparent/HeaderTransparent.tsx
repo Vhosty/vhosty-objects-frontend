@@ -26,7 +26,7 @@ const HeaderTransparent: React.FC<HeaderTransparentProps> = ({bgImage}) => {
 
             <header className="header-transparent">
                 <div className="header-transparent-block">
-                    {/* <HeaderModal /> */}
+                    <HeaderModal />
 
                     <Link to="/" className="header-transparent-block-logo">
                         <img
@@ -37,18 +37,11 @@ const HeaderTransparent: React.FC<HeaderTransparentProps> = ({bgImage}) => {
                     </Link>
                 </div>
 
-                {/* <Link
-                    to="#request_register"
-                    className="btn small header-transparent__link"
-                >
-                    Оставить заявку
-                </Link> */}
-
-                {/* <HeaderTransparentSearch />
+                <HeaderTransparentSearch />
 
                 <HeaderTransparentPassLink />
 
-                <HeaderTransparentUser /> */}
+                <HeaderTransparentUser />
             </header>
         </>
     );

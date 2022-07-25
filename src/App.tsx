@@ -5,9 +5,9 @@ import rn from "random-number";
 
 import "moment/locale/ru";
 
-import {Footer, Header} from "./components/";
+import {Footer, Header, CabinetMain} from "./components/";
 
-import {Home, Reglog} from "./pages";
+import {Home, Reglog, Cabinet} from "./pages";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -51,6 +51,11 @@ const App = () => {
 
                 <Routes>
                     <Route path="/" element={<Home />} />
+
+                    <Route
+                        path="/cabinet/main"
+                        element={<Cabinet block={<CabinetMain />} />}
+                    />
                 </Routes>
 
                 {pathname.indexOf("/confirmed") !== -1 ? null : <Footer />}

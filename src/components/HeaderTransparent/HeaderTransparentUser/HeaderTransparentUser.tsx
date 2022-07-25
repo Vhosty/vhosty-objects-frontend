@@ -46,7 +46,7 @@ const HeaderTransparentUser: React.FC = () => {
                     to="#request_register"
                     className="header-transparent-block-user"
                 >
-                    {/* <HeaderTransparentUserNotifications /> */}
+                    <HeaderTransparentUserNotifications />
 
                     <button className="header-transparent-block-user__btn">
                         Личный кабинет
