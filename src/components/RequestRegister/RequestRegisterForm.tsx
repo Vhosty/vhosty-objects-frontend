@@ -21,7 +21,7 @@ const RequestRegisterForm: React.FC<{} & InjectedFormProps<{}, {}>> = ({
 
     return (
         <form className="reglog-form" onSubmit={handleSubmit}>
-            <div className="reglog-content-padding-top">
+            <div className="reglog-content-padding">
                 <div className="reglog-form-text">
                     <p className="reglog-form-text__title">Оставьте заявку</p>
                     <p className="reglog-form-text__description">
@@ -29,9 +29,7 @@ const RequestRegisterForm: React.FC<{} & InjectedFormProps<{}, {}>> = ({
                         связаться и ответить на интересующие вопросы.
                     </p>
                 </div>
-            </div>
 
-            <div className="reglog-content-padding-bottom">
                 <div className="reglog-form-block">
                     <div className="reglog-form-block-input">
                         <Field

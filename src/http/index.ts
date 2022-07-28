@@ -30,7 +30,7 @@ $api.interceptors.response.use(
 
 				try {
 					const response = await axios.post(
-						`${process.env.REACT_APP_API_DOMEN}/users/token/refresh`,
+						`${process.env.REACT_APP_API_DOMEN}/companies/token/refresh`,
 						{},
 						{ withCredentials: true }
 					);

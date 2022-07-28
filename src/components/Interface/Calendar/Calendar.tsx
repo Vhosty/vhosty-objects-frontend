@@ -15,7 +15,11 @@ export interface CalendarTo {
     date: Moment;
 }
 
-const Calendar: React.FC = () => {
+interface CalendarProps {
+    isCheckedBefore?: boolean;
+}
+
+const Calendar: React.FC<CalendarProps> = ({isCheckedBefore}) => {
     const [activeCalendar, setActiveCalendar] = React.useState<boolean>(false);
 
     const [date, setDate] = React.useState<Moment>(moment());
@@ -88,6 +92,7 @@ const Calendar: React.FC = () => {
                 addClassWrapper="calendar-select"
             >
                 <CalendarSelect
+                    isCheckedBefore={isCheckedBefore}
                     date={date}
                     from={from}
                     to={to}

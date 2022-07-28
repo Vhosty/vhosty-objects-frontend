@@ -5,44 +5,41 @@ const HeaderUserModal: React.FC = () => {
     return (
         <div className="header-block-user-modal">
             <NavLink
+                to="/cabinet/main"
+                className={({isActive}) =>
+                    `header-block-user-modal-item ${isActive ? "active" : ""}`
+                }
+            >
+                <p className="header-block-user-modal-item__title">Главная</p>
+            </NavLink>
+
+            <NavLink
                 to="/cabinet/setting"
                 className={({isActive}) =>
                     `header-block-user-modal-item ${isActive ? "active" : ""}`
                 }
             >
-                <p className="header-block-user-modal-item__title">
-                    Управление аккаунтом
-                </p>
+                <p className="header-block-user-modal-item__title">Аккаунт</p>
             </NavLink>
 
             <NavLink
-                to="/cabinet/history"
+                to="/cabinet/objects"
+                className={({isActive}) =>
+                    `header-block-user-modal-item ${isActive ? "active" : ""}`
+                }
+            >
+                <p className="header-block-user-modal-item__title">Объекты</p>
+            </NavLink>
+
+            <NavLink
+                to="/cabinet/reserv"
                 className={({isActive}) =>
                     `header-block-user-modal-item ${isActive ? "active" : ""}`
                 }
             >
                 <p className="header-block-user-modal-item__title">
-                    Мои бронирования
+                    Бронирования
                 </p>
-            </NavLink>
-
-            {/* <NavLink
-                to="/"
-                className={({isActive}) =>
-                    `header-block-user-modal-item ${isActive ? "active" : ""}`
-                }
-            >
-                <p className="header-block-user-modal-item__title">Мои баллы</p>
-                <p className="header-block-user-modal-item__subtitle">34 000</p>
-            </NavLink> */}
-
-            <NavLink
-                to="/cabinet/favorites"
-                className={({isActive}) =>
-                    `header-block-user-modal-item ${isActive ? "active" : ""}`
-                }
-            >
-                <p className="header-block-user-modal-item__title">Избранное</p>
             </NavLink>
 
             <Link to="#logout" className="header-block-user-modal-item">

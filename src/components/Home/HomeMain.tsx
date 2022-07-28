@@ -15,7 +15,7 @@ const HomeMain: React.FC = () => {
 
                     <div className="home-main-text">
                         <h1 className="home-main-text__title">
-                            Зарабатывайте: зарегистрируйте{" "}
+                            Зарабатывайте: зарегистрируйте&nbsp;
                             <Typed
                                 strings={[
                                     "отель",

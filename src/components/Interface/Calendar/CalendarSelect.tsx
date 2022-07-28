@@ -12,6 +12,8 @@ interface CalendarSelectProps {
 
     daysMonth: Moment[];
 
+    isCheckedBefore?: boolean;
+
     setDaysMonth: (days: Moment[]) => void;
     setDate: (date: Moment) => void;
     setFrom: (from: CalendarFrom) => void;
@@ -23,6 +25,7 @@ const CalendarSelect: React.FC<CalendarSelectProps> = ({
     from,
     to,
     daysMonth,
+    isCheckedBefore,
     setDaysMonth,
     setDate,
     setFrom,
@@ -51,7 +54,7 @@ const CalendarSelect: React.FC<CalendarSelectProps> = ({
     };
 
     const minusMonthOnClick = () => {
-        if (moment(date).isAfter(moment())) {
+        if (moment(date).isAfter(moment()) || isCheckedBefore) {
             setDate(moment(date).subtract(1, "month"));
             setDaysMonth([]);
         }
@@ -74,7 +77,9 @@ const CalendarSelect: React.FC<CalendarSelectProps> = ({
                     className={`calendar-select-top-arrow-btn prev ${
                         moment(date).format("MMMM") ===
                             moment().format("MMMM") &&
-                        moment(date).format("YYYY") === moment().format("YYYY")
+                        moment(date).format("YYYY") ===
+                            moment().format("YYYY") &&
+                        !isCheckedBefore
                             ? "disabled"
                             : ""
                     }`}
@@ -146,7 +151,9 @@ const CalendarSelect: React.FC<CalendarSelectProps> = ({
                                         ? "included"
                                         : ""
                                 } ${isSelectedDay(day) ? "active" : ""} ${
-                                    day.isBefore(moment().subtract(1, "days"))
+                                    day.isBefore(
+                                        moment().subtract(1, "days")
+                                    ) && !isCheckedBefore
                                         ? "disabled"
                                         : ""
                                 }`}

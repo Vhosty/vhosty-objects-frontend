@@ -7,7 +7,7 @@ import {useTypedSelector} from "../../../hooks/useTypedSelector";
 
 const HeaderUser: React.FC = () => {
     // const {isLoadedUser} = useTypedSelector(({user}) => user);
-	const isLoadedUser = false
+	const isLoadedUser = true
 
     const [activeHeaderModal, setActiveHeaderModal] =
         React.useState<boolean>(false);
@@ -20,7 +20,7 @@ const HeaderUser: React.FC = () => {
         <>
             {isLoadedUser ? (
                 <div className="header-block-user">
-                    <HeaderUserNotifications />
+                    {/* <HeaderUserNotifications /> */}
 
                     <button
                         className="header-block-user__btn"
@@ -39,7 +39,7 @@ const HeaderUser: React.FC = () => {
                 </div>
             ) : (
                 <Link to="#request_register" className="header-block-user">
-                    <HeaderUserNotifications />
+                    {/* <HeaderUserNotifications /> */}
 
                     <button className="header-block-user__btn">
                         Личный кабинет

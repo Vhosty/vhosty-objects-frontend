@@ -5,9 +5,18 @@ import rn from "random-number";
 
 import "moment/locale/ru";
 
-import {Footer, Header, CabinetMain} from "./components/";
+import {
+    Footer,
+    Header,
+    CabinetMain,
+    CabinetSetting,
+    CabinetReserv,
+    CabinetObjects,
+} from "./components/";
 
-import {Home, Reglog, Cabinet} from "./pages";
+import {Home, Reglog, Cabinet, Confirmed, ObjectsNew} from "./pages";
+
+import {fetchUserAboutMe} from "./redux/actions/user/user";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -31,6 +40,10 @@ const App = () => {
         if (!localStorage.getItem("userNumber")) {
             localStorage.setItem("userNumber", userNumber);
         }
+
+        if (localStorage.getItem("accessToken")) {
+            dispatch(fetchUserAboutMe() as any);
+        }
     }, []);
 
     React.useEffect(() => {
@@ -53,8 +66,65 @@ const App = () => {
                     <Route path="/" element={<Home />} />
 
                     <Route
+                        path="/confirmed/:hash"
+                        element={
+                            isRedirectUser ? <Confirmed /> : <Navigate to="/" />
+                        }
+                    />
+
+                    <Route
                         path="/cabinet/main"
-                        element={<Cabinet block={<CabinetMain />} />}
+                        element={
+                            isRedirectUser ? (
+                                <Cabinet block={<CabinetMain />} />
+                            ) : (
+                                <Navigate to="/" />
+                            )
+                        }
+                    />
+
+                    <Route
+                        path="/cabinet/setting"
+                        element={
+                            isRedirectUser ? (
+                                <Cabinet block={<CabinetSetting />} />
+                            ) : (
+                                <Navigate to="/" />
+                            )
+                        }
+                    />
+
+                    <Route
+                        path="/cabinet/reserv"
+                        element={
+                            isRedirectUser ? (
+                                <Cabinet block={<CabinetReserv />} />
+                            ) : (
+                                <Navigate to="/" />
+                            )
+                        }
+                    />
+
+                    <Route
+                        path="/cabinet/objects"
+                        element={
+                            isRedirectUser ? (
+                                <Cabinet block={<CabinetObjects />} />
+                            ) : (
+                                <Navigate to="/" />
+                            )
+                        }
+                    />
+
+                    <Route
+                        path="/objects/new"
+                        element={
+                            isRedirectUser ? (
+                                <ObjectsNew />
+                            ) : (
+                                <Navigate to="/" />
+                            )
+                        }
                     />
                 </Routes>
 

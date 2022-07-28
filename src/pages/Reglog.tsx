@@ -1,10 +1,18 @@
 import React from "react";
-import {useLocation, useNavigate} from "react-router-dom";
+import {useLocation, useNavigate, useSearchParams} from "react-router-dom";
 import {useDispatch} from "react-redux";
 
 import {useTypedSelector} from "../hooks/useTypedSelector";
 
-import {ReglogSuccess, RequestRegisterForm} from "../components/";
+import {
+    RegisterForm,
+    ReglogSuccess,
+    RequestRegisterForm,
+    LoginForm,
+    RecoveryPasswordForm,
+    RecoveryPasswordConfirmedForm,
+    CabinetSettingChangePasswordForm,
+} from "../components/";
 
 import {ReglogStateTypes} from "../redux/types/IReglog";
 
@@ -14,11 +22,19 @@ import {
     setReglogType,
 } from "../redux/actions/reglog";
 
+import {sendLogin} from "../redux/actions/login";
 import {sendRequestRegister} from "../redux/actions/request_register";
+import {sendRegister} from "../redux/actions/register";
+import {
+    sendRequestRecoveryPassword,
+    sendRequestRecoveryPasswordConfirmed,
+} from "../redux/actions/recovery_password";
 
 const Reglog: React.FC = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
+
+    const [query] = useSearchParams();
 
     const {closeAnimation, changeCloseAnimation, type} = useTypedSelector(
         ({reglog}) => reglog
@@ -52,16 +68,52 @@ const Reglog: React.FC = () => {
         }
     };
 
-    const requestRegisterOnSubmit = (data: any) => {
-        dispatch(sendRequestRegister(data) as any);
+    const onSubmitLogin = (data: any) => {
+        return dispatch(sendLogin(data) as any);
     };
+
+    const requestRegisterOnSubmit = (data: any) => {
+        return dispatch(sendRequestRegister(data) as any);
+    };
+
+    const onSubmitRecoveryPassword = (data: any) => {
+        return dispatch(sendRequestRecoveryPassword(data) as any);
+    };
+
+    const onSubmitRecoveryPasswordConfirmed = (data: any) => {
+        return dispatch(
+            sendRequestRecoveryPasswordConfirmed({
+                new_password: data.password,
+                new_password2: data.password2,
+                code: query.get("hash"),
+            }) as any
+        );
+    };
+
+    const registerOnSubmit = (data: any) => {
+        const {name, surname, email, phone, password, repeat_password} = data;
+
+        dispatch(
+            sendRegister({
+                first_name: name,
+                last_name: surname,
+                email,
+                phone,
+                password,
+                password2: repeat_password,
+                legal_type: "legal_entity",
+            }) as any
+        );
+    };
+
+    const cabinetSettingChangePasswordOnSubmit = (data: any) => {};
 
     return (
         <section className={`reglog ${closeAnimation ? "close" : ""}`}>
             <div
                 className={`reglog-content ${
                     closeAnimation || changeCloseAnimation ? "close" : ""
-                }`}
+                } ${type === ReglogStateTypes.REGISTER ? "middle-width" : ""}`}
                 ref={PopupRef}
             >
                 <div className="reglog-close" onClick={closeFunc}>
@@ -88,6 +140,24 @@ const Reglog: React.FC = () => {
                     </svg>
                 </div>
 
+                {type === ReglogStateTypes.LOGIN ? (
+                    <LoginForm onSubmit={onSubmitLogin} />
+                ) : null}
+
+                {type === ReglogStateTypes.REGISTER ? (
+                    <RegisterForm onSubmit={registerOnSubmit} />
+                ) : null}
+
+                {type === ReglogStateTypes.REGISTER_SUCCESS ? (
+                    <ReglogSuccess
+                        topTitle="Регистрация нового объекта"
+                        title="Проверьте почту!"
+                        description="Мы выслали всю информацию для подтверждения данных на указанную Вами почту. Перейдите по ссылке в письме и получите полный доступ к функционалу сайта."
+                        btnLink="/cabinet/main"
+                        btnText="В личный кабинет"
+                    />
+                ) : null}
+
                 {type === ReglogStateTypes.REQUEST_REGISTER ? (
                     <RequestRegisterForm onSubmit={requestRegisterOnSubmit} />
                 ) : null}
@@ -99,6 +169,31 @@ const Reglog: React.FC = () => {
                         description="Мы получили Ваши данные. В скором времени наши менеджеры свяжутся с вами, чтобы дать консультацию по нашему сервису."
                         btnLink="/"
                         btnText="На главную"
+                    />
+                ) : null}
+                {type === ReglogStateTypes.RECOVERY_PASSWORD ? (
+                    <RecoveryPasswordForm onSubmit={onSubmitRecoveryPassword} />
+                ) : null}
+
+                {type === ReglogStateTypes.RECOVERY_PASSWORD_SUCCESS ? (
+                    <ReglogSuccess
+                        topTitle="Восстановить пароль"
+                        title="Проверьте почту!"
+                        description="Мы выслали всю информацию для восстановления доступа на указанную Вами почту. Перейдите по ссылке в письме и восстановите доступ."
+                        btnLink="#login"
+                        btnText="Авторизоваться"
+                    />
+                ) : null}
+
+                {type === ReglogStateTypes.RECOVERY_PASSWORD_CONFIRMED ? (
+                    <RecoveryPasswordConfirmedForm
+                        onSubmit={onSubmitRecoveryPasswordConfirmed}
+                    />
+                ) : null}
+
+                {type === ReglogStateTypes.CABINET_SETTING_CHANGE_PASSWORD ? (
+                    <CabinetSettingChangePasswordForm
+                        onSubmit={cabinetSettingChangePasswordOnSubmit}
                     />
                 ) : null}
             </div>

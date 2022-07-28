@@ -24,7 +24,7 @@ const Home: React.FC = () => {
 
             <HomeServices />
 
-            <HomeFeedbacks />
+            {/* <HomeFeedbacks /> */}
 
             <HomeConnect />
 
@@ -34,7 +34,7 @@ const Home: React.FC = () => {
 
             <HomeSteps />
 
-			<HomeCooperation />
+			{/* <HomeCooperation /> */}
 			
 			<HomeEmail />
         </>

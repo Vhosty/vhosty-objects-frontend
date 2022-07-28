@@ -112,8 +112,8 @@ const HeaderModal: React.FC<HeaderModalProps> = ({color}) => {
                                 onClick={() => setActiveHeaderModal(false)}
                             >
                                 Зарегистрироваться
-                            </Link>{" "}
-                            или{" "}
+                            </Link>&nbsp;
+                            или&nbsp;
                             <Link
                                 to="#login"
                                 onClick={() => setActiveHeaderModal(false)}

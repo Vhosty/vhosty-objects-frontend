@@ -39,7 +39,7 @@ const Header: React.FC = () => {
                         </div>
 
                         <div className="header-block">
-                            <HeaderPassLink />
+                            {/* <HeaderPassLink /> */}
 
                             <HeaderUser />
                         </div>

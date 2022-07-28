@@ -11,7 +11,7 @@ import {useTypedSelector} from "../../../hooks/useTypedSelector";
 
 const HeaderTransparentUser: React.FC = () => {
     // const {isLoadedUser} = useTypedSelector(({user}) => user);
-    const isLoadedUser = false;
+    const isLoadedUser = true;
 
     const [activeHeaderModal, setActiveHeaderModal] =
         React.useState<boolean>(false);

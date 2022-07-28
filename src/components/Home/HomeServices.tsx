@@ -9,7 +9,7 @@ const HomeServices: React.FC = () => {
                 <div className="home-services-wrapper">
                     <div className="home-services-list">
                         <h2 className="home-services-list__title">
-                            C VHOSTY - размещение гостей{" "}
+                            C VHOSTY - размещение гостей&nbsp;
                             <span>комфортнее.</span>
                         </h2>
                         <div className="home-services-list-item">
@@ -27,7 +27,7 @@ const HomeServices: React.FC = () => {
                                     />
                                 </svg>
                             </div>
-                            Возможность импортировать объект в другого сервиса:
+                            Возможность импортировать объект из другого сервиса:
                             быстрое и удобное размещение в пару кликов
                         </div>
 
@@ -47,7 +47,7 @@ const HomeServices: React.FC = () => {
                                 </svg>
                             </div>
                             Внимательная и оперативная служба поддержки для
-                            разрешения вопросов и возможность сообщить о
+                            разрешения вопросов. Возможность сообщить о
                             нарушениях со стороны гостя
                         </div>
                         <div className="home-services-list-item">

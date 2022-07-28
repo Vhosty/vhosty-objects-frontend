@@ -9,8 +9,9 @@ const PolicyCheckbox: React.FC = () => {
     return (
         <div className="policy-checkbox">
             <Field component={RenderCheckbox} name="policyCheckbox" small>
-                Я соглашаюсь с условиями{" "}
-                <Link to="/policy">Политики конфиденциальности.</Link>
+                Я соглашаюсь с условиями&nbsp;
+                <Link to="/policy">Политики конфиденциальности</Link> и&nbsp;
+                <Link to="/">Правилами размещения объектов</Link>
             </Field>
         </div>
     );

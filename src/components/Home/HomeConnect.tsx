@@ -11,12 +11,12 @@ const HomeConnect: React.FC = () => {
                     <div className="home-connect-text">
                         <h2 className="home-connect-text__title">
                             <span>Путешественники</span> по всей России будут
-                            видеть ваш объект размещения <span>ежедневно</span>
+                            видеть ваш объект <span>ежедневно</span>
                         </h2>
                         <p className="home-connect-text__description">
                             Получите свои первые бронирования уже сегодня за
                             пару шагов: пройдите регистрацию, зарегистрируйте
-                            объект размещения -{" "}
+                            объект размещения -&nbsp;
                             <span>Все остальное сделаем мы!</span>
                         </p>
                         <Link

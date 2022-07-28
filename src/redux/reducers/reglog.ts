@@ -10,7 +10,7 @@ const initialState: ReglogState = {
 	closeAnimation: false,
 	changeCloseAnimation: false,
 
-	type: ReglogStateTypes.REQUEST_REGISTER_SUCCESS,
+	type: ReglogStateTypes.REGISTER,
 };
 
 const reglog = (state = initialState, action: ReglogActions) => {

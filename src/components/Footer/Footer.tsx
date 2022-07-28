@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
                                 </Link>
                             </div>
                         </div>
-                        <div className="footer-block-menu">
+                        {/* <div className="footer-block-menu">
                             <nav className="footer-block-menu-item">
                                 <p className="footer-block-menu-item__subtitle">
                                     О нас
@@ -139,7 +139,7 @@ const Footer: React.FC = () => {
                                     Центр помощи партнерам
                                 </Link>
                             </nav>
-                        </div>
+                        </div> */}
                     </div>
 {/* 
                     {isLoadedUser ? null : (
@@ -154,7 +154,7 @@ const Footer: React.FC = () => {
                                 <p className="footer-block-reglog__title">
                                     <Link to="#register">
                                         Зарегистрироваться
-                                    </Link>{" "}
+                                    </Link>&nbsp;
                                     или <Link to="#login">Войти</Link>
                                 </p>
                             </div>

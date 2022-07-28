@@ -52,8 +52,23 @@ export { default as HomeEmailForm } from "./Home/HomeEmail/HomeEmailForm";
 // Reglog
 export { default as ReglogSuccess } from "./Reglog/ReglogSuccess";
 
+// Login
+export { default as LoginForm } from "./Login/LoginForm";
+export { default as LoginMessageError } from "./Login/LoginMessageError";
+
 // RequestRegister
 export { default as RequestRegisterForm } from "./RequestRegister/RequestRegisterForm";
+
+// Register
+export { default as RegisterForm } from "./Register/RegisterForm";
+export { default as RegisterMessageError } from "./Register/RegisterMessageError";
+
+// RecoveryPassword
+export { default as RecoveryPasswordForm } from "./RecoveryPassword/RecoveryPasswordForm";
+export { default as RecoveryPasswordMessageError } from "./RecoveryPassword/RecoveryPasswordMessageError";
+
+// RecoveryPassword
+export { default as RecoveryPasswordConfirmedForm } from "./RecoveryPasswordConfirmed/RecoveryPasswordConfirmedForm";
 
 // Cabinet
 export { default as CabinetMenu } from "./Cabinet/CabinetMenu";
@@ -67,9 +82,46 @@ export { default as CabinetMainNotificationsPayment } from "./Cabinet/CabinetMai
 // CabinetMainReserv
 export { default as CabinetMainReserv } from "./Cabinet/CabinetMain/CabinetMainReserv/CabinetMainReserv";
 export { default as CabinetMainReservFilters } from "./Cabinet/CabinetMain/CabinetMainReserv/CabinetMainReservFilters";
+// CabinetSetting
+export { default as CabinetSetting } from "./Cabinet/CabinetSetting/CabinetSetting";
+// CabinetSettingForm
+export { default as CabinetSettingForm } from "./Cabinet/CabinetSetting/CabinetSettingForm/CabinetSettingForm";
+export { default as CabinetSettingFormInfo } from "./Cabinet/CabinetSetting/CabinetSettingForm/CabinetSettingFormInfo";
+// CabinetSettingFormTitleAndBtn
+export { default as CabinetSettingFormTitleAndBtn } from "./Cabinet/CabinetSetting/CabinetSettingForm/CabinetSettingFormTitleAndBtn/CabinetSettingFormTitleAndBtn";
+export { default as CabinetSettingFormTitleAndBtnDisabled } from "./Cabinet/CabinetSetting/CabinetSettingForm/CabinetSettingFormTitleAndBtn/CabinetSettingFormTitleAndBtnDisabled";
+// CabinetSettingFormContact
+export { default as CabinetSettingFormContact } from "./Cabinet/CabinetSetting/CabinetSettingForm/CabinetSettingFormContact/CabinetSettingFormContact";
+export { default as CabinetSettingFormContactEmailInput } from "./Cabinet/CabinetSetting/CabinetSettingForm/CabinetSettingFormContact/CabinetSettingFormContactEmailInput";
+// CabinetSettingChangePassword
+export { default as CabinetSettingChangePassword } from "./Cabinet/CabinetSetting/CabinetSettingChangePassword/CabinetSettingChangePassword";
+export { default as CabinetSettingChangePasswordForm } from "./Cabinet/CabinetSetting/CabinetSettingChangePassword/CabinetSettingChangePasswordForm";
+export { default as CabinetSettingChangePasswordFormMessageError } from "./Cabinet/CabinetSetting/CabinetSettingChangePassword/CabinetSettingChangePasswordFormMessageError";
+// CabinetSettingVerifications
+export { default as CabinetSettingVerifications } from "./Cabinet/CabinetSetting/CabinetSettingVerifications/CabinetSettingVerifications";
+export { default as CabinetSettingVerificationsPassport } from "./Cabinet/CabinetSetting/CabinetSettingVerifications/CabinetSettingVerificationsPassport";
+export { default as CabinetSettingVerificationsIP } from "./Cabinet/CabinetSetting/CabinetSettingVerifications/CabinetSettingVerificationsIP";
 // CabinetReserv
+export { default as CabinetReserv } from "./Cabinet/CabinetReserv/CabinetReserv";
 export { default as CabinetReservItemTitle } from "./Cabinet/CabinetReserv/CabinetReservItemTitle";
 export { default as CabinetReservItem } from "./Cabinet/CabinetReserv/CabinetReservItem";
+// CabinetReservFilters
+export { default as CabinetReservFilters } from "./Cabinet/CabinetReserv/CabinetReservFilters/CabinetReservFilters";
+export { default as CabinetReservFiltersEvent } from "./Cabinet/CabinetReserv/CabinetReservFilters/CabinetReservFiltersEvent";
+export { default as CabinetReservFiltersDate } from "./Cabinet/CabinetReserv/CabinetReservFilters/CabinetReservFiltersDate";
+// CabinetReservEvents
+export { default as CabinetReservEvents } from "./Cabinet/CabinetReserv/CabinetReservEvents/CabinetReservEvents";
+export { default as CabinetReservEventsPrint } from "./Cabinet/CabinetReserv/CabinetReservEvents/CabinetReservEventsPrint";
+export { default as CabinetReservEventsDownload } from "./Cabinet/CabinetReserv/CabinetReservEvents/CabinetReservEventsDownload";
+// CabinetObjects
+export { default as CabinetObjects } from "./Cabinet/CabinetObjects/CabinetObjects";
+export { default as CabinetObjectsItemTitles } from "./Cabinet/CabinetObjects/CabinetObjectsItemTitles";
+export { default as CabinetObjectsItem } from "./Cabinet/CabinetObjects/CabinetObjectsItem";
+// CabinetObjectsFilters
+export { default as CabinetObjectsFilters } from "./Cabinet/CabinetObjects/CabinetObjectsFilters/CabinetObjectsFilters";
+export { default as CabinetObjectsFiltersStatus } from "./Cabinet/CabinetObjects/CabinetObjectsFilters/CabinetObjectsFiltersStatus";
+export { default as CabinetObjectsFiltersSort } from "./Cabinet/CabinetObjects/CabinetObjectsFilters/CabinetObjectsFiltersSort";
+export { default as CabinetObjectsFiltersReserv } from "./Cabinet/CabinetObjects/CabinetObjectsFilters/CabinetObjectsFiltersReserv";
 
 // Footer
 export { default as Footer } from "./Footer/Footer";
