@@ -123,5 +123,24 @@ export { default as CabinetObjectsFiltersStatus } from "./Cabinet/CabinetObjects
 export { default as CabinetObjectsFiltersSort } from "./Cabinet/CabinetObjects/CabinetObjectsFilters/CabinetObjectsFiltersSort";
 export { default as CabinetObjectsFiltersReserv } from "./Cabinet/CabinetObjects/CabinetObjectsFilters/CabinetObjectsFiltersReserv";
 
+// ObjectsNew
+export { default as ObjectsNewMaps } from "./ObjectsNew/ObjectsNewMaps";
+// ObjectsNewCover
+export { default as ObjectsNewCover } from "./ObjectsNew/ObjectsNewCover/ObjectsNewCover";
+export { default as ObjectsNewCoverText } from "./ObjectsNew/ObjectsNewCover/ObjectsNewCoverText";
+export { default as ObjectsNewCoverImage } from "./ObjectsNew/ObjectsNewCover/ObjectsNewCoverImage";
+// ObjectsNewAdditionalPhotos
+export { default as ObjectsNewAdditionalPhotos } from "./ObjectsNew/ObjectsNewAdditionalPhotos/ObjectsNewAdditionalPhotos";
+// ObjectsNewAbout
+export { default as ObjectsNewAbout } from "./ObjectsNew/ObjectsNewAbout/ObjectsNewAbout";
+// ObjectsNewRooms
+export { default as ObjectsNewRooms } from "./ObjectsNew/ObjectsNewRooms/ObjectsNewRooms";
+// ObjectsNewServices
+export { default as ObjectsNewServices } from "./ObjectsNew/ObjectsNewServices/ObjectsNewServices";
+// ObjectsNewTerms
+export { default as ObjectsNewTerms } from "./ObjectsNew/ObjectsNewTerms/ObjectsNewTerms";
+// ObjectsNewFaq
+export { default as ObjectsNewFaq } from "./ObjectsNew/ObjectsNewFaq/ObjectsNewFaq";
+
 // Footer
 export { default as Footer } from "./Footer/Footer";

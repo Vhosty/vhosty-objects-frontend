@@ -39,7 +39,7 @@ const CabinetMainReservFilters: React.FC = () => {
                 ))}
             </div>
 
-            <Link to="/" className="cabinet-block-main-reserv-filters__all">
+            <Link to="/" className="btn-line cabinet-block-main-reserv-filters__all">
                 Все бронирования (37)
             </Link>
         </div>

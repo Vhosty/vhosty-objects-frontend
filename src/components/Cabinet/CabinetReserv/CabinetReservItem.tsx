@@ -42,7 +42,7 @@ const CabinetReservItem: React.FC = () => {
 
                     <Link
                         to="/"
-                        className="cabinet-block-reserv-item-block-object-text__link"
+                        className="btn-line cabinet-block-reserv-item-block-object-text__link"
                     >
                         Редактировать объект
                     </Link>
