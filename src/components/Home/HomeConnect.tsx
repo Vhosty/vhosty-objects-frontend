@@ -20,7 +20,7 @@ const HomeConnect: React.FC = () => {
                             <span>Все остальное сделаем мы!</span>
                         </p>
                         <Link
-                            to="#request_register"
+                            to="#register"
                             className="btn home-connect-text__btn"
                         >
                             Присоединиться к Vhosty

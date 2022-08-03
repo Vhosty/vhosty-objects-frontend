@@ -16,11 +16,11 @@ const CabinetSettingFormContact: React.FC<{} & InjectedFormProps<{}, {}>> = ({
 }) => {
     const [isEdit, setIsEdit] = React.useState<boolean>(false);
 
-    // const {user, isLoadedUser} = useTypedSelector(({user}) => user);
+    const {user, isLoadedUser} = useTypedSelector(({user}) => user);
 
-    // React.useEffect(() => {
-    //     initialize({...user});
-    // }, [isLoadedUser]);
+    React.useEffect(() => {
+        initialize({...user});
+    }, [isLoadedUser]);
 
     return (
         <form
@@ -31,8 +31,7 @@ const CabinetSettingFormContact: React.FC<{} & InjectedFormProps<{}, {}>> = ({
                 title="Данные аккаунта"
                 isEdit={isEdit}
                 setIsEdit={setIsEdit}
-                disabled={true}
-                // disabled={user.email_is_verified}
+                disabled={user.email_is_verified}
             />
 
             <div className="cabinet-block-setting-form-block-inputs">

@@ -14,11 +14,11 @@ const CabinetSettingFormInfo: React.FC<{} & InjectedFormProps<{}, {}>> = ({
 }) => {
     const [isEdit, setIsEdit] = React.useState<boolean>(false);
 
-    // const {user, isLoadedUser} = useTypedSelector(({user}) => user);
+    const {user, isLoadedUser} = useTypedSelector(({user}) => user);
 
-    // React.useEffect(() => {
-    //     initialize({...user});
-    // }, [isLoadedUser]);
+    React.useEffect(() => {
+        initialize({...user});
+    }, [isLoadedUser]);
 
     return (
         <form

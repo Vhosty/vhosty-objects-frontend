@@ -1,6 +1,7 @@
 import React from "react";
 
 import {
+    ObjectsNewModals,
     ObjectsNewCover,
     ObjectsNewAdditionalPhotos,
     ObjectsNewAbout,
@@ -9,28 +10,33 @@ import {
     ObjectsNewServices,
     ObjectsNewTerms,
     ObjectsNewFaq,
+    ObjectsNewVerification,
 } from "../components/";
 
 const ObjectsNew: React.FC = () => {
     return (
         <section className="objects-new">
-			<ObjectsNewCover />
+			<ObjectsNewModals />
 			
+            <ObjectsNewCover />
+
             <div className="container">
                 <div className="objects-new-wrapper">
-					<ObjectsNewAdditionalPhotos />
-					
-					<ObjectsNewAbout />
+                    <ObjectsNewAdditionalPhotos />
 
-					<ObjectsNewRooms />
+                    <ObjectsNewAbout />
 
-					<ObjectsNewMaps />
+                    <ObjectsNewRooms />
 
-					<ObjectsNewServices />
+                    <ObjectsNewMaps />
 
-					<ObjectsNewTerms />
+                    <ObjectsNewServices />
 
-					<ObjectsNewFaq />
+                    <ObjectsNewTerms />
+
+                    <ObjectsNewFaq />
+
+                    <ObjectsNewVerification />
                 </div>
             </div>
         </section>

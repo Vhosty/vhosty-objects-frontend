@@ -36,7 +36,7 @@ const HomeCooperation: React.FC = () => {
                 </div>
 
                 <Link
-                    to="#request_register"
+                    to="#register"
                     className="btn home-cooperation__btn"
                 >
                     Быть частью Vhosty

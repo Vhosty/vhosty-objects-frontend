@@ -9,9 +9,17 @@ interface SelectProps {
 
     border?: boolean;
     small?: boolean;
+
+    disabled?: boolean;
 }
 
-const Select: React.FC<SelectProps> = ({choices, border, small, title}) => {
+const Select: React.FC<SelectProps> = ({
+    choices,
+    border,
+    small,
+    title,
+    disabled,
+}) => {
     const id = v4();
 
     const [isOpen, setIsOpen] = React.useState(false);
@@ -39,7 +47,7 @@ const Select: React.FC<SelectProps> = ({choices, border, small, title}) => {
         <div className="select-wrapper-wrapper">
             {title ? <p className="select__title">{title}</p> : null}
 
-            <div className="select-wrapper">
+            <div className={`select-wrapper ${disabled ? "disabled" : ""}`}>
                 <div
                     className={`select ${isOpen ? "active" : ""} ${
                         border ? "border" : ""
@@ -47,7 +55,7 @@ const Select: React.FC<SelectProps> = ({choices, border, small, title}) => {
                     onClick={() => setIsOpen(!isOpen)}
                     ref={SelectRef}
                 >
-                    <div className="select-title">
+                    <div className={`select-title ${isOpen ? "active" : ""}`}>
                         <p className="select-title__title">
                             {choices[currentIndex].title}
                         </p>
@@ -74,7 +82,13 @@ const Select: React.FC<SelectProps> = ({choices, border, small, title}) => {
                         </div>
                     </div>
 
-                    <AnimateHeight duration={300} height={isOpen ? "auto" : 0}>
+                    <AnimateHeight
+                        duration={300}
+                        height={isOpen ? "auto" : 0}
+                        style={{
+                            maxWidth: "300px",
+                        }}
+                    >
                         <div className="select-list">
                             {choices.map((item, index) => (
                                 <p

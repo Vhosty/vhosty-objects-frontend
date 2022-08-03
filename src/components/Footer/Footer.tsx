@@ -7,7 +7,7 @@ import LogoBlack from "../../assets/images/logo-black.svg";
 import UserIcon from "../../assets/images/user-icon.svg";
 
 const Footer: React.FC = () => {
-    // const {isLoadedUser} = useTypedSelector(({user}) => user);
+    const {isLoadedUser} = useTypedSelector(({user}) => user);
 
     return (
         <footer className="footer">
@@ -140,8 +140,8 @@ const Footer: React.FC = () => {
                                 </Link>
                             </nav>
                         </div> */}
-                    </div>
-{/* 
+					</div>
+					
                     {isLoadedUser ? null : (
                         <div className="footer-block-wrapper">
                             <div className="footer-block-reglog">
@@ -154,12 +154,12 @@ const Footer: React.FC = () => {
                                 <p className="footer-block-reglog__title">
                                     <Link to="#register">
                                         Зарегистрироваться
-                                    </Link>&nbsp;
-                                    или <Link to="#login">Войти</Link>
+                                    </Link>
+                                    &nbsp; или <Link to="#login">Войти</Link>
                                 </p>
                             </div>
                         </div>
-                    )} */}
+                    )}
 
                     <div className="footer-block-wrapper">
                         <Link to="/" className="footer-block__link">

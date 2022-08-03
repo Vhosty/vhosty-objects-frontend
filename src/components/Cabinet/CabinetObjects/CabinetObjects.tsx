@@ -22,7 +22,10 @@ const CabinetObjects: React.FC = () => {
                         </p>
                     </div>
 
-                    <Link to="/" className="btn cabinet-block-top__likn">
+                    <Link
+                        to="/objects/new"
+                        className="btn cabinet-block-top__likn"
+                    >
                         Создать объявление
                     </Link>
                 </div>

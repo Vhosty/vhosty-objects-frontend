@@ -10,7 +10,7 @@ interface HeaderModalProps {
 }
 
 const HeaderModal: React.FC<HeaderModalProps> = ({color}) => {
-    // const {isLoadedUser} = useTypedSelector(({user}) => user);
+    const {isLoadedUser} = useTypedSelector(({user}) => user);
 
     const [activeHeaderModal, setActiveHeaderModal] =
         React.useState<boolean>(false);
@@ -105,7 +105,7 @@ const HeaderModal: React.FC<HeaderModalProps> = ({color}) => {
                         </Link>
                     </div>
 
-                    {/* {isLoadedUser ? null : (
+                    {isLoadedUser ? null : (
                         <p className="header-block-menu-modal-block-bottom__link">
                             <Link
                                 to="#register"
@@ -121,7 +121,7 @@ const HeaderModal: React.FC<HeaderModalProps> = ({color}) => {
                                 Войти
                             </Link>
                         </p>
-                    )} */}
+                    )}
                 </nav>
             </Popup>
         </>

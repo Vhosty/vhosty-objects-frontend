@@ -10,8 +10,7 @@ import {
 import {useTypedSelector} from "../../../hooks/useTypedSelector";
 
 const HeaderTransparentUser: React.FC = () => {
-    // const {isLoadedUser} = useTypedSelector(({user}) => user);
-    const isLoadedUser = true;
+    const {isLoadedUser} = useTypedSelector(({user}) => user);
 
     const [activeHeaderModal, setActiveHeaderModal] =
         React.useState<boolean>(false);
@@ -43,7 +42,7 @@ const HeaderTransparentUser: React.FC = () => {
                 </div>
             ) : (
                 <Link
-                    to="#request_register"
+                    to="#login"
                     className="header-transparent-block-user"
                 >
                     <HeaderTransparentUserNotifications />

@@ -1,5 +1,224 @@
 // objects_new
 .objects-new
+	&-modal
+		overflow-y: hidden
+
+		display: flex
+		justify-content: center
+		align-items: flex-start
+
+		position: fixed
+
+		top: 0
+		left: 0
+
+		width: 100%
+		height: 100%
+
+		background-color: rgba(0, 0, 0, 0.7)
+
+		z-index: 20
+
+		+open
+
+		&.close
+			+close
+
+		&-content
+			position: relative
+
+			margin: 50px 10px
+			padding: 50px
+
+			background-color: $white
+
+			width: 700px
+
+			+borderRadius
+			+openPopup
+
+			&.close
+				+closePopup
+
+				padding: 0
+
+			&-text
+				&__title
+					font-size: 28px
+					color: $darkMainColor
+
+				&__description
+					width: 90%
+
+					margin-top: 15px
+					font-size: 18px
+
+			&-input
+				margin-top: 50px
+
+			&-stars-input
+				margin-top: 50px
+
+				&-items-wrapper
+					display: flex
+					align-items: center
+
+					margin-top: 25px
+
+				&-item
+					cursor: pointer
+					margin-right: 35px
+
+					&:hover > svg
+						fill: $mainColor
+
+					&:last-child
+						margin-right: 0
+
+					& > svg
+						fill: #EDEDED
+
+						+transition
+
+					&.active > svg
+						fill: $mainColor
+
+			&-btn
+				margin-top: 50px
+
+				display: flex
+				justify-content: space-between
+				align-items: center
+
+		&-content-big
+			overflow: hidden
+
+			position: relative
+
+			margin: 50px 10px
+
+			background-color: $white
+
+			width: 95%
+			max-width: 1200px
+			height: calc( 100% - 100px )
+
+			+borderRadius
+			+openPopup
+
+			&-top-text
+				padding: 50px 50px 30px 50px
+
+				+boxShadow
+
+				&__title
+					font-size: 28px
+					color: $darkMainColor
+
+				&__description
+					width: 90%
+
+					margin-top: 15px
+					font-size: 18px
+
+			&-scroll-wrapper
+				padding-right: 25px
+
+				height: 100%
+
+				border: 1px solid red
+
+			&-scroll
+				padding: 25px 50px
+
+				height: calc( 100% - 280px )
+
+				overflow: auto
+
+			&-bottom-btn
+				position: absolute
+
+				bottom: 0
+				left: 0
+
+				width: 100%
+				height: 125px
+
+				background-color: $white
+
+				z-index: 2
+
+				display: flex
+				justify-content: space-between
+				align-items: center
+
+				padding: 30px 50px
+
+				+boxShadow
+
+			&-rooms-block
+				&__title
+					font-weight: 500
+					margin-bottom: 20px
+
+				&-images
+					&__btn
+						width: 100px
+
+						cursor: pointer
+						background-color: transparent
+
+						font-size: 18px
+						color: $gray
+
+						text-align: center
+
+						& > span
+							display: block
+							text-decoration: underline
+
+				&-row
+					&-inputs
+						margin-top: 50px
+
+						display: flex
+						justify-content: space-between
+
+						&:last-child
+
+						&-input-name
+							width: 350px
+
+						&-select-types-room
+							width: 220px
+
+						&-select-types-bed
+							width: 300px
+
+						&-guests-count
+							width: 150px
+
+						&-free-cancel-wrapper
+							width: 46%
+
+						&-free-cancel
+							display: flex
+
+							&-select
+								margin-left: 30px
+
+								width: 100%
+
+						&-foods-wrapper
+							width: 46%
+
+						&-foods
+							display: flex
+
+							&-select
+								margin-left: 30px
+
+								width: 100%
 	&-cover
 		&-text
 			cursor: pointer
@@ -247,3 +466,56 @@
 				height: 350px
 
 				+backgroundSetting
+
+		&-verification
+			&-block
+				margin-top: 50px
+
+				&__title
+					color: $darkMainColor
+					font-size: 18px
+
+				&__description
+					margin-top: 10px
+
+					font-size: 18px
+
+				&__add
+					margin-top: 20px
+
+				&-document
+					margin-top: 25px
+					display: flex
+
+					&-cover
+						width: 100px
+						min-height: 100%
+
+						border-radius: 20px
+
+						+backgroundSetting
+
+					&-text
+						margin-left: 20px
+
+						&__size
+							color: $gray
+
+						&__status
+							font-size: 15px
+
+							& > span
+								font-weight: 500
+
+							&.cancel > span
+								color: $darkMainRed
+
+							&.work > span
+								color: $darkMainColor
+
+						&__input
+							margin-top: 5px
+							cursor: pointer
+
+							color: $gray
+							border-bottom: 1px solid $gray

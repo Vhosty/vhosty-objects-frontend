@@ -17,7 +17,7 @@ const CabinetSettingFormContactEmailInput: React.FC<
 > = ({disabled}) => {
     const dispatch = useDispatch();
 
-    // const {user} = useTypedSelector(({user}) => user);
+    const {user} = useTypedSelector(({user}) => user);
 
     const initialSeconds: number = +localStorage["seconds"];
 
@@ -54,16 +54,14 @@ const CabinetSettingFormContactEmailInput: React.FC<
             <div className="cabinet-block-setting-form-block-input">
                 <div
                     className={`cabinet-block-setting-form-block-input-title ${
-                        true ? "" : "error"
+                        user.email_is_verified ? "" : "error"
                     }`}
                 >
                     <p className="cabinet-block-setting-form-block-input-title__subtitle">
                         Электронная почта
                     </p>
 
-                    {/* user.email_is_verified */}
-
-                    {true ? null : (
+                    {user.email_is_verified ? null : (
                         <>
                             <div
                                 className="cabinet-block-setting-form-block-input-title-icon"

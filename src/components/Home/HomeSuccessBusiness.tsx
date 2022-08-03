@@ -30,7 +30,7 @@ const HomeSuccessBusiness: React.FC = () => {
                         </p>
 
                         <Link
-                            to="#request_register"
+                            to="#register"
                             className="btn home-success-business-text__btn"
                         >
                             Оставить контактные данные

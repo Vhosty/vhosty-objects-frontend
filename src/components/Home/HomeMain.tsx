@@ -34,7 +34,7 @@ const HomeMain: React.FC = () => {
                         </p>
 
                         <Link
-                            to="#request_register"
+                            to="#register"
                             className="btn home-main-text__btn"
                         >
                             Отправить заявку
