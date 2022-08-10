@@ -1,6 +1,10 @@
 import React from "react";
 
-import {TitleIcon, YesOrNo, Select} from "../../../../";
+import {
+    TitleIcon,
+    Select,
+    ObjectsNewModalsRoomsBlockYesOrNo,
+} from "../../../../";
 
 const ObjectsNewModalsRoomsBlockFreeCancel: React.FC = () => {
     const [selectIsActive, setSelectIsActive] = React.useState<boolean>(true);
@@ -27,7 +31,7 @@ const ObjectsNewModalsRoomsBlockFreeCancel: React.FC = () => {
             </TitleIcon>
 
             <div className="objects-new-modal-content-big-rooms-block-row-inputs-free-cancel">
-                <YesOrNo onChange={onChangeYesOrNo} />
+                <ObjectsNewModalsRoomsBlockYesOrNo onChange={onChangeYesOrNo} />
 
                 <div className="objects-new-modal-content-big-rooms-block-row-inputs-free-cancel-select">
                     <Select

@@ -1,7 +1,7 @@
 // objects_new
 .objects-new
 	&-modal
-		overflow-y: hidden
+		overflow-y: auto
 
 		display: flex
 		justify-content: center
@@ -24,10 +24,24 @@
 		&.close
 			+close
 
+		&-content-wrapper
+			display: flex
+			justify-content: center
+
+			width: 90%
+			max-width: 1200px
+
+			margin: 0 auto
+
+			+openPopup
+
+			&.close
+				+closePopup
+
 		&-content
 			position: relative
 
-			margin: 50px 10px
+			margin: 25px 10px
 			padding: 50px
 
 			background-color: $white
@@ -35,7 +49,10 @@
 			width: 700px
 
 			+borderRadius
-			+openPopup
+
+			&.fullWidth
+				width: 100%
+				max-width: 1200px
 
 			&.close
 				+closePopup
@@ -90,23 +107,82 @@
 				justify-content: space-between
 				align-items: center
 
+			&-terms
+				margin-top: 50px
+
+				&-times
+					display: flex
+					justify-content: space-between
+
+					&-from-to
+						width: 47%
+
+						display: flex
+						justify-content: space-between
+
+						&-block
+							width: 47%
+
+					&-possibility-from-to-wrapper
+						width: 47%
+
+					&-possibility-from-to
+						display: flex
+						align-items: center
+
+						&-yes-or-no
+							display: flex
+							align-items: center
+
+							&-block
+								margin-right: 20px
+
+								&:last-child
+									margin-right: 0
+
+						&-select
+							margin-left: 30px
+
+							width: 100%
+
+				&-about
+					margin-top: 30px
+
+				&-selects
+					margin-top: 30px
+
+					display: flex
+					justify-content: space-between
+
+					&-pay
+						width: 40%
+
+					&-confirmed
+						width: 40%
+
 		&-content-big
 			overflow: hidden
 
 			position: relative
 
-			margin: 50px 10px
+			margin: 25px 10px
 
 			background-color: $white
 
-			width: 95%
-			max-width: 1200px
-			height: calc( 100% - 100px )
+			width: 700px
+			height: calc( 100% - 50px )
 
 			+borderRadius
 			+openPopup
 
+			&.fullWidth
+				width: 100%
+				max-width: 1200px
+
 			&-top-text
+				position: relative
+				z-index: 12
+
 				padding: 50px 50px 30px 50px
 
 				+boxShadow
@@ -116,7 +192,7 @@
 					color: $darkMainColor
 
 				&__description
-					width: 90%
+					width: 85%
 
 					margin-top: 15px
 					font-size: 18px
@@ -124,29 +200,18 @@
 			&-scroll-wrapper
 				padding-right: 25px
 
-				height: 100%
-
-				border: 1px solid red
-
 			&-scroll
 				padding: 25px 50px
 
-				height: calc( 100% - 280px )
+				height: 100%
 
 				overflow: auto
 
 			&-bottom-btn
-				position: absolute
-
-				bottom: 0
-				left: 0
-
-				width: 100%
-				height: 125px
+				position: relative
+				z-index: 12
 
 				background-color: $white
-
-				z-index: 2
 
 				display: flex
 				justify-content: space-between
@@ -177,37 +242,138 @@
 							display: block
 							text-decoration: underline
 
-				&-row
-					&-inputs
+				&-row-inputs
+					margin-top: 50px
+
+					display: flex
+					justify-content: space-between
+
+					&-input-name
+						width: 350px
+
+					&-select-types-room
+						width: 220px
+
+					&-select-types-bed
+						width: 300px
+
+					&-guests-count
+						width: 150px
+
+					&-free-cancel-wrapper
+						width: 46%
+
+					&-free-cancel
+						display: flex
+
+						&-select
+							margin-left: 30px
+
+							width: 100%
+
+					&-foods-wrapper
+						width: 46%
+
+					&-foods
+						display: flex
+
+						&-select
+							margin-left: 30px
+
+							width: 100%
+
+					&-payment-wrapper
+						width: 46%
+
+					&-payment
+						display: flex
+						justify-content: space-between
+
+						&-select
+							width: 75%
+
+						&-input
+							width: 23%
+
+					&-price-wrapper
+						width: 46%
+
+					&-price
+						display: flex
+						align-items: center
+
+						&-input
+							margin-right: 20px
+
+				&-options-block
+					margin-top: 65px
+
+					&-title
+						display: flex
+						align-items: center
+
+						&__title
+							font-size: 18px
+
+						&-message
+							position: relative
+
+							z-index: 2
+
+							&-icon
+								cursor: pointer
+
+								display: flex
+								justify-content: center
+								align-items: center
+
+								margin-left: 15px
+
+								&__svgActive
+									display: flex
+									align-items: center
+									justify-content: center
+
+									opacity: 0
+
+									z-index: 1
+									position: absolute
+
+									+transition
+
+									&.active
+										opacity: 1
+
+							&__text
+								padding: 20px
+
+								font-size: 15px
+								color: $white
+								background-color: $mainColor
+
+								width: 320px
+								position: absolute
+
+								bottom: 5px
+
+								left: 40px
+
+								+borderRadius
+
+					&-row-inputs
 						margin-top: 50px
 
 						display: flex
 						justify-content: space-between
 
-						&:last-child
-
-						&-input-name
-							width: 350px
-
-						&-select-types-room
-							width: 220px
-
-						&-select-types-bed
-							width: 300px
-
-						&-guests-count
-							width: 150px
-
-						&-free-cancel-wrapper
+						&-type-beds
 							width: 46%
 
-						&-free-cancel
 							display: flex
+							justify-content: space-between
 
-							&-select
-								margin-left: 30px
-
-								width: 100%
+							&-block
+								width: 48%
 
 						&-foods-wrapper
 							width: 46%
@@ -219,10 +385,123 @@
 								margin-left: 30px
 
 								width: 100%
+
+				&-btn
+					margin: 65px 0 30px 0
+
+					display: flex
+					justify-content: space-between
+					align-items: center
+
+					&__btn
+						cursor: pointer
+
+						display: flex
+						align-items: center
+
+						font-size: 18px
+
+						background-color: transparent
+						color: $darkMainColor
+
+						& > svg
+							margin-right: 20px
+
+						&.gray
+							color: $gray
+
+				&-yes-or-no
+					display: flex
+					align-items: center
+
+					&-block
+						margin-right: 20px
+
+						&:last-child
+							margin-right: 0
+
+			&-services
+				&-block
+					&__title
+						font-size: 18px
+
+					&-items-wrapper
+						display: flex
+						justify-content: space-between
+						flex-wrap: wrap
+
+					&-item
+						width: 47%
+
+						display: flex
+						justify-content: space-between
+						align-items: center
+
+						margin-top: 20px
+
+						&__title
+							position: relative
+							font-size: 15px
+							margin-left: 15px
+
+							&::before
+								content: ""
+
+								display: block
+
+								position: absolute
+
+								left: -15px
+								top: 50%
+
+								transform: translateY(-50%)
+
+								width: 5px
+								height: 5px
+
+								background-color: $black
+
+								border-radius: 50%
+
+						&-radios
+							display: flex
+							align-items: center
+
+							&-block
+								margin-right: 20px
+
+								&:last-child
+									margin-right: 0
+
+			&-faq
+				&-item
+					&__title
+						font-size: 18px
+
+					&-question
+						margin-top: 30px
+
+					&-answer
+						margin-top: 30px
+
+				&__btn
+					margin: 35px 0 15px 0
+
+					cursor: pointer
+
+					display: flex
+					align-items: center
+
+					font-size: 18px
+
+					background-color: transparent
+					color: $darkMainColor
+
+					& > svg
+						margin-right: 20px
+
 	&-cover
 		&-text
-			cursor: pointer
-
 			display: flex
 			justify-content: space-between
 
@@ -244,6 +523,7 @@
 					font-size: 18px
 
 				&__btn
+					display: block
 					margin-top: 20px
 
 			&-feedbacks
@@ -253,8 +533,6 @@
 				background-color: $darkMainColor
 
 		&-image
-			cursor: pointer
-
 			display: flex
 			flex-direction: column
 			align-items: center
@@ -340,6 +618,7 @@
 				width: 80%
 
 			&__btn
+				display: block
 				margin-top: 30px
 
 		&-icon

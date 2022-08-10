@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const ObjectsNewRooms: React.FC = () => {
     return (
@@ -12,9 +13,9 @@ const ObjectsNewRooms: React.FC = () => {
                     Вы можете создать номер и включить в опции/комплектацию как
                     еду, так и условия бронирований.
                 </p>
-                <button className="btn-line objects-new-block-text__btn">
+                <Link to="#rooms" className="btn-line objects-new-block-text__btn">
                     Создать номер
-                </button>
+                </Link>
             </div>
 
             <div className="objects-new-block-icon">

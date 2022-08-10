@@ -1,19 +1,13 @@
 import React from "react";
 
-import {TitleIcon, Textarea} from "../../";
+import {TitleIcon, Textarea, ObjectsNewModalsSmall} from "../../";
 
 const ObjectsNewModalsAbout: React.FC = () => {
     return (
-        <div className="objects-new-modal-content small">
-            <div className="objects-new-modal-content-text">
-                <h2 className="objects-new-modal-content-text__title">
-                    Об объекте
-                </h2>
-                <p className="objects-new-modal-content-text__description">
-                    Расскажите об отеле, о его достоинствах, преимуществах,
-                    истории.
-                </p>
-            </div>
+        <ObjectsNewModalsSmall
+            title="Об объекте"
+            description="Расскажите об отеле, о его достоинствах, преимуществах, истории."
+        >
             <div className="objects-new-modal-content-input">
                 <TitleIcon title="Описание объекта" marginBottom>
                     <svg
@@ -34,17 +28,7 @@ const ObjectsNewModalsAbout: React.FC = () => {
 
                 <Textarea label="Например, год создания здания, принципы, описание местности" />
             </div>
-
-            <div className="objects-new-modal-content-btn">
-                <button className="btn-line gray objects-new-modal-content-btn__cancel">
-                    Отменить изменения
-                </button>
-
-                <button className="btn small objects-new-modal-content-btn__save">
-                    Сохранить
-                </button>
-            </div>
-        </div>
+        </ObjectsNewModalsSmall>
     );
 };
 

@@ -17,7 +17,8 @@ export { default as Tab } from "./Interface/Tab";
 export { default as Location } from "./Interface/Location";
 export { default as PolicyCheckbox } from "./Interface/PolicyCheckbox";
 export { default as Textarea } from "./Interface/Textarea";
-export { default as YesOrNo } from "./Interface/YesOrNo";
+export { default as Radio } from "./Interface/Radio";
+export { default as Time } from "./Interface/Time";
 
 // Header
 export { default as Header } from "./Header/Header";
@@ -101,6 +102,7 @@ export { default as CabinetSettingChangePasswordForm } from "./Cabinet/CabinetSe
 export { default as CabinetSettingChangePasswordFormMessageError } from "./Cabinet/CabinetSetting/CabinetSettingChangePassword/CabinetSettingChangePasswordFormMessageError";
 // CabinetSettingVerifications
 export { default as CabinetSettingVerifications } from "./Cabinet/CabinetSetting/CabinetSettingVerifications/CabinetSettingVerifications";
+export { default as CabinetSettingVerificationsBlock } from "./Cabinet/CabinetSetting/CabinetSettingVerifications/CabinetSettingVerificationsBlock";
 export { default as CabinetSettingVerificationsPassport } from "./Cabinet/CabinetSetting/CabinetSettingVerifications/CabinetSettingVerificationsPassport";
 export { default as CabinetSettingVerificationsIP } from "./Cabinet/CabinetSetting/CabinetSettingVerifications/CabinetSettingVerificationsIP";
 // CabinetReserv
@@ -146,7 +148,9 @@ export { default as ObjectsNewFaq } from "./ObjectsNew/ObjectsNewFaq/ObjectsNewF
 // ObjectsNewVerification
 export { default as ObjectsNewVerification } from "./ObjectsNew/ObjectsNewVerification/ObjectsNewVerification";
 // ObjectsNewModals
-export { default as ObjectsNewModals } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModals";
+export { default as ObjectsNewModalsWrapper } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsWrapper";
+export { default as ObjectsNewModalsSmall } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsSmall";
+export { default as ObjectsNewModalsBig } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsBig";
 export { default as ObjectsNewModalsAbout } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsAbout";
 // ObjectsNewModalsCover
 export { default as ObjectsNewModalsCoverText } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsCover/ObjectsNewModalsCoverText";
@@ -162,6 +166,25 @@ export { default as ObjectsNewModalsRoomsBlockGuestsCount } from "./ObjectsNew/O
 export { default as ObjectsNewModalsRoomsBlockFreeCancel } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsRooms/ObjectsNewModalsRoomsBlock/ObjectsNewModalsRoomsBlockFreeCancel";
 export { default as ObjectsNewModalsRoomsBlockFoods } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsRooms/ObjectsNewModalsRoomsBlock/ObjectsNewModalsRoomsBlockFoods";
 export { default as ObjectsNewModalsRoomsBlockPayment } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsRooms/ObjectsNewModalsRoomsBlock/ObjectsNewModalsRoomsBlockPayment";
+export { default as ObjectsNewModalsRoomsBlockPrice } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsRooms/ObjectsNewModalsRoomsBlock/ObjectsNewModalsRoomsBlockPrice";
+export { default as ObjectsNewModalsRoomsBlockBtn } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsRooms/ObjectsNewModalsRoomsBlock/ObjectsNewModalsRoomsBlockBtn";
+export { default as ObjectsNewModalsRoomsBlockYesOrNo } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsRooms/ObjectsNewModalsRoomsBlock/ObjectsNewModalsRoomsBlockYesOrNo";
+// ObjectsNewModalsRoomsBlockOptions
+export { default as ObjectsNewModalsRoomsBlockOptions } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsRooms/ObjectsNewModalsRoomsBlock/ObjectsNewModalsRoomsBlockOptions/ObjectsNewModalsRoomsBlockOptions";
+export { default as ObjectsNewModalsRoomsBlockOptionsTypeBeds } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsRooms/ObjectsNewModalsRoomsBlock/ObjectsNewModalsRoomsBlockOptions/ObjectsNewModalsRoomsBlockOptionsTypeBeds";
+export { default as ObjectsNewModalsRoomsBlockOptionsFoods } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsRooms/ObjectsNewModalsRoomsBlock/ObjectsNewModalsRoomsBlockOptions/ObjectsNewModalsRoomsBlockOptionsFoods";
+export { default as ObjectsNewModalsRoomsBlockOptionsPayment } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsRooms/ObjectsNewModalsRoomsBlock/ObjectsNewModalsRoomsBlockOptions/ObjectsNewModalsRoomsBlockOptionsPayment";
+export { default as ObjectsNewModalsRoomsBlockOptionsPrice } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsRooms/ObjectsNewModalsRoomsBlock/ObjectsNewModalsRoomsBlockOptions/ObjectsNewModalsRoomsBlockOptionsPrice";
+// ObjectsNewModalsServices
+export { default as ObjectsNewModalsServices } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsServices/ObjectsNewModalsServices";
+export { default as ObjectsNewModalsServicesBlock } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsServices/ObjectsNewModalsServicesBlock/ObjectsNewModalsServicesBlock";
+export { default as ObjectsNewModalsServicesBlockItem } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsServices/ObjectsNewModalsServicesBlock/ObjectsNewModalsServicesBlockItem";
+// ObjectsNewModalsTerms
+export { default as ObjectsNewModalsTerms } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsTerms/ObjectsNewModalsTerms";
+export { default as ObjectsNewModalsTermsYesOrNo } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsTerms/ObjectsNewModalsTermsYesOrNo";
+// ObjectsNewModalsFaq
+export { default as ObjectsNewModalsFaq } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsFaq/ObjectsNewModalsFaq";
+export { default as ObjectsNewModalsFaqItem } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsFaq/ObjectsNewModalsFaqItem";
 
 // Footer
 export { default as Footer } from "./Footer/Footer";

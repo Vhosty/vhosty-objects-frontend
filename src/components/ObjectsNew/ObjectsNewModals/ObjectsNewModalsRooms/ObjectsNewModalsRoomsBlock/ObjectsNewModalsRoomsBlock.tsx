@@ -8,6 +8,9 @@ import {
     ObjectsNewModalsRoomsBlockFreeCancel,
     ObjectsNewModalsRoomsBlockFoods,
     ObjectsNewModalsRoomsBlockPayment,
+    ObjectsNewModalsRoomsBlockPrice,
+    ObjectsNewModalsRoomsBlockBtn,
+    ObjectsNewModalsRoomsBlockOptions,
 } from "../../../../";
 
 const ObjectsNewModalsRoomsBlock: React.FC = () => {
@@ -46,7 +49,6 @@ const ObjectsNewModalsRoomsBlock: React.FC = () => {
                     <span>Загрузить фото</span>
                 </button>
             </div>
-
             <div className="objects-new-modal-content-big-rooms-block-row-inputs">
                 <ObjectsNewModalsRoomsBlockName />
 
@@ -56,16 +58,22 @@ const ObjectsNewModalsRoomsBlock: React.FC = () => {
 
                 <ObjectsNewModalsRoomsBlockGuestsCount />
             </div>
-
             <div className="objects-new-modal-content-big-rooms-block-row-inputs">
                 <ObjectsNewModalsRoomsBlockFreeCancel />
 
                 <ObjectsNewModalsRoomsBlockFoods />
             </div>
+            <div className="objects-new-modal-content-big-rooms-block-row-inputs">
+                <ObjectsNewModalsRoomsBlockPayment />
 
-			<div className="objects-new-modal-content-big-rooms-block-row-inputs">
-				<ObjectsNewModalsRoomsBlockPayment />
+                <ObjectsNewModalsRoomsBlockPrice />
             </div>
+
+            <div className="objects-new-modal-content-big-rooms-block-options">
+                <ObjectsNewModalsRoomsBlockOptions />
+            </div>
+
+            <ObjectsNewModalsRoomsBlockBtn />
         </div>
     );
 };

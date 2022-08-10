@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const ObjectsNewFaq: React.FC = () => {
     return (
@@ -12,9 +13,9 @@ const ObjectsNewFaq: React.FC = () => {
                     комфортнее вывести в отдельную вкладку Добавьте как вопросы,
                     так и ответы на них, чтобы дать гостям популярную информацию
                 </p>
-                <button className="btn-line objects-new-block-text__btn">
+                <Link to="#faq" className="btn-line objects-new-block-text__btn">
                     Добавить вопросы и ответы
-                </button>
+                </Link>
             </div>
 
             <div className="objects-new-block-icon">

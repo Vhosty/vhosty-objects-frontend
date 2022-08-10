@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const ObjectsNewServices: React.FC = () => {
     return (
@@ -12,9 +13,9 @@ const ObjectsNewServices: React.FC = () => {
                     соответствуют вашему отелю, или добавьте свое с помощью
                     вкладки “прочее”
                 </p>
-                <button className="btn-line objects-new-block-text__btn">
+                <Link to="#services" className="btn-line objects-new-block-text__btn">
                     Добавить удобства и услуги
-                </button>
+                </Link>
             </div>
 
             <div className="objects-new-block-icon">

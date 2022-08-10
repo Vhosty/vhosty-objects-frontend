@@ -11,7 +11,13 @@ const initialState: UserState = {
 		id: 0,
 		phone_is_verified: false,
 		email_is_verified: false
-	}
+	},
+
+	isLoadedUserDocuments: false,
+	userDocuments: {},
+
+	isLoadedUserObjects: false,
+	userObjects: {}
 }
 
 const user = (state = initialState, action: UserActions) => {
@@ -20,6 +26,14 @@ const user = (state = initialState, action: UserActions) => {
 			...state,
 			isLoadedUser: true,
 			user: action.payload
+		}
+	}
+
+	if (action.type === UserActionTypes.SET_USER_DOCUMENTS) {
+		return {
+			...state,
+			isLoadedUserDocuments: true,
+			userDocuments: action.payload
 		}
 	}
 

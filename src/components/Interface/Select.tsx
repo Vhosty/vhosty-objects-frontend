@@ -47,7 +47,11 @@ const Select: React.FC<SelectProps> = ({
         <div className="select-wrapper-wrapper">
             {title ? <p className="select__title">{title}</p> : null}
 
-            <div className={`select-wrapper ${disabled ? "disabled" : ""}`}>
+            <div
+                className={`select-wrapper ${disabled ? "disabled" : ""} ${
+                    small ? "small" : ""
+                }`}
+            >
                 <div
                     className={`select ${isOpen ? "active" : ""} ${
                         border ? "border" : ""
@@ -82,13 +86,7 @@ const Select: React.FC<SelectProps> = ({
                         </div>
                     </div>
 
-                    <AnimateHeight
-                        duration={300}
-                        height={isOpen ? "auto" : 0}
-                        style={{
-                            maxWidth: "300px",
-                        }}
-                    >
+                    <AnimateHeight duration={300} height={isOpen ? "auto" : 0}>
                         <div className="select-list">
                             {choices.map((item, index) => (
                                 <p

@@ -29,6 +29,7 @@ import {
     sendRequestRecoveryPassword,
     sendRequestRecoveryPasswordConfirmed,
 } from "../redux/actions/recovery_password";
+import {sendUserChangePassword} from "../redux/actions/user/userCabinetSetting";
 
 const Reglog: React.FC = () => {
     const navigate = useNavigate();
@@ -106,7 +107,9 @@ const Reglog: React.FC = () => {
         );
     };
 
-    const cabinetSettingChangePasswordOnSubmit = (data: any) => {};
+    const cabinetSettingChangePasswordOnSubmit = (data: any) => {
+        return dispatch(sendUserChangePassword(data) as any);
+    };
 
     return (
         <section className={`reglog ${closeAnimation ? "close" : ""}`}>

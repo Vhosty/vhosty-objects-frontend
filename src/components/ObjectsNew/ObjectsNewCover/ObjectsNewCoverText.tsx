@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const ObjectsNewCoverText: React.FC = () => {
     return (
@@ -11,9 +12,12 @@ const ObjectsNewCoverText: React.FC = () => {
                     Наименование объекта, количество звезд, местоположение
                 </p>
 
-                <button className="btn-line objects-new-cover-text-description__btn">
+                <Link
+                    to="#cover"
+                    className="btn-line objects-new-cover-text-description__btn"
+                >
                     Добавить информацию
-                </button>
+                </Link>
             </div>
             <div className="objects-new-cover-text-feedbacks"></div>
         </div>

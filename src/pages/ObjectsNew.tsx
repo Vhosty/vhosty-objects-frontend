@@ -1,7 +1,7 @@
 import React from "react";
 
 import {
-    ObjectsNewModals,
+    ObjectsNewModalsWrapper,
     ObjectsNewCover,
     ObjectsNewAdditionalPhotos,
     ObjectsNewAbout,
@@ -16,8 +16,8 @@ import {
 const ObjectsNew: React.FC = () => {
     return (
         <section className="objects-new">
-			<ObjectsNewModals />
-			
+            <ObjectsNewModalsWrapper />
+
             <ObjectsNewCover />
 
             <div className="container">

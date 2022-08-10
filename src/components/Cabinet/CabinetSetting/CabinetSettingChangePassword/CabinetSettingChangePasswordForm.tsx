@@ -17,10 +17,9 @@ const CabinetSettingChangePasswordForm: React.FC<
     CabinetSettingChangePasswordFormProps &
         InjectedFormProps<{}, CabinetSettingChangePasswordFormProps>
 > = ({handleSubmit, invalid, submitting, pristine}) => {
-    // const {isPendingChangePassword} = useTypedSelector(
-    //     ({userCabinetSetting}) => userCabinetSetting
-    // );
-    const isPendingChangePassword = false;
+    const {isPendingChangePassword} = useTypedSelector(
+        ({userCabinetSetting}) => userCabinetSetting
+    );
 
     return (
         <form className="reglog-form" onSubmit={handleSubmit}>
@@ -32,7 +31,7 @@ const CabinetSettingChangePasswordForm: React.FC<
 
             <CabinetSettingChangePasswordFormMessageError />
 
-            <div className="reglog-content-padding">
+            <div className="reglog-content-padding-bottom">
                 <div className="reglog-form-block">
                     <div className="reglog-form-block-input">
                         <Field

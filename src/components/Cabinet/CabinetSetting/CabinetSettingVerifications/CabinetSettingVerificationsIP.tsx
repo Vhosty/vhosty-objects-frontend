@@ -1,6 +1,8 @@
 import React from "react";
 
 const CabinetSettingVerificationsIP: React.FC = () => {
+	
+
     return (
         <div className="cabinet-block-setting-vetifications-block cabinet-block-setting-vetifications-passport">
             <h3 className="cabinet-block-setting-vetifications-block__title">

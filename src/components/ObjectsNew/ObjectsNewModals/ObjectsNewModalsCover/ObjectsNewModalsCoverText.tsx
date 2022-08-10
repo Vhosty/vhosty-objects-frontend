@@ -1,19 +1,18 @@
 import React from "react";
 
-import {TitleIcon, Input, ObjectsNewModalsCoverTextStarsInput} from "../../../";
+import {
+    TitleIcon,
+    Input,
+    ObjectsNewModalsSmall,
+    ObjectsNewModalsCoverTextStarsInput,
+} from "../../../";
 
 const ObjectsNewModalsCoverText: React.FC = () => {
     return (
-        <div className="objects-new-modal-content small">
-            <div className="objects-new-modal-content-text">
-                <h2 className="objects-new-modal-content-text__title">
-                    Главная информация
-                </h2>
-                <p className="objects-new-modal-content-text__description">
-                    Добавьте информацию о наименовании объекта, количестве
-                    звезд, местоположении
-                </p>
-            </div>
+        <ObjectsNewModalsSmall
+            title="Главная информация"
+            description="Добавьте информацию о наименовании объекта, количестве звезд, местоположении"
+        >
             <div className="objects-new-modal-content-input">
                 <TitleIcon title="Наименование объекта" marginBottom>
                     <svg
@@ -65,17 +64,7 @@ const ObjectsNewModalsCoverText: React.FC = () => {
                     small
                 />
             </div>
-
-            <div className="objects-new-modal-content-btn">
-                <button className="btn-line gray objects-new-modal-content-btn__cancel">
-                    Отменить изменения
-                </button>
-
-                <button className="btn small objects-new-modal-content-btn__save">
-                    Сохранить
-                </button>
-            </div>
-        </div>
+        </ObjectsNewModalsSmall>
     );
 };
 

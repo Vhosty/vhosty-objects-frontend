@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const ObjectsNewAbout: React.FC = () => {
     return (
@@ -11,9 +12,9 @@ const ObjectsNewAbout: React.FC = () => {
                     популярные удобства и услуги, когда вы заполните карточку
                     удобств.
                 </p>
-                <button className="btn-line objects-new-block-text__btn">
+                <Link to="#about" className="btn-line objects-new-block-text__btn">
                     Добавить информацию
-                </button>
+                </Link>
             </div>
 
             <div className="objects-new-block-icon">

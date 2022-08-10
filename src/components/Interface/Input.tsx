@@ -99,7 +99,13 @@ const Input: React.FC<InputProps> = ({
                 ) : null}
 
                 {fixLabel ? (
-                    <p className="input-field__fixlabel">{fixLabel}</p>
+                    <p
+                        className={`input-field__fixlabel  ${
+                            disabled ? "disabled" : ""
+                        }`}
+                    >
+                        {fixLabel}
+                    </p>
                 ) : null}
             </div>
         </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const ObjectsNewTerms: React.FC = () => {
     return (
@@ -12,9 +13,13 @@ const ObjectsNewTerms: React.FC = () => {
                     также об условиях проживания, оплаты или иную полезную для
                     гостей информацию.
                 </p>
-                <button className="btn-line objects-new-block-text__btn">
+
+                <Link
+                    to="#terms"
+                    className="btn-line objects-new-block-text__btn"
+                >
                     Добавить информацию об условиях
-                </button>
+                </Link>
             </div>
 
             <div className="objects-new-block-icon">

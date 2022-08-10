@@ -1,13 +1,23 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
+import {useDispatch} from "react-redux";
+
 import {
     CabinetObjectsFilters,
     CabinetObjectsItemTitles,
     CabinetObjectsItem,
 } from "../../";
 
+import {fetchUserObjects} from "../../../redux/actions/user/user";
+
 const CabinetObjects: React.FC = () => {
+    const dispatch = useDispatch();
+
+    React.useEffect(() => {
+        dispatch(fetchUserObjects() as any);
+    }, []);
+
     return (
         <div className="cabinet-block cabinet-block-objects">
             <div className="cabinet-block-padding-top">

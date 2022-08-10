@@ -1,13 +1,16 @@
 import { combineReducers } from "redux";
 import { reducer as formReducer } from "redux-form";
 
-import reglog from "../reducers/reglog";
-import request_register from "../reducers/request_register";
-import register from "../reducers/register";
-import login from "../reducers/login";
-import recovery_password from "../reducers/recovery_password";
+import reglog from "./reglog";
+import request_register from "./request_register";
+import register from "./register";
+import login from "./login";
+import recovery_password from "./recovery_password";
+import objects_new_modals from "./objects_new_modals";
+
 // user
 import user from "../reducers/user/user";
+import userCabinetSetting from "../reducers/user/userCabinetSetting";
 
 export const rootReducer = combineReducers({
 	reglog,
@@ -15,7 +18,8 @@ export const rootReducer = combineReducers({
 	register,
 	login,
 	recovery_password,
-	user,
+	objects_new_modals,
+	user, userCabinetSetting,
 	form: formReducer,
 });
 

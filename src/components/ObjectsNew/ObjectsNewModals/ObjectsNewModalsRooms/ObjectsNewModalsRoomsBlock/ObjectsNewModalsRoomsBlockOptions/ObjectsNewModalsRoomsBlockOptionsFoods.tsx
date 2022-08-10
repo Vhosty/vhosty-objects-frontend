@@ -1,8 +1,12 @@
 import React from "react";
 
-import {TitleIcon, Select, ObjectsNewModalsRoomsBlockYesOrNo} from "../../../../";
+import {
+    TitleIcon,
+    Select,
+    ObjectsNewModalsRoomsBlockYesOrNo,
+} from "../../../../../";
 
-const ObjectsNewModalsRoomsBlockFoods: React.FC = () => {
+const ObjectsNewModalsRoomsBlockOptionsFoods: React.FC = () => {
     const [selectIsActive, setSelectIsActive] = React.useState<boolean>(true);
 
     const onChangeYesOrNo = (status: boolean) => {
@@ -10,7 +14,7 @@ const ObjectsNewModalsRoomsBlockFoods: React.FC = () => {
     };
 
     return (
-        <div className="objects-new-modal-content-big-rooms-block-row-inputs-foods-wrapper">
+        <div className="objects-new-modal-content-big-rooms-block-options-block-row-inputs-foods-wrapper">
             <TitleIcon title="Питание" marginBottom>
                 <svg
                     viewBox="0 0 17 18"
@@ -24,10 +28,10 @@ const ObjectsNewModalsRoomsBlockFoods: React.FC = () => {
                 </svg>
             </TitleIcon>
 
-            <div className="objects-new-modal-content-big-rooms-block-row-inputs-foods">
+            <div className="objects-new-modal-content-big-rooms-block-options-block-row-inputs-foods">
                 <ObjectsNewModalsRoomsBlockYesOrNo onChange={onChangeYesOrNo} />
 
-                <div className="objects-new-modal-content-big-rooms-block-row-inputs-foods-select">
+                <div className="objects-new-modal-content-big-rooms-block-options-block-row-inputs-foods-select">
                     <Select
                         choices={[
                             {
@@ -69,4 +73,4 @@ const ObjectsNewModalsRoomsBlockFoods: React.FC = () => {
     );
 };
 
-export default ObjectsNewModalsRoomsBlockFoods;
+export default ObjectsNewModalsRoomsBlockOptionsFoods;

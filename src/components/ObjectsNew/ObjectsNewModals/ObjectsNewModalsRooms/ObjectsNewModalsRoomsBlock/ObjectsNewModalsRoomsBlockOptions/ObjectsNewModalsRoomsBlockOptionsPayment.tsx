@@ -1,8 +1,8 @@
 import React from "react";
 
-import {TitleIcon, Select, Input} from "../../../../";
+import {TitleIcon, Select, Input} from "../../../../../";
 
-const ObjectsNewModalsRoomsBlockPayment: React.FC = () => {
+const ObjectsNewModalsRoomsBlockOptionsPayment: React.FC = () => {
     return (
         <div className="objects-new-modal-content-big-rooms-block-row-inputs-payment-wrapper">
             <TitleIcon title="Оплата" marginBottom>
@@ -34,16 +34,16 @@ const ObjectsNewModalsRoomsBlockPayment: React.FC = () => {
                         small
                         border
                     />
-				</div>
-				
+                </div>
+
                 <div className="objects-new-modal-content-big-rooms-block-row-inputs-payment-input">
                     <Input
                         type="number"
                         label=""
                         fixLabel="%"
                         defaultValue={0}
-						small
-						disabled
+                        small
+                        disabled
                     />
                 </div>
             </div>
@@ -51,4 +51,4 @@ const ObjectsNewModalsRoomsBlockPayment: React.FC = () => {
     );
 };
 
-export default ObjectsNewModalsRoomsBlockPayment;
+export default ObjectsNewModalsRoomsBlockOptionsPayment;
