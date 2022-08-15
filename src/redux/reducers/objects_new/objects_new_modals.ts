@@ -5,7 +5,7 @@ import {
 	ObjectsNewModalsState,
 	ObjectsNewModalsActionTypes,
 	ObjectsNewModalsActions
-} from "../types/IObjectsNewModals"
+} from "../../types/IObjectsNewModals"
 
 const initialState: ObjectsNewModalsState = {
 	open: false,

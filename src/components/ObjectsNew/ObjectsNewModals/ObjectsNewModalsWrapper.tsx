@@ -19,7 +19,7 @@ import {
     setObjectsNewModalsOpen,
     setObjectsNewModalsClose,
     setObjectsNewModalsType,
-} from "../../../redux/actions/objects_new_modals";
+} from "../../../redux/actions/objects_new/objects_new_modals";
 
 const ObjectsNewModals: React.FC = () => {
     const {closeAnimation, type} = useTypedSelector(

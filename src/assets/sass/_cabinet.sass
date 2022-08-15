@@ -75,11 +75,22 @@
 					color: $gray
 
 		&-main
+			overflow: hidden
+
 			&-notifications
 				margin-top: 30px
 
+				padding-left: 50px
+				padding-bottom: 25px
+
+				overflow-x: auto
+				overflow-y: hidden
+
 				display: flex
 				justify-content: space-between
+
+				&::-webkit-scrollbar
+					display: none
 
 				&-block
 					display: flex
@@ -90,7 +101,9 @@
 					position: relative
 
 					padding: 25px
-					width: 31%
+					min-width: 340px
+
+					margin-right: 50px
 
 					background: #CCECEC
 
@@ -184,6 +197,18 @@
 
 					&__all
 						font-size: 15px
+
+				&-filters-media
+					display: none
+
+				&-items-wrapper
+					width: 100%
+
+					overflow-x: auto
+					overflow-y: hidden
+
+					&::-webkit-scrollbar
+						display: none
 
 		&-setting
 			&-form
@@ -430,7 +455,7 @@
 						display: flex
 
 						&-cover
-							width: 100px
+							min-width: 100px
 							min-height: 100%
 
 							border-radius: 20px
@@ -508,6 +533,8 @@
 						margin-right: 20px
 
 			&-titles
+				width: 1200px
+
 				display: flex
 				justify-content: space-between
 				align-items: center
@@ -541,7 +568,18 @@
 					&.booking
 						width: 120px
 
+			&-items-wrapper
+				width: 100%
+
+				overflow-x: auto
+				overflow-y: hidden
+
+				&::-webkit-scrollbar
+					display: none
+
 			&-item
+				width: 1200px
+
 				display: flex
 				justify-content: space-between
 
@@ -697,6 +735,8 @@
 					width: 31%
 
 			&-titles
+				width: 1200px
+
 				display: flex
 				justify-content: space-between
 				align-items: center
@@ -726,8 +766,17 @@
 
 			&-items-wrapper
 				padding: 30px 0
+				width: 100%
+
+				overflow-x: auto
+				overflow-y: hidden
+
+				&::-webkit-scrollbar
+					display: none
 
 			&-item
+				width: 1200px
+
 				display: flex
 				justify-content: space-between
 

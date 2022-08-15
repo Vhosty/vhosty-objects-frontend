@@ -2,7 +2,7 @@ import React from "react";
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 
-import {setObjectsNewModalsClose} from "../../../redux/actions/objects_new_modals";
+import {setObjectsNewModalsClose} from "../../../redux/actions/objects_new/objects_new_modals";
 
 interface ObjectsNewModalsSmallProps {
     title: string;

@@ -13,9 +13,9 @@ const CabinetMain: React.FC = () => {
                         Напоминания, статистика, информация о бронированиях
                     </p>
                 </div>
-
-                <CabinetMainNotifications />
             </div>
+
+            <CabinetMainNotifications />
 
             <CabinetMainReserv />
         </div>

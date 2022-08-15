@@ -10,14 +10,10 @@ const ObjectsNewCover: React.FC = () => {
             className="objects-new-cover"
             style={{backgroundImage: `url("${ObjectsNewCoverImg}")`}}
         >
-            <div className="container">
-                <div
-                    className="objects-new-cover-wrapper"
-                >
-					<ObjectsNewCoverText />
-					
-					<ObjectsNewCoverImage />
-                </div>
+            <div className="objects-new-cover-wrapper">
+                <ObjectsNewCoverText />
+
+                <ObjectsNewCoverImage />
             </div>
         </div>
     );

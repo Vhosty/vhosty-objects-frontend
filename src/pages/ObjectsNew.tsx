@@ -1,4 +1,5 @@
 import React from "react";
+import {useDispatch} from "react-redux";
 
 import {
     ObjectsNewModalsWrapper,
@@ -13,7 +14,15 @@ import {
     ObjectsNewVerification,
 } from "../components/";
 
+import {fetchObjectsServicesList} from "../redux/actions/objects_new/objects_new";
+
 const ObjectsNew: React.FC = () => {
+    const dispatch = useDispatch();
+
+    React.useEffect(() => {
+        dispatch(fetchObjectsServicesList() as any);
+    }, []);
+
     return (
         <section className="objects-new">
             <ObjectsNewModalsWrapper />
@@ -28,7 +37,7 @@ const ObjectsNew: React.FC = () => {
 
                     <ObjectsNewRooms />
 
-                    <ObjectsNewMaps />
+                    {/* <ObjectsNewMaps /> */}
 
                     <ObjectsNewServices />
 

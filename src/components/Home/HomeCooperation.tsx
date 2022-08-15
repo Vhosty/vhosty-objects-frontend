@@ -39,7 +39,7 @@ const HomeCooperation: React.FC = () => {
                     to="#register"
                     className="btn home-cooperation__btn"
                 >
-                    Быть частью Vhosty
+                    Быть частью Bookover
                 </Link>
             </div>
         </section>

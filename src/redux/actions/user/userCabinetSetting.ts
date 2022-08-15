@@ -17,7 +17,7 @@ export const sendUserChangePassword = (data: any) => {
 			payload: true
 		})
 
-		await $api.post("/users/password/change", data).then(({ data }) => {
+		await $api.post("/companies/password/change", data).then(({ data }) => {
 			dispatch({
 				type: UserCabinetSettingActionTypes.SET_IS_PENDING_CHANGE_PASSWORD,
 				payload: false

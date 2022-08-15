@@ -3,10 +3,9 @@ import React from "react";
 import {useTypedSelector} from "../../../../hooks/useTypedSelector";
 
 const CabinetSettingChangePasswordFormMessageError: React.FC = () => {
-    // const {errorMessageChangePassword} = useTypedSelector(
-    //     ({userCabinetSetting}) => userCabinetSetting
-    // );
-    const errorMessageChangePassword = "";
+    const {errorMessageChangePassword} = useTypedSelector(
+        ({userCabinetSetting}) => userCabinetSetting
+    );
 
     return (
         <>

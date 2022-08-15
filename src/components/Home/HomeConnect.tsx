@@ -23,7 +23,7 @@ const HomeConnect: React.FC = () => {
                             to="#register"
                             className="btn home-connect-text__btn"
                         >
-                            Присоединиться к Vhosty
+                            Присоединиться к Bookover
                         </Link>
                     </div>
                     <div className="home-connect-img">

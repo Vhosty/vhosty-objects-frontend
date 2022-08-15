@@ -6,11 +6,14 @@ import request_register from "./request_register";
 import register from "./register";
 import login from "./login";
 import recovery_password from "./recovery_password";
-import objects_new_modals from "./objects_new_modals";
 
 // user
 import user from "../reducers/user/user";
 import userCabinetSetting from "../reducers/user/userCabinetSetting";
+
+// objects_new
+import objects_new from "./objects_new/objects_new";
+import objects_new_modals from "./objects_new/objects_new_modals";
 
 export const rootReducer = combineReducers({
 	reglog,
@@ -18,8 +21,8 @@ export const rootReducer = combineReducers({
 	register,
 	login,
 	recovery_password,
-	objects_new_modals,
 	user, userCabinetSetting,
+	objects_new, objects_new_modals,
 	form: formReducer,
 });
 

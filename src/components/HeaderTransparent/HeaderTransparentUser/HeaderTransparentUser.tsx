@@ -30,7 +30,9 @@ const HeaderTransparentUser: React.FC = () => {
                         onClick={openHeaderModal}
                     >
                         Личный кабинет
-                    </button>
+					</button>
+					
+                    <button className="header-transparent-block-user__btn-mobile"></button>
 
                     <Popup
                         wrapperActive={activeHeaderModal}
@@ -41,10 +43,7 @@ const HeaderTransparentUser: React.FC = () => {
                     </Popup>
                 </div>
             ) : (
-                <Link
-                    to="#login"
-                    className="header-transparent-block-user"
-                >
+                <Link to="#login" className="header-transparent-block-user">
                     <HeaderTransparentUserNotifications />
 
                     <button className="header-transparent-block-user__btn">

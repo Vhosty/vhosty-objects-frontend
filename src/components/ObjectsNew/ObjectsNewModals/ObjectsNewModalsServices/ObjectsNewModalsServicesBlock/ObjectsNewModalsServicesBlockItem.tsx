@@ -2,23 +2,30 @@ import React from "react";
 
 import {Radio} from "../../../../";
 
-const ObjectsNewModalsServicesBlockItem: React.FC = () => {
+import {IObjectsNewServicesGroupItem} from "../../../../../models/IObjectsNew/IObjectsNewServices";
+
+interface ObjectsNewModalsServicesBlockItemProps
+    extends IObjectsNewServicesGroupItem {}
+
+const ObjectsNewModalsServicesBlockItem: React.FC<
+    ObjectsNewModalsServicesBlockItemProps
+> = ({name, service}) => {
     return (
         <div className="objects-new-modal-content-big-services-block-item">
             <p className="objects-new-modal-content-big-services-block-item__title">
-                Банкомат
+                {name}
             </p>
             <div className="objects-new-modal-content-big-services-block-item-radios">
                 <div className="objects-new-modal-content-big-services-block-item-radios-block">
-                    <Radio name="atm" label="Да" value="yes" small />
+                    <Radio name={service} label="Да" value="yes" small />
                 </div>
 
                 <div className="objects-new-modal-content-big-services-block-item-radios-block">
-                    <Radio name="atm" label="Нет" value="no" small />
+                    <Radio name={service} label="Нет" value="no" small />
                 </div>
 
                 <div className="objects-new-modal-content-big-services-block-item-radios-block">
-                    <Radio name="atm" label="Платно" value="pay" small />
+                    <Radio name={service} label="Платно" value="pay" small />
                 </div>
             </div>
         </div>

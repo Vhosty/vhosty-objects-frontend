@@ -13,7 +13,10 @@ const ObjectsNewServices: React.FC = () => {
                     соответствуют вашему отелю, или добавьте свое с помощью
                     вкладки “прочее”
                 </p>
-                <Link to="#services" className="btn-line objects-new-block-text__btn">
+                <Link
+                    to="#services"
+                    className="btn-line objects-new-block-text__btn"
+                >
                     Добавить удобства и услуги
                 </Link>
             </div>

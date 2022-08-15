@@ -3,7 +3,7 @@ import React from "react";
 const ObjectsNewModalsRoomsBlockBtn: React.FC = () => {
 	return (
         <div className="objects-new-modal-content-big-rooms-block-btn">
-            <button className="objects-new-modal-content-big-rooms-block-btn__btn">
+            <button className="objects-new-modal-content-big-rooms-block-btn__btn add-room">
                 <svg
                     width="36"
                     height="36"
@@ -27,7 +27,7 @@ const ObjectsNewModalsRoomsBlockBtn: React.FC = () => {
                 </svg>
                 Добавить вариант размещения/номер
             </button>
-            <button className="objects-new-modal-content-big-rooms-block-btn__btn gray">
+            <button className="objects-new-modal-content-big-rooms-block-btn__btn gray add-room-option">
                 <svg
                     width="37"
                     height="37"

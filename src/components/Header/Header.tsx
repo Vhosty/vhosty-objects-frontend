@@ -32,7 +32,7 @@ const Header: React.FC = () => {
                             <Link to="/" className="header-block-logo">
                                 <img
                                     src={LogoColor}
-                                    alt="Vhosty"
+                                    alt="Bookover"
                                     className="header-block-logo__image"
                                 />
                             </Link>

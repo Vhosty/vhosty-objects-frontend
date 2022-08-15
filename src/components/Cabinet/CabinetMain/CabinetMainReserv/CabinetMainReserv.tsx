@@ -11,11 +11,11 @@ const CabinetMainReserv: React.FC = () => {
         <div className="cabinet-block-main-reserv">
             <div className="cabinet-block-padding">
                 <CabinetMainReservFilters />
-			</div>
-			
-			<CabinetReservItemTitle />
-			
+            </div>
+
             <div className="cabinet-block-main-reserv-items-wrapper">
+                <CabinetReservItemTitle />
+
                 <CabinetReservItem />
                 <CabinetReservItem />
                 <CabinetReservItem />

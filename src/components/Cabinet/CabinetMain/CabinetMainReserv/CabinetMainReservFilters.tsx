@@ -1,6 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
+import {Select} from "../../../";
+
 const CabinetMainReservFilters: React.FC = () => {
     const btns = [
         {
@@ -26,23 +28,39 @@ const CabinetMainReservFilters: React.FC = () => {
     ];
 
     return (
-        <div className="cabinet-block-main-reserv-filters">
-            <div className="cabinet-block-main-reserv-filters-btn">
-                {btns.map((btn, index) => (
-                    <button
-                        className={`cabinet-block-main-reserv-filters-btn__btn`}
-                        key={`cabinet-block-main-reserv-filters-btn__btn-${index}`}
-                    >
-                        {btn.title}&nbsp;
-                        <span>({btn.count})</span>
-                    </button>
-                ))}
+        <>
+            <div className="cabinet-block-main-reserv-filters-media">
+                <Select
+                    choices={btns.map((item) => ({
+                        key: item.key,
+                        title: `${item.title} (${item.count})`,
+                    }))}
+                    border
+                    small
+                />
             </div>
 
-            <Link to="/" className="btn-line cabinet-block-main-reserv-filters__all">
-                Все бронирования (37)
-            </Link>
-        </div>
+            <div className="cabinet-block-main-reserv-filters">
+                <div className="cabinet-block-main-reserv-filters-btn">
+                    {btns.map((btn, index) => (
+                        <button
+                            className={`cabinet-block-main-reserv-filters-btn__btn`}
+                            key={`cabinet-block-main-reserv-filters-btn__btn-${index}`}
+                        >
+                            {btn.title}&nbsp;
+                            <span>({btn.count})</span>
+                        </button>
+                    ))}
+                </div>
+
+                <Link
+                    to="/"
+                    className="btn-line cabinet-block-main-reserv-filters__all"
+                >
+                    Все бронирования (37)
+                </Link>
+            </div>
+        </>
     );
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 import {useDispatch} from "react-redux";
 import {Field} from "redux-form";
 
-// import {sendRepeatUserConfirmedEmail} from "../../../../../redux/actions/user/user";
+import {sendRepeatUserConfirmedEmail} from "../../../../../redux/actions/user/user";
 
 import {Popup, RenderInput} from "../../../../";
 
@@ -19,7 +19,9 @@ const CabinetSettingFormContactEmailInput: React.FC<
 
     const {user} = useTypedSelector(({user}) => user);
 
-    const initialSeconds: number = +localStorage["seconds"];
+    const initialSeconds: number = +localStorage["seconds"]
+        ? +localStorage["seconds"]
+        : 1;
 
     const [activeEmailMessage, setActiveEmailMessage] =
         React.useState<boolean>(false);
@@ -45,9 +47,11 @@ const CabinetSettingFormContactEmailInput: React.FC<
     }, [currentSeconds]);
 
     const sendConfirmedEmail = () => {
-        // dispatch(sendRepeatUserConfirmedEmail(user.email) as any);
-        // setCurrentSeconds(currentSeconds - 1);
+        dispatch(sendRepeatUserConfirmedEmail(user.email) as any);
+        setCurrentSeconds(currentSeconds - 1);
     };
+
+    console.log(currentSeconds);
 
     return (
         <div className="cabinet-block-setting-form-block-input-wrapper">

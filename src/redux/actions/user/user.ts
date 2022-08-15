@@ -33,13 +33,13 @@ export const sendUserUpdateAboutMe = (data: UserInfo) => {
 
 export const sendRepeatUserConfirmedEmail = (email: string) => {
 	return async (dispatch: Dispatch<UserActions>) => {
-		$api.post("/users/verification/resend-email", { email })
+		$api.post("/companies/verification/resend-email", { email })
 	}
 }
 
 export const fetchUserDocuments = () => {
 	return async (dispatch: Dispatch<any>) => {
-		$api.get("/companies/documents").then(({ data }) => {
+		$api.get("/companies/verification-documents").then(({ data }) => {
 			dispatch({
 				type: UserActionTypes.SET_USER_DOCUMENTS,
 				payload: data.results
@@ -56,6 +56,14 @@ export const fetchUserObjects = () => {
 			// 	type: UserActionTypes.SET_USER_OBJECTS,
 			// 	payload: data.results
 			// })
+		})
+	}
+}
+
+export const fetchUserReservs = () => {
+	return async (dispatch: Dispatch<any>) => {
+		$api.get("/hotels/employee/bookings").then(({ data }) => {
+			console.log(data)
 		})
 	}
 }

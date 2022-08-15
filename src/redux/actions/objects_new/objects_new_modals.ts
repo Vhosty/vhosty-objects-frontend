@@ -1,6 +1,6 @@
 import React, { Dispatch } from "react";
 
-import { ObjectsNewModalsActionTypes, ObjectsNewModalsActions } from "../types/IObjectsNewModals";
+import { ObjectsNewModalsActionTypes, ObjectsNewModalsActions } from "../../types/IObjectsNewModals";
 
 export const setObjectsNewModalsOpen = () => {
 	document.body.style.overflowY = "hidden";
