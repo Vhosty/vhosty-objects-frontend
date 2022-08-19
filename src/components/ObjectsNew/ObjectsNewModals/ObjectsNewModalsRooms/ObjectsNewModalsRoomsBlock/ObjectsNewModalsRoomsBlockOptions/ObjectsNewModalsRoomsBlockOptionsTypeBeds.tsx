@@ -1,8 +1,9 @@
 import React from "react";
+import {Field} from "redux-form";
 
-import {TitleIcon, Select} from "../../../../../";
+import {TitleIcon, RenderSelect} from "../../../../../";
 
-const ObjectsNewModalsRoomsBlockOptionsTypeBeds: React.FC = () => {
+const ObjectsNewModalsRoomsBlockOptionsTypeBeds: React.FC<any> = ({option}) => {
     return (
         <div className="objects-new-modal-content-big-rooms-block-options-block-row-inputs-type-beds">
             <div className="objects-new-modal-content-big-rooms-block-options-block-row-inputs-type-beds-block">
@@ -19,7 +20,8 @@ const ObjectsNewModalsRoomsBlockOptionsTypeBeds: React.FC = () => {
                     </svg>
                 </TitleIcon>
 
-                <Select
+                <Field
+                    component={RenderSelect}
                     choices={[
                         {
                             title: "1 Двуспальная кровать",
@@ -52,6 +54,7 @@ const ObjectsNewModalsRoomsBlockOptionsTypeBeds: React.FC = () => {
                     ]}
                     small
                     border
+                    name={`${option}.bedType`}
                 />
             </div>
             <div className="objects-new-modal-content-big-rooms-block-options-block-row-inputs-type-beds-block">
@@ -73,7 +76,9 @@ const ObjectsNewModalsRoomsBlockOptionsTypeBeds: React.FC = () => {
                         />
                     </svg>
                 </TitleIcon>
-                <Select
+
+                <Field
+                    component={RenderSelect}
                     choices={[
                         {
                             title: "Отсутствует",
@@ -110,6 +115,7 @@ const ObjectsNewModalsRoomsBlockOptionsTypeBeds: React.FC = () => {
                     ]}
                     small
                     border
+                    name={`${option}.addBedType`}
                 />
             </div>
         </div>

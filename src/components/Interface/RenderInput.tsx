@@ -10,7 +10,11 @@ interface InputProps extends WrappedFieldProps {
     small?: boolean;
     smallPlaceholder?: boolean;
 
+    value?: string | number;
+    defaultValue?: string | number;
+
     title?: string;
+    fixLabel?: string;
 
     disabled?: boolean;
 }
@@ -20,7 +24,10 @@ const Input: React.FC<InputProps> = ({
     type,
     small,
     smallPlaceholder,
+    value,
+    defaultValue,
     title,
+    fixLabel,
     input,
     disabled,
     meta: {touched, error},
@@ -60,6 +67,7 @@ const Input: React.FC<InputProps> = ({
                             touched && error ? "error" : ""
                         } ${disabled ? "disabled" : ""}`}
                         placeholder={label}
+                        defaultValue={defaultValue}
                     />
 
                     {type === "password" ? (
@@ -95,6 +103,16 @@ const Input: React.FC<InputProps> = ({
                                 </svg>
                             )}
                         </div>
+                    ) : null}
+
+                    {fixLabel ? (
+                        <p
+                            className={`input-field__fixlabel  ${
+                                disabled ? "disabled" : ""
+                            }`}
+                        >
+                            {fixLabel}
+                        </p>
                     ) : null}
                 </div>
 

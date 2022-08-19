@@ -173,7 +173,8 @@ const Reglog: React.FC = () => {
                         btnLink="/"
                         btnText="На главную"
                     />
-                ) : null}
+				) : null}
+				
                 {type === ReglogStateTypes.RECOVERY_PASSWORD ? (
                     <RecoveryPasswordForm onSubmit={onSubmitRecoveryPassword} />
                 ) : null}

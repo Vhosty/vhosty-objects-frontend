@@ -11,6 +11,8 @@ interface RenderSelectProps extends WrappedFieldProps {
 
     border?: boolean;
     small?: boolean;
+
+    disabled?: boolean;
 }
 
 const RenderSelect: React.FC<RenderSelectProps> = ({
@@ -19,6 +21,7 @@ const RenderSelect: React.FC<RenderSelectProps> = ({
     border,
     small,
     input,
+    disabled,
     meta: {form},
 }) => {
     const dispatch = useDispatch();
@@ -29,6 +32,20 @@ const RenderSelect: React.FC<RenderSelectProps> = ({
     const [currentIndex, setCurrentIndex] = React.useState(0);
 
     const SelectRef = React.useRef<HTMLDivElement>(null);
+
+    React.useEffect(() => {
+        if (disabled) {
+            dispatch(change(form, input.name, ""));
+        } else {
+            dispatch(change(form, input.name, choices[0].key));
+        }
+    }, []);
+
+    React.useEffect(() => {
+        if (disabled) {
+            dispatch(change(form, input.name, ""));
+        }
+    }, [disabled]);
 
     React.useEffect(() => {
         document.addEventListener("mousedown", toggleSelect);
@@ -56,7 +73,11 @@ const RenderSelect: React.FC<RenderSelectProps> = ({
         <div className="select-wrapper-wrapper">
             {title ? <p className="select__title">{title}</p> : null}
 
-            <div className="select-wrapper">
+            <div
+                className={`select-wrapper ${disabled ? "disabled" : ""} ${
+                    small ? "small" : ""
+                }`}
+            >
                 <div className="select-height"></div>
 
                 <div

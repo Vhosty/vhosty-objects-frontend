@@ -93,11 +93,18 @@ const ObjectsNewModalsBig: React.FC<ObjectsNewModalsBigProps> = ({
                 className="objects-new-modal-content-big-bottom-btn"
                 ref={bottom}
             >
-                <button className="btn-line gray objects-new-modal-content-big-bottom-btn__cancel">
+                <button
+                    type="button"
+                    className="btn-line gray objects-new-modal-content-big-bottom-btn__cancel"
+                    onClick={closeFunc}
+                >
                     Отменить изменения
                 </button>
 
-                <button className="btn small objects-new-modal-content-big-bottom-btn__save">
+                <button
+                    type="submit"
+                    className="btn small objects-new-modal-content-big-bottom-btn__save"
+                >
                     Сохранить
                 </button>
             </div>

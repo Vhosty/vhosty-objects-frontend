@@ -1,6 +1,7 @@
 import React from "react";
+import {Field} from "redux-form";
 
-import {Radio} from "../../../../";
+import {RenderRadio} from "../../../../";
 
 import {IObjectsNewServicesGroupItem} from "../../../../../models/IObjectsNew/IObjectsNewServices";
 
@@ -17,15 +18,33 @@ const ObjectsNewModalsServicesBlockItem: React.FC<
             </p>
             <div className="objects-new-modal-content-big-services-block-item-radios">
                 <div className="objects-new-modal-content-big-services-block-item-radios-block">
-                    <Radio name={service} label="Да" value="yes" small />
+                    <Field
+                        component={RenderRadio}
+                        name={service}
+                        label="Да"
+                        value="yes"
+                        small
+                    />
                 </div>
 
                 <div className="objects-new-modal-content-big-services-block-item-radios-block">
-                    <Radio name={service} label="Нет" value="no" small />
+                    <Field
+                        component={RenderRadio}
+                        name={service}
+                        label="Нет"
+                        value="no"
+                        small
+                    />
                 </div>
 
                 <div className="objects-new-modal-content-big-services-block-item-radios-block">
-                    <Radio name={service} label="Платно" value="pay" small />
+                    <Field
+                        component={RenderRadio}
+                        name={service}
+                        label="Платно"
+                        value="pay"
+                        small
+                    />
                 </div>
             </div>
         </div>

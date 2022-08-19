@@ -33,11 +33,18 @@ const HomeMain: React.FC = () => {
                             Регистрация бесплатная и занимает 10 минут
                         </p>
 
+                        {/* <Link
+                            to="#request_register"
+                            className="btn home-main-text__btn"
+                        >
+                            Отправить заявку
+                        </Link> */}
+
                         <Link
                             to="#register"
                             className="btn home-main-text__btn"
                         >
-                            Отправить заявку
+                            Зарегистрироваться
                         </Link>
                     </div>
                 </div>

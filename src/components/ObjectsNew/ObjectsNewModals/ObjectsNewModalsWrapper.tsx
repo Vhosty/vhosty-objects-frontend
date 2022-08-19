@@ -5,12 +5,12 @@ import {useDispatch} from "react-redux";
 import {useTypedSelector} from "../../../hooks/useTypedSelector";
 
 import {
-    ObjectsNewModalsCoverText,
-    ObjectsNewModalsAbout,
-    ObjectsNewModalsRooms,
-    ObjectsNewModalsServices,
-    ObjectsNewModalsTerms,
-    ObjectsNewModalsFaq,
+    ObjectsNewModalsCoverTextWrapper,
+    ObjectsNewModalsAboutWrapper,
+    ObjectsNewModalsRoomsWrapper,
+    ObjectsNewModalsServicesWrapper,
+    ObjectsNewModalsTermsWrapper,
+    ObjectsNewModalsFaqWrapper,
 } from "../../";
 
 import {ObjectsNewModalsStateTypes} from "../../../redux/types/IObjectsNewModals";
@@ -29,22 +29,22 @@ const ObjectsNewModals: React.FC = () => {
     return (
         <div className={`objects-new-modal ${closeAnimation ? "close" : ""}`}>
             {type === ObjectsNewModalsStateTypes.COVER ? (
-                <ObjectsNewModalsCoverText />
+                <ObjectsNewModalsCoverTextWrapper />
             ) : null}
             {type === ObjectsNewModalsStateTypes.ABOUT ? (
-                <ObjectsNewModalsAbout />
+                <ObjectsNewModalsAboutWrapper />
             ) : null}
             {type === ObjectsNewModalsStateTypes.ROOMS ? (
-                <ObjectsNewModalsRooms />
+                <ObjectsNewModalsRoomsWrapper />
             ) : null}
             {type === ObjectsNewModalsStateTypes.SERVICES ? (
-                <ObjectsNewModalsServices />
+                <ObjectsNewModalsServicesWrapper />
             ) : null}
             {type === ObjectsNewModalsStateTypes.TERMS ? (
-                <ObjectsNewModalsTerms />
+                <ObjectsNewModalsTermsWrapper />
             ) : null}
             {type === ObjectsNewModalsStateTypes.FAQ ? (
-                <ObjectsNewModalsFaq />
+                <ObjectsNewModalsFaqWrapper />
             ) : null}
         </div>
     );

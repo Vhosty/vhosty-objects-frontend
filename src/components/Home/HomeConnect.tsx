@@ -20,7 +20,7 @@ const HomeConnect: React.FC = () => {
                             <span>Все остальное сделаем мы!</span>
                         </p>
                         <Link
-                            to="#register"
+                            to="#request_register"
                             className="btn home-connect-text__btn"
                         >
                             Присоединиться к Bookover

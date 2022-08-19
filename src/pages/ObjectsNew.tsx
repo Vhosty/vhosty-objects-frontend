@@ -1,5 +1,6 @@
 import React from "react";
 import {useDispatch} from "react-redux";
+import {useParams} from "react-router-dom";
 
 import {
     ObjectsNewModalsWrapper,
@@ -14,14 +15,23 @@ import {
     ObjectsNewVerification,
 } from "../components/";
 
-import {fetchObjectsServicesList} from "../redux/actions/objects_new/objects_new";
+import {
+    fetchObjectById,
+    fetchObjectsServicesList,
+} from "../redux/actions/objects_new/objects_new";
 
 const ObjectsNew: React.FC = () => {
     const dispatch = useDispatch();
 
+    const {id} = useParams();
+
     React.useEffect(() => {
         dispatch(fetchObjectsServicesList() as any);
     }, []);
+
+    React.useEffect(() => {
+        if (id) dispatch(fetchObjectById(id) as any);
+    }, [id]);
 
     return (
         <section className="objects-new">
@@ -45,7 +55,7 @@ const ObjectsNew: React.FC = () => {
 
                     <ObjectsNewFaq />
 
-                    <ObjectsNewVerification />
+                    {/* <ObjectsNewVerification /> */}
                 </div>
             </div>
         </section>

@@ -7,7 +7,7 @@ export interface UserState {
 	isLoadedUserDocuments: boolean,
 	userDocuments: any,
 
-	isLoadedUserObjects: false,
+	isLoadedUserObjects: boolean,
 	userObjects: {}
 }
 
@@ -37,9 +37,15 @@ interface setUserDocuments {
 	payload: any
 }
 
+interface setIsLoadedUserObjects {
+	type: UserActionTypes.SET_IS_LOADED_USER_OBJECTS
+	payload: boolean
+}
+
 interface setUserObjects {
 	type: UserActionTypes.SET_USER_OBJECTS
 	payload: any
 }
 
-export type UserActions = setUser | setIsLoadedUser | setUserDocuments | setUserObjects
+
+export type UserActions = setUser | setIsLoadedUser | setUserDocuments | setIsLoadedUserObjects | setUserObjects 

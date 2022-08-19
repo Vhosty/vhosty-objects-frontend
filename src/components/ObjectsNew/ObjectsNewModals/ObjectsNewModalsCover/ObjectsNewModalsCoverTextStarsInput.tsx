@@ -1,12 +1,47 @@
 import React from "react";
+import {formValueSelector, Field, WrappedFieldProps} from "redux-form";
 
 import {TitleIcon} from "../../../";
 
-const ObjectsNewModalsCoverTextStarsInput: React.FC = () => {
+import {useTypedSelector} from "../../../../hooks/useTypedSelector";
+
+const ObjectsNewModalsCoverTextStarsInput: React.FC<any> = ({
+    initialize,
+    initStars,
+}) => {
     const [currentIndex, setCurrentIndex] = React.useState<number>(0);
+
+    const selector = formValueSelector("objects-new-modals-cover-text");
+
+    const values = useTypedSelector((state) => {
+        const {name, address} = selector(state, "name", "address");
+
+        return {
+            name,
+            address,
+        };
+    });
+
+    React.useEffect(() => {
+        initialize({
+            ...values,
+            stars: currentIndex + 1,
+        });
+    }, [currentIndex]);
+
+    React.useEffect(() => {
+        if (initStars) setCurrentIndex(initStars-1);
+    }, [initStars]);
 
     return (
         <div className="objects-new-modal-content-stars-input">
+            <Field
+                component={({input}: WrappedFieldProps) => (
+                    <input {...input} type="hidden" />
+                )}
+                name="stars"
+            />
+
             <TitleIcon title="Количество звезд">
                 <svg
                     viewBox="0 0 18 17"
@@ -19,6 +54,7 @@ const ObjectsNewModalsCoverTextStarsInput: React.FC = () => {
                     />
                 </svg>
             </TitleIcon>
+
             <div className="objects-new-modal-content-stars-input-items-wrapper">
                 {Array(5)
                     .fill(0)

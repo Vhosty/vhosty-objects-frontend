@@ -1,8 +1,13 @@
 import React from "react";
+import {Field} from "redux-form";
 
-import {TitleIcon, Select, ObjectsNewModalsRoomsBlockYesOrNo} from "../../../../";
+import {
+    TitleIcon,
+    RenderSelect,
+    ObjectsNewModalsRoomsBlockYesOrNo,
+} from "../../../../";
 
-const ObjectsNewModalsRoomsBlockFoods: React.FC = () => {
+const ObjectsNewModalsRoomsBlockFoods: React.FC<any> = ({room}) => {
     const [selectIsActive, setSelectIsActive] = React.useState<boolean>(true);
 
     const onChangeYesOrNo = (status: boolean) => {
@@ -28,7 +33,8 @@ const ObjectsNewModalsRoomsBlockFoods: React.FC = () => {
                 <ObjectsNewModalsRoomsBlockYesOrNo onChange={onChangeYesOrNo} />
 
                 <div className="objects-new-modal-content-big-rooms-block-row-inputs-foods-select">
-                    <Select
+                    <Field
+                        component={RenderSelect}
                         choices={[
                             {
                                 title: "Все включено",
@@ -62,6 +68,7 @@ const ObjectsNewModalsRoomsBlockFoods: React.FC = () => {
                         small
                         border
                         disabled={!selectIsActive}
+                        name={`${room}.foodType`}
                     />
                 </div>
             </div>

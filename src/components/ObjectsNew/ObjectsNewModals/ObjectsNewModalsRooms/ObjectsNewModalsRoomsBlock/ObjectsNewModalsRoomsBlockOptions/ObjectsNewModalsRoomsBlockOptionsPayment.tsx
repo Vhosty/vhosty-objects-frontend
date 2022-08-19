@@ -1,8 +1,12 @@
 import React from "react";
+import {Field} from "redux-form";
 
-import {TitleIcon, Select, Input} from "../../../../../";
+import {TitleIcon, RenderSelect, RenderInput} from "../../../../../";
 
-const ObjectsNewModalsRoomsBlockOptionsPayment: React.FC = () => {
+const ObjectsNewModalsRoomsBlockOptionsPayment: React.FC<any> = ({
+    option,
+    values,
+}) => {
     return (
         <div className="objects-new-modal-content-big-rooms-block-row-inputs-payment-wrapper">
             <TitleIcon title="Оплата" marginBottom>
@@ -20,7 +24,8 @@ const ObjectsNewModalsRoomsBlockOptionsPayment: React.FC = () => {
 
             <div className="objects-new-modal-content-big-rooms-block-row-inputs-payment">
                 <div className="objects-new-modal-content-big-rooms-block-row-inputs-payment-select">
-                    <Select
+                    <Field
+                        component={RenderSelect}
                         choices={[
                             {
                                 title: "Бронирование без предоплаты",
@@ -33,17 +38,24 @@ const ObjectsNewModalsRoomsBlockOptionsPayment: React.FC = () => {
                         ]}
                         small
                         border
+                        name={`${option}.bookingType`}
                     />
                 </div>
 
                 <div className="objects-new-modal-content-big-rooms-block-row-inputs-payment-input">
-                    <Input
+                    <Field
+                        component={RenderInput}
                         type="number"
                         label=""
                         fixLabel="%"
                         defaultValue={0}
                         small
-                        disabled
+                        disabled={
+                            values.bookingType === "booking-without-prepayment"
+                                ? true
+                                : false
+                        }
+                        name={`${option}.bookingPercent`}
                     />
                 </div>
             </div>

@@ -1,8 +1,9 @@
 import React from "react";
+import {Field} from "redux-form";
 
-import {TitleIcon, Select} from '../../../../'
+import {TitleIcon, RenderSelect} from "../../../../";
 
-const ObjectsNewModalsRoomsBlockTypesBed: React.FC = () => {
+const ObjectsNewModalsRoomsBlockTypesBed: React.FC<any> = ({room}) => {
     return (
         <div className="objects-new-modal-content-big-rooms-block-row-inputs-select-types-bed">
             <TitleIcon title="Кровать" marginBottom>
@@ -18,7 +19,8 @@ const ObjectsNewModalsRoomsBlockTypesBed: React.FC = () => {
                 </svg>
             </TitleIcon>
 
-            <Select
+            <Field
+                component={RenderSelect}
                 choices={[
                     {
                         title: "1 Двуспальная кровать",
@@ -51,6 +53,7 @@ const ObjectsNewModalsRoomsBlockTypesBed: React.FC = () => {
                 ]}
                 small
                 border
+                name={`${room}.bed_type`}
             />
         </div>
     );

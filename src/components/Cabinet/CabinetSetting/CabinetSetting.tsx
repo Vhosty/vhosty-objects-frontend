@@ -21,7 +21,7 @@ const CabinetSetting: React.FC = () => {
 
 				<CabinetSettingChangePassword />
 				
-				<CabinetSettingVerifications />
+				{/* <CabinetSettingVerifications /> */}
             </div>
         </div>
     );

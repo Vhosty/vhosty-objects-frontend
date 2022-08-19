@@ -69,11 +69,18 @@ const ObjectsNewModalsSmall: React.FC<ObjectsNewModalsSmallProps> = ({
             {children}
 
             <div className="objects-new-modal-content-btn">
-                <button className="btn-line gray objects-new-modal-content-btn__cancel">
+                <button
+                    type="button"
+                    className="btn-line gray objects-new-modal-content-btn__cancel"
+                    onClick={closeFunc}
+                >
                     Отменить изменения
                 </button>
 
-                <button className="btn small objects-new-modal-content-btn__save">
+                <button
+                    type="submit"
+                    className="btn small objects-new-modal-content-btn__save"
+                >
                     Сохранить
                 </button>
             </div>

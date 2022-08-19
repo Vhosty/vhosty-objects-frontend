@@ -50,12 +50,21 @@ export const fetchUserDocuments = () => {
 
 export const fetchUserObjects = () => {
 	return async (dispatch: Dispatch<any>) => {
-		$api.get("/hotels/employee/hotels").then(({ data }) => {
-			console.log(data)
-			// dispatch({
-			// 	type: UserActionTypes.SET_USER_OBJECTS,
-			// 	payload: data.results
-			// })
+		dispatch({
+			type: UserActionTypes.SET_IS_LOADED_USER_OBJECTS,
+			payload: false
+		})
+
+		$api.get("/hotels/employee/catalog").then(({ data }) => {
+			dispatch({
+				type: UserActionTypes.SET_IS_LOADED_USER_OBJECTS,
+				payload: true
+			})
+
+			dispatch({
+				type: UserActionTypes.SET_USER_OBJECTS,
+				payload: data.results
+			})
 		})
 	}
 }

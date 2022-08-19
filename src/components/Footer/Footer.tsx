@@ -142,7 +142,7 @@ const Footer: React.FC = () => {
                         </div> */}
 					</div>
 					
-                    {isLoadedUser ? null : (
+                    {/* {isLoadedUser ? null : (
                         <div className="footer-block-wrapper">
                             <div className="footer-block-reglog">
                                 <img
@@ -159,7 +159,7 @@ const Footer: React.FC = () => {
                                 </p>
                             </div>
                         </div>
-                    )}
+                    )} */}
 
                     <div className="footer-block-wrapper">
                         <Link to="/" className="footer-block__link">

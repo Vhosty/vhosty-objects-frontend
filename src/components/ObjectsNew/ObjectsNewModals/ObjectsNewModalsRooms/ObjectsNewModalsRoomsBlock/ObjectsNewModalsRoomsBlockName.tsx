@@ -1,8 +1,9 @@
 import React from "react";
+import {Field} from "redux-form";
 
-import {TitleIcon, Input} from "../../../../";
+import {TitleIcon, RenderInput} from "../../../../";
 
-const ObjectsNewModalsRoomsBlockName: React.FC = () => {
+const ObjectsNewModalsRoomsBlockName: React.FC<any> = ({room}) => {
     return (
         <div className="objects-new-modal-content-big-rooms-block-row-inputs-input-name">
             <TitleIcon title="Название номера" marginBottom>
@@ -26,7 +27,13 @@ const ObjectsNewModalsRoomsBlockName: React.FC = () => {
                 </svg>
             </TitleIcon>
 
-            <Input label="Двухместный номер" type="text" small />
+            <Field
+                component={RenderInput}
+                label="Двухместный номер"
+                type="text"
+                small
+                name={`${room}.name`}
+            />
         </div>
     );
 };

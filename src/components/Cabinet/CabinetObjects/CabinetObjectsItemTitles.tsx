@@ -5,11 +5,11 @@ import {Checkbox} from "../../";
 const CabinetObjectsItemTitles: React.FC = () => {
     return (
         <div className="cabinet-block-objects-titles">
-            <p className="cabinet-block-objects-titles-checkbox">
-                <Checkbox>
+            <div className="cabinet-block-objects-titles-checkbox">
+                {/* <Checkbox>
                     <></>
-                </Checkbox>
-            </p>
+                </Checkbox> */}
+            </div>
 
             <p className="cabinet-block-objects-titles__item object">
                 Объявление

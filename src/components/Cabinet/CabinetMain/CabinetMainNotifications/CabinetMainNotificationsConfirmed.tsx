@@ -12,7 +12,7 @@ const CabinetMainNotificationsConfirmed: React.FC = () => {
                 </h3>
                 <p className="cabinet-block-main-notifications-block-text__description">
                     Пройдите верификацию на объекте&nbsp;
-                    <span>VHOSTY sweet home elite global neverland</span>, чтобы
+                    <span>BOOKOVER sweet home elite global neverland</span>, чтобы
                     получить бронирования
                 </p>
             </div>

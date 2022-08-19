@@ -9,7 +9,7 @@ const HomeServices: React.FC = () => {
                 <div className="home-services-wrapper">
                     <div className="home-services-list">
                         <h2 className="home-services-list__title">
-                            C VHOSTY - размещение гостей&nbsp;
+                            C BOOKOVER - размещение гостей&nbsp;
                             <span>комфортнее.</span>
                         </h2>
                         <div className="home-services-list-item">

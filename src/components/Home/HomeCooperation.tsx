@@ -36,7 +36,7 @@ const HomeCooperation: React.FC = () => {
                 </div>
 
                 <Link
-                    to="#register"
+                    to="#request_register"
                     className="btn home-cooperation__btn"
                 >
                     Быть частью Bookover

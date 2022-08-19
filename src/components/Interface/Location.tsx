@@ -23,7 +23,7 @@ const Location: React.FC<Location> = ({title, subtitle}) => {
                     />
                 </svg>
             </p>
-            <p className="location__subtitle">{subtitle}</p>
+            {/* <p className="location__subtitle">{subtitle}</p> */}
         </div>
     );
 };

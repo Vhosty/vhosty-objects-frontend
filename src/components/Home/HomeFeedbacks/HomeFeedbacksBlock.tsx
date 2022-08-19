@@ -32,7 +32,7 @@ const HomeFeedbacksBlock: React.FC = () => {
                     </h3>
                     <p className="home-feedbacks-block-text-block__description">
                         Этот сервис помог мне наконец привлечь к своей
-                        недвижимости гостей. Теперь пользуюсь только VHOSTY.
+                        недвижимости гостей. Теперь пользуюсь только BOOKOVER.
                     </p>
                     <p className="home-feedbacks-block-text-block__subtitle">
                         Владелец гостевого дома

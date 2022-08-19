@@ -329,25 +329,41 @@ input:-webkit-autofill:active
 // textarea
 .textarea
 	width: 100%
-	min-height: 200px
 
-	resize: none
-	outline: none
+	&__field
+		width: 100%
+		min-height: 200px
 
-	font-size: 20px
-	color: $black
+		resize: none
+		outline: none
 
-	border-radius: 25px
-	padding: 18px 25px
+		font-size: 20px
+		color: $black
 
-	background-color: transparent
-	border: 2px solid $lightGray
+		border-radius: 25px
+		padding: 18px 25px
 
-	+transition
+		background-color: transparent
+		border: 2px solid $lightGray
 
-	&::placeholder
-		user-select: none
-		color: $lightGray
+		+transition
+
+		&::placeholder
+			user-select: none
+			color: $lightGray
+
+		&.error
+			border: 2px solid $red
+
+			&::placeholder
+				color: $red
+
+	&__error
+		margin-top: 5px
+		font-size: 15px
+		color: $red
+
+		+openPopup
 
 // input-range
 .input-range

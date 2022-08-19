@@ -1,17 +1,34 @@
 import React from "react";
 
+import {FieldArray, reduxForm, InjectedFormProps} from "redux-form";
+
 import {ObjectsNewModalsBig, ObjectsNewModalsRoomsBlock} from "../../../";
 
-const ObjectsNewModalsRooms: React.FC = () => {
+import {validate} from "./validate";
+
+const ObjectsNewModalsRooms: React.FC<{} & InjectedFormProps<{}, {}>> = ({
+    handleSubmit,
+}) => {
     return (
-        <ObjectsNewModalsBig
-            title="Выбор доступного номера"
-            description="Вы можете создать номер и включить в опции/комплектацию как еду, так и условия бронирований."
-            fullWidth
+        <form
+            className="objects-new-modal-content-form big"
+            onSubmit={handleSubmit}
         >
-            <ObjectsNewModalsRoomsBlock />
-        </ObjectsNewModalsBig>
+            <ObjectsNewModalsBig
+                title="Выбор доступного номера"
+                description="Вы можете создать номер и включить в опции/комплектацию как еду, так и условия бронирований."
+                fullWidth
+            >
+                <FieldArray
+                    component={ObjectsNewModalsRoomsBlock}
+                    name="rooms"
+                />
+            </ObjectsNewModalsBig>
+        </form>
     );
 };
 
-export default ObjectsNewModalsRooms;
+export default reduxForm<{}, {}>({
+    form: "objects-new-modals-rooms",
+    validate,
+})(ObjectsNewModalsRooms);

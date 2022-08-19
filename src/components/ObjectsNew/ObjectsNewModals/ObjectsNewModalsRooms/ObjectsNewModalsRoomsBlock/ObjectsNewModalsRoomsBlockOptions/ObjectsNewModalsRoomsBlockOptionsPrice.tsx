@@ -1,8 +1,9 @@
 import React from "react";
+import {Field} from "redux-form";
 
-import {TitleIcon, Input} from "../../../../../";
+import {TitleIcon, RenderInput} from "../../../../../";
 
-const ObjectsNewModalsRoomsBlockOptionsPrice: React.FC = () => {
+const ObjectsNewModalsRoomsBlockOptionsPrice: React.FC<any> = ({option}) => {
     return (
         <div className="objects-new-modal-content-big-rooms-block-row-inputs-price-wrapper">
             <TitleIcon title="Цена за номер/ночь" marginBottom>
@@ -20,7 +21,13 @@ const ObjectsNewModalsRoomsBlockOptionsPrice: React.FC = () => {
 
             <div className="objects-new-modal-content-big-rooms-block-row-inputs-price">
                 <div className="objects-new-modal-content-big-rooms-block-row-inputs-price-input">
-                    <Input type="number" label="Например, 3 000" small />
+                    <Field
+                        component={RenderInput}
+                        type="number"
+                        label="Например, 3 000"
+						small
+						name={`${option}.price`}
+                    />
                 </div>
 
                 <p className="objects-new-modal-content-big-rooms-block-row-inputs-price__text">

@@ -1,8 +1,13 @@
 import React from "react";
+import {Field} from "redux-form";
 
-import {Select} from "../";
+import {RenderSelect} from "../";
 
-const Time: React.FC = () => {
+interface RenderTimeProps {
+    name: string;
+}
+
+const RenderTime: React.FC<RenderTimeProps> = ({name}) => {
     const hourses = Array(24)
         .fill(0)
         .map((_, index) => ({
@@ -20,14 +25,26 @@ const Time: React.FC = () => {
     return (
         <div className="time">
             <div className="time-hourses">
-                <Select choices={hourses} border small />
+                <Field
+                    component={RenderSelect}
+                    choices={hourses}
+                    border
+                    small
+                    name={`${name}-hourses`}
+                />
             </div>
             <span className="time__text">:</span>
             <div className="time-minutes">
-                <Select choices={minutes} border small />
+                <Field
+                    component={RenderSelect}
+                    choices={minutes}
+                    border
+                    small
+                    name={`${name}-minutes`}
+                />
             </div>
         </div>
     );
 };
 
-export default Time;
+export default RenderTime;

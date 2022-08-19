@@ -2,7 +2,10 @@ import { ObjectsNewState, ObjectsNewActions, ObjectsNewActionTypes } from '../..
 
 const initialState: ObjectsNewState = {
 	services: [],
-	isLoadedServices: false
+	isLoadedServices: false,
+
+	itemById: {},
+	isLoadedItemById: false
 }
 
 const objects_new = (state = initialState, action: ObjectsNewActions) => {
@@ -11,6 +14,20 @@ const objects_new = (state = initialState, action: ObjectsNewActions) => {
 			...state,
 			services: action.payload,
 			isLoadedServices: true
+		}
+	}
+
+	if (action.type === ObjectsNewActionTypes.SET_OBJECT_NEW_ITEM_BY_ID) {
+		return {
+			...state,
+			itemById: action.payload
+		}
+	}
+
+	if (action.type === ObjectsNewActionTypes.SET_OBJECT_NEW_ITEM_BY_ID_IS_LOADED) {
+		return {
+			...state,
+			isLoadedItemById: action.payload
 		}
 	}
 

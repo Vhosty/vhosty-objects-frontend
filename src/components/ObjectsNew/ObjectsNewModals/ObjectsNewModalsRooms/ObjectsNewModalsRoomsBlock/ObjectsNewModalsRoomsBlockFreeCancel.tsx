@@ -1,12 +1,13 @@
 import React from "react";
+import {Field} from "redux-form";
 
 import {
     TitleIcon,
-    Select,
+    RenderSelect,
     ObjectsNewModalsRoomsBlockYesOrNo,
 } from "../../../../";
 
-const ObjectsNewModalsRoomsBlockFreeCancel: React.FC = () => {
+const ObjectsNewModalsRoomsBlockFreeCancel: React.FC<any> = ({room}) => {
     const [selectIsActive, setSelectIsActive] = React.useState<boolean>(true);
 
     const onChangeYesOrNo = (status: boolean) => {
@@ -34,7 +35,8 @@ const ObjectsNewModalsRoomsBlockFreeCancel: React.FC = () => {
                 <ObjectsNewModalsRoomsBlockYesOrNo onChange={onChangeYesOrNo} />
 
                 <div className="objects-new-modal-content-big-rooms-block-row-inputs-free-cancel-select">
-                    <Select
+                    <Field
+                        component={RenderSelect}
                         choices={[
                             {
                                 title: "До 3 дней до даты",
@@ -60,6 +62,7 @@ const ObjectsNewModalsRoomsBlockFreeCancel: React.FC = () => {
                         small
                         border
                         disabled={!selectIsActive}
+                        name={`${room}.freeCancel`}
                     />
                 </div>
             </div>

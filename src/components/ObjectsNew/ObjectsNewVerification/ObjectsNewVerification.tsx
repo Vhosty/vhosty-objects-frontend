@@ -1,6 +1,23 @@
 import React from "react";
+import {useDispatch} from "react-redux";
+
+import {fetchObjectByIdDocuments} from "../../../redux/actions/objects_new/objects_new";
+
+import {useTypedSelector} from "../../../hooks/useTypedSelector";
 
 const ObjectsNewVerification: React.FC = () => {
+    const dispatch = useDispatch();
+
+    const {itemById, isLoadedItemById} = useTypedSelector(
+        ({objects_new}) => objects_new
+    );
+
+    React.useEffect(() => {
+        if (isLoadedItemById) {
+            dispatch(fetchObjectByIdDocuments(itemById.id) as any);
+        }
+    }, [isLoadedItemById]);
+
     return (
         <div className="objects-new-block objects-new-block-verification">
             <div className="objects-new-block-text">

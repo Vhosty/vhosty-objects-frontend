@@ -117,7 +117,7 @@ const App = () => {
                     />
 
                     <Route
-                        path="/objects/new"
+                        path="/objects/new/:id"
                         element={
                             isRedirectUser ? (
                                 <ObjectsNew />
