@@ -4,21 +4,16 @@ import {WrappedFieldProps} from "redux-form";
 
 interface RadioProps extends WrappedFieldProps {
     label: string;
-    value: string | number;
+    value_init: string | number;
 
-    defaultChecked?: boolean;
     small?: boolean;
-
-    onChange?: (value: string | number) => void;
 }
 
-const Radio: React.FC<RadioProps> = ({
+const RadioProps: React.FC<RadioProps> = ({
     input,
     label,
-    value,
-    defaultChecked,
+    value_init,
     small,
-    onChange,
 }) => {
     const id = v4();
 
@@ -28,13 +23,13 @@ const Radio: React.FC<RadioProps> = ({
                 {...input}
                 type="radio"
                 id={`radio-${id}`}
-                value={value}
-                onChange={(e) => onChange && onChange(e.target.value)}
-                defaultChecked={defaultChecked}
+                value={value_init}
+                onChange={(e) => input.onChange(e.target.value)}
+                checked={input.value == value_init ? true : false}
             />
             <label htmlFor={`radio-${id}`}>{label}</label>
         </div>
     );
 };
 
-export default Radio;
+export default RadioProps;

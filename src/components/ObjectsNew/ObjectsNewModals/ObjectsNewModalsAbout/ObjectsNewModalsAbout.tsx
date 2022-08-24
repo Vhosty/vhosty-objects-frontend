@@ -4,11 +4,24 @@ import {Field, reduxForm, InjectedFormProps} from "redux-form";
 
 import {TitleIcon, RenderTextarea, ObjectsNewModalsSmall} from "../../../";
 
+import { useTypedSelector } from "../../../../hooks/useTypedSelector";
+
 import {validate} from "./validate";
 
 const ObjectsNewModalsAbout: React.FC<{} & InjectedFormProps<{}, {}>> = ({
     handleSubmit,
+    initialize,
 }) => {
+    const {itemById, isLoadedItemById} = useTypedSelector(
+        ({objects_new}) => objects_new
+    );
+
+    React.useEffect(() => {
+        if (isLoadedItemById) {
+            initialize({...itemById});
+        }
+    }, [isLoadedItemById]);
+
     return (
         <form
             className="objects-new-modal-content-form"

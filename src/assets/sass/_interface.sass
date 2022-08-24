@@ -208,8 +208,6 @@ button
 
 	background-color: transparent
 
-	border-radius: 100px
-
 	+transition
 
 	&:hover
@@ -222,6 +220,9 @@ button
 			color: $darkGray
 
 // input
+input[type="file"]
+	display: none
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -939,7 +940,7 @@ input:-webkit-autofill:active
 	margin-top: 20px
 
 // owl-slider
-#object-page-slider-images .owl-stage-outer
+.owl-carousel .owl-stage-outer
 	overflow: visible
 
 // loader

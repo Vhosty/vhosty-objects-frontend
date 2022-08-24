@@ -7,6 +7,8 @@ interface RadioProps {
     value: string | number;
 
     defaultChecked?: boolean;
+	checked?: boolean;
+	
     small?: boolean;
 
     onChange?: (value: string | number) => void;
@@ -17,6 +19,7 @@ const Radio: React.FC<RadioProps> = ({
     label,
     value,
     defaultChecked,
+    checked,
     small,
     onChange,
 }) => {
@@ -31,6 +34,7 @@ const Radio: React.FC<RadioProps> = ({
                 value={value}
                 onChange={(e) => onChange && onChange(e.target.value)}
                 defaultChecked={defaultChecked}
+                checked={checked}
             />
             <label htmlFor={`radio-${id}`}>{label}</label>
         </div>

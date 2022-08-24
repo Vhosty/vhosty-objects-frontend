@@ -7,12 +7,16 @@ import {
     ObjectsNewModalsRoomsBlockYesOrNo,
 } from "../../../../";
 
-const ObjectsNewModalsRoomsBlockFoods: React.FC<any> = ({room}) => {
+const ObjectsNewModalsRoomsBlockFoods: React.FC<any> = ({room, values}) => {
     const [selectIsActive, setSelectIsActive] = React.useState<boolean>(true);
 
     const onChangeYesOrNo = (status: boolean) => {
         setSelectIsActive(status);
     };
+
+    React.useEffect(() => {
+        setSelectIsActive(values.food_is_included);
+    }, []);
 
     return (
         <div className="objects-new-modal-content-big-rooms-block-row-inputs-foods-wrapper">
@@ -30,7 +34,10 @@ const ObjectsNewModalsRoomsBlockFoods: React.FC<any> = ({room}) => {
             </TitleIcon>
 
             <div className="objects-new-modal-content-big-rooms-block-row-inputs-foods">
-                <ObjectsNewModalsRoomsBlockYesOrNo onChange={onChangeYesOrNo} />
+                <ObjectsNewModalsRoomsBlockYesOrNo
+                    onChange={onChangeYesOrNo}
+                    selectIsActive={selectIsActive}
+                />
 
                 <div className="objects-new-modal-content-big-rooms-block-row-inputs-foods-select">
                     <Field
@@ -38,31 +45,31 @@ const ObjectsNewModalsRoomsBlockFoods: React.FC<any> = ({room}) => {
                         choices={[
                             {
                                 title: "Все включено",
-                                key: "all",
+                                key: "all_inclusive",
                             },
                             {
                                 title: "Завтрак включен",
-                                key: "breakfast-included",
+                                key: "breakfast",
                             },
                             {
                                 title: "Завтрак и обед включен",
-                                key: "breakfast-lunch-included",
+                                key: "breakfast_and_lunch",
                             },
                             {
                                 title: "Завтрак и ужин включен",
-                                key: "breakfast-dinner-included",
+                                key: "breakfast_and_dinner",
                             },
                             {
                                 title: "Обед включен",
-                                key: "lunch-included",
+                                key: "lunch",
                             },
                             {
                                 title: "Ужин включен",
-                                key: "dinner-included",
+                                key: "dinner",
                             },
                             {
                                 title: "Обед и ужин включен",
-                                key: "lunch-dinner-included",
+                                key: "lunch_and_dinner",
                             },
                         ]}
                         small

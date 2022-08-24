@@ -6,13 +6,18 @@ const ObjectsNewAbout: React.FC = () => {
         <div className="objects-new-block objects-new-block-about">
             <div className="objects-new-block-text">
                 <h2 className="objects-new-block-text__title">Об объекте</h2>
+
                 <p className="objects-new-block-text__description">
                     Расскажите об отеле, о его достоинствах, преимуществах,
                     истории. Помимо этого, в этом блоке будут отображаться самые
                     популярные удобства и услуги, когда вы заполните карточку
                     удобств.
                 </p>
-                <Link to="#about" className="btn-line objects-new-block-text__btn">
+
+                <Link
+                    to="#about"
+                    className="btn-line objects-new-block-text__btn"
+                >
                     Добавить информацию
                 </Link>
             </div>

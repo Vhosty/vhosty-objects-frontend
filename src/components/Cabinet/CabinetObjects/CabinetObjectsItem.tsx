@@ -3,17 +3,47 @@ import {Link} from "react-router-dom";
 
 import {Checkbox} from "../../";
 
-const CabinetObjectsItem: React.FC<any> = ({
+interface CabinetObjectsItemProps {
+    hotel: any;
+    room_categories: any;
+    price_max: number;
+    price_min: number;
+
+    isSelected: boolean;
+
+    setObjectsDeleteIdsOnClick: (id: {
+        hotel_id: number;
+        room_category_id: string;
+    }) => void;
+}
+
+const CabinetObjectsItem: React.FC<CabinetObjectsItemProps> = ({
     hotel: {address, background_image, booking_type, id, name, status},
-    room_category: {price},
+    room_categories,
+    price_max,
+    price_min,
+    isSelected,
+    setObjectsDeleteIdsOnClick,
 }) => {
     return (
-        <div className="cabinet-block-objects-item">
-            {/* <div className="cabinet-block-objects-item-block-checkbox">
-                <Checkbox>
+        <div
+            className={`cabinet-block-objects-item ${
+                isSelected ? "selected" : ""
+            }`}
+        >
+            <div className="cabinet-block-objects-item-block-checkbox">
+                <Checkbox
+                    checked={isSelected}
+                    onClick={() =>
+                        setObjectsDeleteIdsOnClick({
+                            hotel_id: id,
+                            room_category_id: room_categories.id,
+                        })
+                    }
+                >
                     <></>
                 </Checkbox>
-            </div> */}
+            </div>
 
             <div className="cabinet-block-objects-item-block-object">
                 <div
@@ -150,8 +180,8 @@ const CabinetObjectsItem: React.FC<any> = ({
             </div>
             <div className="cabinet-block-objects-item-block-price">
                 <p className="cabinet-block-objects-item-block-price__title">
-                    {price}
-                    {/* от 93 000₽ до 120 000₽ */}
+                    {/* {price} */}
+                    от {price_min}₽ до {price_max}₽
                 </p>
             </div>
             <div className="cabinet-block-objects-item-block-location">

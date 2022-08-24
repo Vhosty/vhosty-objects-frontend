@@ -6,9 +6,6 @@ export interface UserState {
 
 	isLoadedUserDocuments: boolean,
 	userDocuments: any,
-
-	isLoadedUserObjects: boolean,
-	userObjects: {}
 }
 
 export enum UserActionTypes {
@@ -17,9 +14,6 @@ export enum UserActionTypes {
 
 	SET_IS_LOADED_USER_DOCUMENTS = "SET_IS_LOADED_USER_DOCUMENTS",
 	SET_USER_DOCUMENTS = "SET_USER_DOCUMENTS",
-
-	SET_IS_LOADED_USER_OBJECTS = "SET_IS_LOADED_USER_OBJECTS",
-	SET_USER_OBJECTS = "SET_USER_OBJECTS",
 }
 
 interface setIsLoadedUser {
@@ -37,15 +31,4 @@ interface setUserDocuments {
 	payload: any
 }
 
-interface setIsLoadedUserObjects {
-	type: UserActionTypes.SET_IS_LOADED_USER_OBJECTS
-	payload: boolean
-}
-
-interface setUserObjects {
-	type: UserActionTypes.SET_USER_OBJECTS
-	payload: any
-}
-
-
-export type UserActions = setUser | setIsLoadedUser | setUserDocuments | setIsLoadedUserObjects | setUserObjects 
+export type UserActions = setUser | setIsLoadedUser | setUserDocuments

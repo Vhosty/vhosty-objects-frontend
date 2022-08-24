@@ -24,31 +24,31 @@ const ObjectsNewModalsRoomsBlockTypesBed: React.FC<any> = ({room}) => {
                 choices={[
                     {
                         title: "1 Двуспальная кровать",
-                        key: "one-double-bed",
+                        key: "double",
                     },
                     {
                         title: "2 Двуспальная кровати",
-                        key: "two-double-beds",
+                        key: "two_double",
                     },
                     {
                         title: "1 Односпальная кровать",
-                        key: "one-single-bed",
+                        key: "single",
                     },
                     {
                         title: "2 Односпальных кровати",
-                        key: "two-single-bed",
+                        key: "two_single",
                     },
                     {
                         title: "1 Односпальная кровать и 1 двуспальная кровать",
-                        key: "one-single-bed-and-one-double-bed",
+                        key: "single_double",
                     },
                     {
                         title: "1 Односпальная кровать и 2 двуспальные кровати",
-                        key: "one-single-bed-and-two-double-bed",
+                        key: "single_two_double",
                     },
                     {
                         title: "2 Односпальные кровати и 1 двуспальная кровать",
-                        key: "two-single-bed-and-one-double-bed",
+                        key: "two_single_double",
                     },
                 ]}
                 small

@@ -34,7 +34,7 @@ const ObjectsNewModalsRoomsBlockTypesRoom: React.FC<any> = ({room}) => {
                     },
                     {
                         title: "Полулюкс",
-                        key: "junior-suite",
+                        key: "junior_suite",
                     },
                     {
                         title: "Люкс",

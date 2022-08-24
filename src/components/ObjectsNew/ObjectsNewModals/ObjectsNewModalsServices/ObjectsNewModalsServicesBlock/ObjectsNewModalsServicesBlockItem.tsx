@@ -22,7 +22,7 @@ const ObjectsNewModalsServicesBlockItem: React.FC<
                         component={RenderRadio}
                         name={service}
                         label="Да"
-                        value="yes"
+                        value_init="yes"
                         small
                     />
                 </div>
@@ -32,7 +32,7 @@ const ObjectsNewModalsServicesBlockItem: React.FC<
                         component={RenderRadio}
                         name={service}
                         label="Нет"
-                        value="no"
+                        value_init="no"
                         small
                     />
                 </div>
@@ -42,7 +42,7 @@ const ObjectsNewModalsServicesBlockItem: React.FC<
                         component={RenderRadio}
                         name={service}
                         label="Платно"
-                        value="pay"
+                        value_init="pay"
                         small
                     />
                 </div>

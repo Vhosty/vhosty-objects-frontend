@@ -8,8 +8,27 @@ import {useTypedSelector} from "../../../../hooks/useTypedSelector";
 
 const ObjectsNewModalsServices: React.FC<{} & InjectedFormProps<{}, {}>> = ({
     handleSubmit,
+    initialize,
 }) => {
-    const {services} = useTypedSelector(({objects_new}) => objects_new);
+    const {services, itemByIdServices} = useTypedSelector(
+        ({objects_new}) => objects_new
+    );
+
+    React.useEffect(() => {
+        const services_object: any = {};
+
+        itemByIdServices.map((group: any) => {
+			group.services.map((service: any) => {
+                services_object[service.service] = service.is_available
+                    ? "yes"
+                    : service.is_chargeable
+                    ? "pay"
+                    : "no";
+            });
+        });
+
+        initialize(services_object);
+    }, []);
 
     return (
         <form

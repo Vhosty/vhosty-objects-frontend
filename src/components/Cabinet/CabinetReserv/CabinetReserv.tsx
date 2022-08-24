@@ -8,7 +8,7 @@ import {
     CabinetReservEvents,
 } from "../../";
 
-import {fetchUserReservs} from "../../../redux/actions/user/user";
+import {fetchUserReservs} from "../../../redux/actions/user/userReservs";
 
 const CabinetReserv: React.FC = () => {
     const dispatch = useDispatch();
@@ -24,14 +24,14 @@ const CabinetReserv: React.FC = () => {
                     <h2 className="cabinet-block-text__title">Бронирования</h2>
                 </div>
 
-                <CabinetReservFilters />
+                {/* <CabinetReservFilters /> */}
 
-                <CabinetReservEvents />
+                {/* <CabinetReservEvents /> */}
             </div>
 
             <div className="cabinet-block-reserv-items-wrapper">
-				<CabinetReservItemTitle />
-				
+                <CabinetReservItemTitle />
+
                 <CabinetReservItem />
                 <CabinetReservItem />
                 <CabinetReservItem />

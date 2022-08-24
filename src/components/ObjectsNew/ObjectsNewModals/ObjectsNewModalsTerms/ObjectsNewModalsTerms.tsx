@@ -11,14 +11,46 @@ import {
     ObjectsNewModalsTermsYesOrNo,
 } from "../../../";
 
+import {useTypedSelector} from "../../../../hooks/useTypedSelector";
+
+import {validate} from "./validate";
+
 const ObjectsNewModalsTerms: React.FC<{} & InjectedFormProps<{}, {}>> = ({
     handleSubmit,
+    initialize,
 }) => {
     const [selectIsActive, setSelectIsActive] = React.useState<boolean>(true);
 
     const onChangeYesOrNo = (status: boolean) => {
         setSelectIsActive(status);
     };
+
+    const {itemByIdTerms, isLoadedItemByIdTerms} = useTypedSelector(
+        ({objects_new}) => objects_new
+    );
+
+    React.useEffect(() => {
+        if (isLoadedItemByIdTerms) {
+            initialize({
+                ["from-hourses"]: itemByIdTerms.checkin_time.split(":")[0],
+                ["from-minutes"]: itemByIdTerms.checkin_time.split(":")[1],
+
+                ["to-hourses"]: itemByIdTerms.checkout_time.split(":")[0],
+                ["to-minutes"]: itemByIdTerms.checkout_time.split(":")[1],
+
+                other_time_available: selectIsActive,
+                timesPossibilityType: itemByIdTerms.other_time_price,
+
+                about: itemByIdTerms.additional_info,
+            });
+        }
+    }, [isLoadedItemByIdTerms, selectIsActive]);
+
+    React.useEffect(() => {
+        if (isLoadedItemByIdTerms) {
+            setSelectIsActive(itemByIdTerms.other_time_available);
+        }
+    }, [isLoadedItemByIdTerms]);
 
     return (
         <form
@@ -90,14 +122,15 @@ const ObjectsNewModalsTerms: React.FC<{} & InjectedFormProps<{}, {}>> = ({
                             <div className="objects-new-modal-content-terms-times-possibility-from-to">
                                 <ObjectsNewModalsTermsYesOrNo
                                     onChange={onChangeYesOrNo}
+                                    selectIsActive={selectIsActive}
                                 />
 
                                 <div className="objects-new-modal-content-terms-times-possibility-from-to-select">
                                     <Field
                                         component={RenderSelect}
                                         choices={[
-                                            {title: "Бесплатно", key: "free"},
-                                            {title: "Платно", key: "pay"},
+                                            {title: "Бесплатно", key: 0},
+                                            {title: "Платно", key: 1},
                                         ]}
                                         border
                                         small
@@ -176,7 +209,7 @@ const ObjectsNewModalsTerms: React.FC<{} & InjectedFormProps<{}, {}>> = ({
                                 name="payType"
                             />
                         </div>
-
+                        {/* 
                         <div className="objects-new-modal-content-terms-selects-confirmed">
                             <TitleIcon
                                 title="Подтверждение бронирования"
@@ -222,7 +255,7 @@ const ObjectsNewModalsTerms: React.FC<{} & InjectedFormProps<{}, {}>> = ({
                                 border
                                 name="confirmedType"
                             />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </ObjectsNewModalsSmall>
@@ -232,5 +265,5 @@ const ObjectsNewModalsTerms: React.FC<{} & InjectedFormProps<{}, {}>> = ({
 
 export default reduxForm<{}, {}>({
     form: "objects-new-modals-terms",
-    // validate,
+    validate,
 })(ObjectsNewModalsTerms);

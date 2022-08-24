@@ -260,12 +260,23 @@
 				&-block
 					+openPopup
 
+					margin-bottom: 50px
+
+					&:last-child
+						margin-bottom: 0
+
 					&__title
 						font-weight: 500
 						margin-bottom: 20px
 
 					&-images
+						display: flex
+
 						&__btn
+							margin-right: 7.5px
+
+							display: block
+
 							width: 100px
 
 							cursor: pointer
@@ -279,6 +290,50 @@
 							& > span
 								display: block
 								text-decoration: underline
+
+						&-catalog
+							display: flex
+
+							&-item
+								margin: 0 7.5px
+
+								position: relative
+
+								width: 95px
+								height: 95px
+
+								border-radius: 20px
+
+								overflow: hidden
+
+								+backgroundSetting
+								+open
+
+								&-plaecholder
+									position: absolute
+
+									top: 0
+									left: 0
+
+									width: 100%
+									height: 100%
+
+									background-color: rgba(0, 0, 0, 0.2)
+
+								&-icon
+									position: absolute
+
+									cursor: pointer
+
+									right: 15px
+									bottom: 10px
+									
+									& > svg
+										fill: $white
+										+transition
+
+									& > svg:hover
+										fill: rgba(255, 255, 255, 0.8)
 
 					&-row-inputs
 						margin-top: 50px
@@ -553,11 +608,12 @@
 						margin-right: 20px
 
 	&-cover
-		&-text
-			width: 90%
-			max-width: 1200px
-			margin: 0 auto
+		position: relative
 
+		+backgroundSetting
+		+open
+
+		&-text
 			display: flex
 			justify-content: space-between
 
@@ -613,6 +669,8 @@
 					font-size: 18px
 
 				&__btn
+					user-select: none
+					display: block
 					margin-top: 30px
 
 	&-additional-photos
@@ -620,6 +678,8 @@
 
 		position: relative
 		height: 180px
+
+		+open
 
 		&__img
 			z-index: -1

@@ -121,6 +121,7 @@ export { default as CabinetReservEventsPrint } from "./Cabinet/CabinetReserv/Cab
 export { default as CabinetReservEventsDownload } from "./Cabinet/CabinetReserv/CabinetReservEvents/CabinetReservEventsDownload";
 // CabinetObjects
 export { default as CabinetObjects } from "./Cabinet/CabinetObjects/CabinetObjects";
+export { default as CabinetObjectsDeleteBtn } from "./Cabinet/CabinetObjects/CabinetObjectsDeleteBtn";
 export { default as CabinetObjectsItemTitles } from "./Cabinet/CabinetObjects/CabinetObjectsItemTitles";
 export { default as CabinetObjectsItem } from "./Cabinet/CabinetObjects/CabinetObjectsItem";
 // CabinetObjectsFilters
@@ -130,21 +131,37 @@ export { default as CabinetObjectsFiltersSort } from "./Cabinet/CabinetObjects/C
 export { default as CabinetObjectsFiltersReserv } from "./Cabinet/CabinetObjects/CabinetObjectsFilters/CabinetObjectsFiltersReserv";
 
 // ObjectsNew
+export { default as ObjectsNewBlockTextWrapper } from "./ObjectsNew/ObjectsNewBlockTextWrapper";
+export { default as ObjectsNewEditBtn } from "./ObjectsNew/ObjectsNewEditBtn";
 export { default as ObjectsNewMaps } from "./ObjectsNew/ObjectsNewMaps";
 // ObjectsNewCover
 export { default as ObjectsNewCover } from "./ObjectsNew/ObjectsNewCover/ObjectsNewCover";
 export { default as ObjectsNewCoverText } from "./ObjectsNew/ObjectsNewCover/ObjectsNewCoverText";
+export { default as ObjectsNewCoverTextFilled } from "./ObjectsNew/ObjectsNewCover/ObjectsNewCoverTextFilled";
 export { default as ObjectsNewCoverImage } from "./ObjectsNew/ObjectsNewCover/ObjectsNewCoverImage";
+export { default as ObjectsNewCoverImageFilled } from "./ObjectsNew/ObjectsNewCover/ObjectsNewCoverImageFilled";
 // ObjectsNewAdditionalPhotos
+export { default as ObjectsNewAdditionalPhotosWrapper } from "./ObjectsNew/ObjectsNewAdditionalPhotos/ObjectsNewAdditionalPhotosWrapper";
 export { default as ObjectsNewAdditionalPhotos } from "./ObjectsNew/ObjectsNewAdditionalPhotos/ObjectsNewAdditionalPhotos";
+export { default as ObjectsNewAdditionalPhotosFilled } from "./ObjectsNew/ObjectsNewAdditionalPhotos/ObjectsNewAdditionalPhotosFilled";
 // ObjectsNewAbout
+export { default as ObjectsNewAboutWrapper } from "./ObjectsNew/ObjectsNewAbout/ObjectsNewAboutWrapper";
+export { default as ObjectsNewAboutFilled } from "./ObjectsNew/ObjectsNewAbout/ObjectsNewAboutFilled";
 export { default as ObjectsNewAbout } from "./ObjectsNew/ObjectsNewAbout/ObjectsNewAbout";
 // ObjectsNewRooms
+export { default as ObjectsNewRoomsWrapper } from "./ObjectsNew/ObjectsNewRooms/ObjectsNewRoomsWrapper";
 export { default as ObjectsNewRooms } from "./ObjectsNew/ObjectsNewRooms/ObjectsNewRooms";
+// ObjectsNewRoomsFilled
+export { default as ObjectsNewRoomsFilled } from "./ObjectsNew/ObjectsNewRooms/ObjectsNewRoomsFilled/ObjectsNewRoomsFilled";
+export { default as ObjectsNewRoomsFilledBlock } from "./ObjectsNew/ObjectsNewRooms/ObjectsNewRoomsFilled/ObjectsNewRoomsFilledBlock";
 // ObjectsNewServices
+export { default as ObjectsNewServicesWrapper } from "./ObjectsNew/ObjectsNewServices/ObjectsNewServicesWrapper";
+export { default as ObjectsNewServicesFilled } from "./ObjectsNew/ObjectsNewServices/ObjectsNewServicesFilled";
 export { default as ObjectsNewServices } from "./ObjectsNew/ObjectsNewServices/ObjectsNewServices";
 // ObjectsNewTerms
+export { default as ObjectsNewTermsWrapper } from "./ObjectsNew/ObjectsNewTerms/ObjectsNewTermsWrapper";
 export { default as ObjectsNewTerms } from "./ObjectsNew/ObjectsNewTerms/ObjectsNewTerms";
+export { default as ObjectsNewTermsFilled } from "./ObjectsNew/ObjectsNewTerms/ObjectsNewTermsFilled";
 // ObjectsNewFaq
 export { default as ObjectsNewFaq } from "./ObjectsNew/ObjectsNewFaq/ObjectsNewFaq";
 // ObjectsNewVerification
@@ -165,6 +182,7 @@ export { default as ObjectsNewModalsRoomsWrapper } from "./ObjectsNew/ObjectsNew
 export { default as ObjectsNewModalsRooms } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsRooms/ObjectsNewModalsRooms";
 // ObjectsNewModalsRoomsBlock
 export { default as ObjectsNewModalsRoomsBlock } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsRooms/ObjectsNewModalsRoomsBlock/ObjectsNewModalsRoomsBlock";
+export { default as ObjectsNewModalsRoomsBlockImages } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsRooms/ObjectsNewModalsRoomsBlock/ObjectsNewModalsRoomsBlockImages";
 export { default as ObjectsNewModalsRoomsBlockName } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsRooms/ObjectsNewModalsRoomsBlock/ObjectsNewModalsRoomsBlockName";
 export { default as ObjectsNewModalsRoomsBlockTypesRoom } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsRooms/ObjectsNewModalsRoomsBlock/ObjectsNewModalsRoomsBlockTypesRoom";
 export { default as ObjectsNewModalsRoomsBlockTypesBed } from "./ObjectsNew/ObjectsNewModals/ObjectsNewModalsRooms/ObjectsNewModalsRoomsBlock/ObjectsNewModalsRoomsBlockTypesBed";

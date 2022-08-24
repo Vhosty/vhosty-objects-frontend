@@ -28,10 +28,10 @@ const ObjectsNewModalsRoomsBlockPayment: React.FC<any> = ({room, values}) => {
                                 title: "Бронирование без предоплаты",
                                 key: "booking-without-prepayment",
                             },
-                            {
-                                title: "Бронирование по предоплате",
-                                key: "prepaid-booking",
-                            },
+                            // {
+                            //     title: "Бронирование по предоплате",
+                            //     key: "prepaid-booking",
+                            // },
                         ]}
                         small
                         border
@@ -39,7 +39,7 @@ const ObjectsNewModalsRoomsBlockPayment: React.FC<any> = ({room, values}) => {
                     />
                 </div>
 
-                <div className="objects-new-modal-content-big-rooms-block-row-inputs-payment-input">
+                {/* <div className="objects-new-modal-content-big-rooms-block-row-inputs-payment-input">
                     <Field
                         component={RenderInput}
                         type="number"
@@ -54,7 +54,7 @@ const ObjectsNewModalsRoomsBlockPayment: React.FC<any> = ({room, values}) => {
                         }
                         name={`${room}.bookingPercent`}
                     />
-                </div>
+                </div> */}
             </div>
         </div>
     );

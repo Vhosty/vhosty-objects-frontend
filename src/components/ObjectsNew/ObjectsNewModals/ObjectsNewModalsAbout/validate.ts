@@ -12,9 +12,7 @@ export const validate = (values: validateValues) => {
 	const min = process.env.REACT_APP_MIN_INPUT_SYMBOLS
 		? parseInt(process.env.REACT_APP_MIN_INPUT_SYMBOLS)
 		: 0;
-	const max = process.env.REACT_APP_MAX_INPUT_SYMBOLS
-		? parseInt(process.env.REACT_APP_MAX_INPUT_SYMBOLS)
-		: 0;
+	const max = 5000;
 
 	if (!values.description) {
 		errors.description = "Поле не может быть пустым";

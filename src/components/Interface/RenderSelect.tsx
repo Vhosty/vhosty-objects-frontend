@@ -22,13 +22,15 @@ const RenderSelect: React.FC<RenderSelectProps> = ({
     small,
     input,
     disabled,
-    meta: {form},
+    meta: {form, initial},
 }) => {
     const dispatch = useDispatch();
 
     const id = v4();
 
     const [isOpen, setIsOpen] = React.useState(false);
+    const [isInit, setIsInit] = React.useState(false);
+
     const [currentIndex, setCurrentIndex] = React.useState(0);
 
     const SelectRef = React.useRef<HTMLDivElement>(null);
@@ -38,12 +40,30 @@ const RenderSelect: React.FC<RenderSelectProps> = ({
             dispatch(change(form, input.name, ""));
         } else {
             dispatch(change(form, input.name, choices[0].key));
+            setCurrentIndex(0);
         }
     }, []);
 
     React.useEffect(() => {
-        if (disabled) {
+        if (initial && !isInit) {
+            dispatch(change(form, input.name, initial));
+
+            choices.map((item, index) => {
+                if (item.key === initial) {
+                    setCurrentIndex(index);
+                }
+            });
+
+            setIsInit(true);
+        }
+    }, [initial]);
+
+    React.useEffect(() => {
+        if (disabled === true) {
             dispatch(change(form, input.name, ""));
+        } else if (disabled === false) {
+            dispatch(change(form, input.name, choices[0].key));
+            setCurrentIndex(0);
         }
     }, [disabled]);
 

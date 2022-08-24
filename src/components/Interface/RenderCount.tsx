@@ -8,7 +8,9 @@ interface RenderCountProps extends WrappedFieldProps {}
 const RenderCount: React.FC<RenderCountProps> = ({input, meta: {form}}) => {
     const dispatch = useDispatch();
 
-    const [countState, setCountState] = React.useState<number>(1);
+    const [countState, setCountState] = React.useState<number>(
+        input.value ? input.value : 1
+    );
 
     const minusCountState = () => {
         if (countState > 1) {
@@ -23,7 +25,6 @@ const RenderCount: React.FC<RenderCountProps> = ({input, meta: {form}}) => {
     React.useEffect(() => {
         dispatch(change(form, input.name, countState));
     }, [countState]);
-
     return (
         <div className="count">
             <button

@@ -1,6 +1,27 @@
 import React from "react";
+import {useDispatch} from "react-redux";
+
+import {useTypedSelector} from "../../../hooks/useTypedSelector";
+
+import {uploadObjectByIdCoverImage} from "../../../redux/actions/objects_new/objects_new";
 
 const ObjectsNewCoverImage: React.FC = () => {
+    const dispatch = useDispatch();
+
+    const {itemById} = useTypedSelector(({objects_new}) => objects_new);
+
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const data = new FormData();
+
+        if (e.target.files) {
+            data.append("uploading_file", e.target.files[0]);
+
+            dispatch(
+                uploadObjectByIdCoverImage(data, itemById.id, itemById) as any
+            );
+        }
+    };
+
     return (
         <div className="objects-new-cover-image">
             <svg
@@ -31,9 +52,19 @@ const ObjectsNewCoverImage: React.FC = () => {
                     пользователей на главном экране
                 </p>
 
-                <button className="btn-line objects-new-cover-image-text__btn">
+                <input
+                    id="objects-new-cover-image"
+                    type="file"
+                    accept=".png, .jpg, .jpeg"
+                    onChange={onChange}
+                />
+
+                <label
+                    htmlFor="objects-new-cover-image"
+                    className="btn-line objects-new-cover-image-text__btn"
+                >
                     Загрузить фото
-                </button>
+                </label>
             </div>
         </div>
     );

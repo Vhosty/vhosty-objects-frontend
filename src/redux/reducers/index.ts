@@ -9,6 +9,8 @@ import recovery_password from "./recovery_password";
 
 // user
 import user from "../reducers/user/user";
+import userObjects from "../reducers/user/userObjects";
+import userReservs from "../reducers/user/userReservs";
 import userCabinetSetting from "../reducers/user/userCabinetSetting";
 
 // objects_new
@@ -21,7 +23,7 @@ export const rootReducer = combineReducers({
 	register,
 	login,
 	recovery_password,
-	user, userCabinetSetting,
+	user, userObjects, userReservs, userCabinetSetting,
 	objects_new, objects_new_modals,
 	form: formReducer,
 });

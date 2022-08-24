@@ -569,6 +569,7 @@
 						width: 120px
 
 			&-items-wrapper
+				margin-top: 35px
 				width: 100%
 
 				overflow-x: auto
@@ -734,6 +735,36 @@
 				&-block
 					width: 31%
 
+			&-delete
+				padding-left: 30px
+				padding-bottom: 20px
+
+				&__btn
+					cursor: pointer
+
+					display: flex
+					align-items: center
+
+					font-size: 15px
+					background-color: transparent
+					color: $darkMainColor
+
+					+transition
+
+					& > svg
+						margin-right: 15px
+
+						width: 15px
+						fill: $darkMainColor
+
+						+transition
+
+					&.disabled
+						color: #D3D6D3
+
+						& > svg
+							fill: #D3D6D3
+
 			&-titles
 				width: 1200px
 
@@ -744,9 +775,6 @@
 				padding: 20px 30px
 
 				background-color: #E6F6F6
-
-				&-checkbox
-					display: none
 
 				&__item
 					font-size: 15px
@@ -786,6 +814,11 @@
 				position: relative
 
 				padding: 20px 30px
+
+				+transition
+
+				&.selected
+					background-color: #E6F6F6
 
 				&::before
 					content: ""

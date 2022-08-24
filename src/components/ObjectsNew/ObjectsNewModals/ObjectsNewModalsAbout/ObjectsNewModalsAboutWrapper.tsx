@@ -5,7 +5,7 @@ import {ObjectsNewModalsAbout} from "../../../";
 
 import {useTypedSelector} from "../../../../hooks/useTypedSelector";
 
-import {updateObjectsAbout} from "../../../../redux/actions/objects_new/objects_new";
+import {updateObjectByIdAbout} from "../../../../redux/actions/objects_new/objects_new";
 
 const ObjectsNewModalsAboutWrapper: React.FC = () => {
     const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const ObjectsNewModalsAboutWrapper: React.FC = () => {
 
     const onSubmit = (data: any) => {
         dispatch(
-            updateObjectsAbout({...itemById, ...data}, itemById.id) as any
+            updateObjectByIdAbout({...itemById, ...data}, itemById.id) as any
         );
     };
 

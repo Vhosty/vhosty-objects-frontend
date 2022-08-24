@@ -5,7 +5,7 @@ import {ObjectsNewModalsCoverText} from "../../../";
 
 import {useTypedSelector} from "../../../../hooks/useTypedSelector";
 
-import {updateObjectsCoverText} from "../../../../redux/actions/objects_new/objects_new";
+import {updateObjectByIdCoverText} from "../../../../redux/actions/objects_new/objects_new";
 
 const ObjectsNewModalsCoverTextWrapper: React.FC = () => {
     const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const ObjectsNewModalsCoverTextWrapper: React.FC = () => {
 
     const onSubmit = (data: any) => {
         dispatch(
-            updateObjectsCoverText({...itemById, ...data}, itemById.id) as any
+            updateObjectByIdCoverText({...itemById, ...data}, itemById.id) as any
         );
     };
 
