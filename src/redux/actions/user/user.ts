@@ -5,7 +5,7 @@ import {
 	UserActions,
 } from "../../types/IUser";
 
-import { UserInfo } from '../../../models/IUser'
+import { UserInfo, UserContact } from '../../../models/IUser'
 
 import $api from '../../../http';
 
@@ -21,6 +21,17 @@ export const fetchUserAboutMe = () => {
 }
 
 export const sendUserUpdateAboutMe = (data: UserInfo) => {
+	return async (dispatch: Dispatch<UserActions>) => {
+		$api.post("/companies/about-me", data).then(({ data }) => {
+			dispatch({
+				type: UserActionTypes.SET_USER,
+				payload: data
+			})
+		})
+	}
+}
+
+export const sendUserUpdateContactMe = (data: UserContact) => {
 	return async (dispatch: Dispatch<UserActions>) => {
 		$api.post("/companies/about-me", data).then(({ data }) => {
 			dispatch({

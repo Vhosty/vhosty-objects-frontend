@@ -26,7 +26,7 @@ const ObjectsNewRoomsFilledBlock: React.FC<any> = ({
                     <div
                         className="objects-new-filled-section-room-block-subblock-info-cover"
                         style={{
-                            backgroundImage: `url('${images[0].url}')`,
+                            backgroundImage: `url('${images[0] && images[0].url}')`,
                         }}
                     >
                         <p className="objects-new-filled-section-room-block-subblock-info-cover__count">

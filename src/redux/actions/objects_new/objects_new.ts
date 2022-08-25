@@ -209,7 +209,7 @@ export const updateObjectByIdTerms = (data: any, id: string) => {
 	}
 }
 
-export const createObjectByIdRoom = (data: any, id: string) => {
+export const createObjectByIdRoom = (data: any, id: string, idObject: string) => {
 	return async (dispatch: Dispatch<ObjectsNewActions>) => {
 		const images: { id: string }[] = []
 
@@ -233,10 +233,7 @@ export const createObjectByIdRoom = (data: any, id: string) => {
 		newData.images = images
 
 		$api.post(`/hotels/employee/${id}/room-categories`, newData).then(({ data }) => {
-			dispatch({
-				type: ObjectsNewActionTypes.SET_OBJECT_NEW_ITEM_BY_ID_ROOMS,
-				payload: data.results
-			})
+			dispatch(fetchObjectByIdRooms(idObject) as any)
 
 			dispatch(setObjectsNewModalsClose() as any)
 
@@ -245,7 +242,7 @@ export const createObjectByIdRoom = (data: any, id: string) => {
 	}
 }
 
-export const updateObjectByIdRoom = (data: any, id: string) => {
+export const updateObjectByIdRoom = (data: any, id: string, idObject: string) => {
 	return async (dispatch: Dispatch<ObjectsNewActions>) => {
 		const images: { id: string }[] = []
 
@@ -269,10 +266,7 @@ export const updateObjectByIdRoom = (data: any, id: string) => {
 		newData.images = images
 
 		$api.post(`/hotels/employee/room-categories/${id}`, newData).then(({ data }) => {
-			dispatch({
-				type: ObjectsNewActionTypes.SET_OBJECT_NEW_ITEM_BY_ID_ROOMS,
-				payload: data.results
-			})
+			dispatch(fetchObjectByIdRooms(idObject) as any)
 
 			dispatch(setObjectsNewModalsClose() as any)
 

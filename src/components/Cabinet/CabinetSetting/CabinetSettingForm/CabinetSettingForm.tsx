@@ -3,22 +3,37 @@ import {useDispatch} from "react-redux";
 
 import {CabinetSettingFormInfo, CabinetSettingFormContact} from "../../../";
 
-import {sendUserUpdateAboutMe} from "../../../../redux/actions/user/user";
+import {
+    sendUserUpdateAboutMe,
+    sendUserUpdateContactMe,
+} from "../../../../redux/actions/user/user";
+
+import {useTypedSelector} from "../../../../hooks/useTypedSelector";
 
 const CabinetSettingForm: React.FC = () => {
     const dispatch = useDispatch();
 
-    const onSubmit = (data: any) => {
+    const {user} = useTypedSelector(({user}) => user);
+
+    const onSubmitInfo = (data: any) => {
         const {first_name, last_name} = data;
 
-        dispatch(sendUserUpdateAboutMe({first_name, last_name}) as any);
+        dispatch(
+            sendUserUpdateAboutMe({...user, first_name, last_name}) as any
+        );
+    };
+
+    const onSubmitContact = (data: any) => {
+        const {email, phone} = data;
+
+        dispatch(sendUserUpdateContactMe({...user, email, phone}) as any);
     };
 
     return (
         <div className="cabinet-block-setting-form">
-            <CabinetSettingFormInfo onSubmit={onSubmit} />
+            <CabinetSettingFormInfo onSubmit={onSubmitInfo} />
 
-            <CabinetSettingFormContact onSubmit={onSubmit} />
+            <CabinetSettingFormContact onSubmit={onSubmitContact} />
         </div>
     );
 };

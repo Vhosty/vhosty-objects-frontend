@@ -15,8 +15,15 @@ const ObjectsNewModalsRoomsBlockFoods: React.FC<any> = ({room, values}) => {
     };
 
     React.useEffect(() => {
-        setSelectIsActive(values.food_is_included);
+        if (
+            values.food_is_included === true ||
+            values.food_is_included === false
+        ) {
+            setSelectIsActive(values.food_is_included);
+        }
     }, []);
+
+    console.log(selectIsActive);
 
     return (
         <div className="objects-new-modal-content-big-rooms-block-row-inputs-foods-wrapper">

@@ -67,5 +67,5 @@ const ObjectsNewModalsRooms: React.FC<{} & InjectedFormProps<{}, {}>> = ({
 
 export default reduxForm<{}, {}>({
     form: "objects-new-modals-rooms",
-    // validate,
+    validate,
 })(ObjectsNewModalsRooms);

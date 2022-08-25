@@ -23,7 +23,8 @@ const ObjectsNewModalsRoomsWrapper: React.FC = () => {
                 is_free_cancel: false,
                 free_cancel_days: 30,
                 food_is_included: room.food_is_included,
-                food_type: room.foodType,
+                // food_type: room.foodType,
+				food_type: "all_inclusive",
                 square: 100,
                 room_type: room.type,
                 beds: [],
@@ -36,9 +37,17 @@ const ObjectsNewModalsRoomsWrapper: React.FC = () => {
             };
 
             if (room.id) {
-                dispatch(updateObjectByIdRoom(newData, room.id) as any);
+                dispatch(
+                    updateObjectByIdRoom(newData, room.id, itemById.id) as any
+                );
             } else {
-                dispatch(createObjectByIdRoom(newData, itemById.id) as any);
+                dispatch(
+                    createObjectByIdRoom(
+                        newData,
+                        itemById.id,
+                        itemById.id
+                    ) as any
+                );
             }
         });
     };

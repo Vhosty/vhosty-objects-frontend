@@ -51,8 +51,6 @@ const CabinetSettingFormContactEmailInput: React.FC<
         setCurrentSeconds(currentSeconds - 1);
     };
 
-    console.log(currentSeconds);
-
     return (
         <div className="cabinet-block-setting-form-block-input-wrapper">
             <div className="cabinet-block-setting-form-block-input">

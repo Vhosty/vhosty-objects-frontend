@@ -26,7 +26,7 @@ const ObjectsNewModalsRoomsBlockTypesRoom: React.FC<any> = ({room}) => {
                 choices={[
                     {
                         title: "Стандарт",
-                        key: "standart",
+                        key: "standard",
                     },
                     {
                         title: "Комфорт",
