@@ -44,11 +44,11 @@ const HeaderUserModal: React.FC = () => {
 
             <Link
                 to="#logout"
+                className="header-block-user-modal-item"
                 onClick={() => {
                     localStorage.removeItem("accessToken");
                     window.location.href = "/";
                 }}
-                className="header-block-user-modal-item"
             >
                 <p className="header-block-user-modal-item__title">
                     Выйти из аккаунта

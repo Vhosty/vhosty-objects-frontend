@@ -10,8 +10,14 @@ import {
 
 import {fetchUserReservs} from "../../../redux/actions/user/userReservs";
 
+import {useTypedSelector} from "../../../hooks/useTypedSelector";
+
 const CabinetReserv: React.FC = () => {
     const dispatch = useDispatch();
+
+    const {reservs, isLoadedReservs} = useTypedSelector(
+        ({userReservs}) => userReservs
+    );
 
     React.useEffect(() => {
         dispatch(fetchUserReservs() as any);
@@ -29,15 +35,18 @@ const CabinetReserv: React.FC = () => {
                 {/* <CabinetReservEvents /> */}
             </div>
 
-            <div className="cabinet-block-reserv-items-wrapper">
-                <CabinetReservItemTitle />
+            {isLoadedReservs ? (
+                <div className="cabinet-block-reserv-items-wrapper">
+                    <CabinetReservItemTitle />
 
-                <CabinetReservItem />
-                <CabinetReservItem />
-                <CabinetReservItem />
-                <CabinetReservItem />
-                <CabinetReservItem />
-            </div>
+                    {reservs.map((reserv: any, index: number) => (
+                        <CabinetReservItem
+                            {...reserv}
+                            key={`cabinet-block-reserv-item-${index}`}
+                        />
+                    ))}
+                </div>
+            ) : null}
         </div>
     );
 };

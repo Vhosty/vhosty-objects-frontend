@@ -1,7 +1,32 @@
 import React from "react";
+import moment from "moment";
 import {Link} from "react-router-dom";
 
-const CabinetReservItem: React.FC = () => {
+// adults: 1;
+// booked_at: "2022-08-26T14:29:24.567559+00:00";
+// booking_id: "8cb45eef-2382-4711-83aa-1ae4812257a8";
+// checkin_date: "2022-08-18";
+// checkout_date: "2022-08-28";
+// children: 0;
+// fee: 4340;
+// guest_name: "Иван Горячев";
+// hotel_id: 2;
+// hotel_name: "Елисейские поля";
+// price: 43400;
+// room_category_id: "74ff4b82-dc99-454a-aff1-bda6773c72f4";
+// room_category_name: "VIP";
+// status: "created";
+
+const CabinetReservItem: React.FC<any> = ({
+    adults,
+    guest_name,
+    hotel_id,
+    hotel_name,
+    checkin_date,
+    checkout_date,
+    price,
+    booked_at,
+}) => {
     return (
         <div className="cabinet-block-reserv-item">
             <div className="cabinet-block-reserv-item-block-object">
@@ -36,12 +61,11 @@ const CabinetReservItem: React.FC = () => {
                 </div>
                 <div className="cabinet-block-reserv-item-block-object-text">
                     <p className="cabinet-block-reserv-item-block-object-text__title">
-                        Уютный домик в лесу для пары и романтического уютный
-                        домик в лесу для пары и романтического
+                        {hotel_name}
                     </p>
 
                     <Link
-                        to="/"
+                        to={`/objects/new/${hotel_id}`}
                         className="btn-line cabinet-block-reserv-item-block-object-text__link"
                     >
                         Редактировать объект
@@ -51,40 +75,40 @@ const CabinetReservItem: React.FC = () => {
 
             <div className="cabinet-block-reserv-item-block-guests">
                 <p className="cabinet-block-reserv-item-block-guests__title">
-                    Филипова Анастасия Александровна
+                    {guest_name}
                 </p>
                 <p className="cabinet-block-reserv-item-block-guests__subtitle">
-                    2 гостя, 1 ребенок
+                    {adults} гостя
                 </p>
             </div>
 
             <div className="cabinet-block-reserv-item-block-from">
                 <p className="cabinet-block-reserv-item-block-from__title">
-                    25 сент. 2021
+                    {moment(checkin_date, "YYYY-MM-DD").format("DD MMM YYYY")}
                 </p>
             </div>
 
             <div className="cabinet-block-reserv-item-block-to">
                 <p className="cabinet-block-reserv-item-block-to__title">
-                    25 окт. 2021
+                    {moment(checkout_date, "YYYY-MM-DD").format("DD MMM YYYY")}
                 </p>
             </div>
 
             <div className="cabinet-block-reserv-item-block-status">
-                <p className="cabinet-block-reserv-item-block-status__title cancel">
-                    Отмена
+                <p className="cabinet-block-reserv-item-block-status__title">
+                    Создан
                 </p>
             </div>
 
             <div className="cabinet-block-reserv-item-block-price">
                 <p className="cabinet-block-reserv-item-block-price__title">
-                    210 000 ₽
+                    {price} ₽
                 </p>
             </div>
 
             <div className="cabinet-block-reserv-item-block-commission">
                 <p className="cabinet-block-reserv-item-block-commission__title">
-                    2100 ₽
+                    {(price / 100) * 14} ₽
                 </p>
             </div>
 
@@ -93,7 +117,7 @@ const CabinetReservItem: React.FC = () => {
                     № 2372533808
                 </p>
                 <p className="cabinet-block-reserv-item-block-booking__date">
-                    12 сент. 2021
+                    {moment(booked_at).format("DD MMM YYYY")}
                 </p>
             </div>
         </div>
