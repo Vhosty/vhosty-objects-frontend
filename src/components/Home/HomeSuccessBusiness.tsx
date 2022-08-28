@@ -18,7 +18,7 @@ const HomeSuccessBusiness: React.FC = () => {
                     <div className="home-success-business-text">
                         <h2 className="home-success-business-text__title">
                             <span>Успех</span> вашего бизнеса зависит от Вас
-                            самих! <br /> Мы - поможем
+                            самих! <br /> Мы поможем
                         </h2>
                         <p className="home-success-business-text__description">
                             Свяжемся с Вами и&nbsp;
