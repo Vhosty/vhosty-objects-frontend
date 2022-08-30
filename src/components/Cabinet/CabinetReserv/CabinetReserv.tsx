@@ -20,7 +20,7 @@ const CabinetReserv: React.FC = () => {
     );
 
     React.useEffect(() => {
-        dispatch(fetchUserReservs() as any);
+        if (!reservs.length) dispatch(fetchUserReservs() as any);
     }, []);
 
     return (

@@ -27,6 +27,7 @@ const ObjectsNewAdditionalPhotosFilled: React.FC<
         dots: false,
         margin: 20,
         id: "objects-new-filled-slider-images",
+        autoWidth: true,
     };
 
     const sliderRef = React.useRef<any>(null);

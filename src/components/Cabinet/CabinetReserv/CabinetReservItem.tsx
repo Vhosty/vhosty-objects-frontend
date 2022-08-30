@@ -2,21 +2,6 @@ import React from "react";
 import moment from "moment";
 import {Link} from "react-router-dom";
 
-// adults: 1;
-// booked_at: "2022-08-26T14:29:24.567559+00:00";
-// booking_id: "8cb45eef-2382-4711-83aa-1ae4812257a8";
-// checkin_date: "2022-08-18";
-// checkout_date: "2022-08-28";
-// children: 0;
-// fee: 4340;
-// guest_name: "Иван Горячев";
-// hotel_id: 2;
-// hotel_name: "Елисейские поля";
-// price: 43400;
-// room_category_id: "74ff4b82-dc99-454a-aff1-bda6773c72f4";
-// room_category_name: "VIP";
-// status: "created";
-
 const CabinetReservItem: React.FC<any> = ({
     adults,
     guest_name,

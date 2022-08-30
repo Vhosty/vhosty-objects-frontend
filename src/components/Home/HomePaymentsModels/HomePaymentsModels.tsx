@@ -40,9 +40,9 @@ const HomePaymentsModels: React.FC = () => {
             <div className="container">
                 <div className="home-payments-models-wrapper">
                     <h2 className="home-payments-models__title">
-                        <span>Модели оплаты</span> для вашего бизнеса
+                        <span>Модель оплаты</span> для вашего бизнеса
                     </h2>
-                    <div className="home-payments-models-btn">
+                    {/* <div className="home-payments-models-btn">
                         {items.map((item, index) => (
                             <button
                                 className={`btn-light home-payments-models-btn__btn ${
@@ -55,11 +55,11 @@ const HomePaymentsModels: React.FC = () => {
                             </button>
                         ))}
 					</div>
-					
+					 */}
                     {items.map((item, index) => (
                         <div
                             className={`home-payments-models-img ${
-                                currentIndexItem === index ? "active" : ""
+                                0 === index ? "active" : ""
                             }`}
                             key={`home-payments-models-img-${index}`}
                             style={
