@@ -32,13 +32,11 @@ const ObjectsNewCover: React.FC = () => {
             ) : null}
 
             <div className="objects-new-cover-wrapper">
-                <div className="container">
-                    {itemById.name !== "" ? (
-                        <ObjectsNewCoverTextFilled {...itemById} />
-                    ) : (
-                        <ObjectsNewCoverText />
-                    )}
-                </div>
+                {itemById.name !== "" ? (
+                    <ObjectsNewCoverTextFilled {...itemById} />
+                ) : (
+                    <ObjectsNewCoverText />
+                )}
 
                 {isFilled() ? (
                     <ObjectsNewCoverImageFilled {...itemById} />

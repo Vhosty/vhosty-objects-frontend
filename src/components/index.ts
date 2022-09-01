@@ -156,8 +156,15 @@ export { default as ObjectsNewRoomsFilled } from "./ObjectsNew/ObjectsNewRooms/O
 export { default as ObjectsNewRoomsFilledBlock } from "./ObjectsNew/ObjectsNewRooms/ObjectsNewRoomsFilled/ObjectsNewRoomsFilledBlock";
 // ObjectsNewServices
 export { default as ObjectsNewServicesWrapper } from "./ObjectsNew/ObjectsNewServices/ObjectsNewServicesWrapper";
-export { default as ObjectsNewServicesFilled } from "./ObjectsNew/ObjectsNewServices/ObjectsNewServicesFilled";
 export { default as ObjectsNewServices } from "./ObjectsNew/ObjectsNewServices/ObjectsNewServices";
+// ObjectsNewServicesFilled
+export { default as ObjectsNewServicesFilled } from "./ObjectsNew/ObjectsNewServices/ObjectsNewServicesFilled/ObjectsNewServicesFilled";
+// ObjectsNewServicesFilledGroup
+export { default as ObjectsNewServicesFilledGroup } from "./ObjectsNew/ObjectsNewServices/ObjectsNewServicesFilled/ObjectsNewServicesFilledGroup/ObjectsNewServicesFilledGroup";
+export { default as ObjectsNewServicesFilledGroupItem } from "./ObjectsNew/ObjectsNewServices/ObjectsNewServicesFilled/ObjectsNewServicesFilledGroup/ObjectsNewServicesFilledGroupItem";
+// ObjectsNewServicesFilledTabsGroup
+export { default as ObjectsNewServicesFilledTabsGroup } from "./ObjectsNew/ObjectsNewServices/ObjectsNewServicesFilled/ObjectsNewServicesFilledTabsGroup/ObjectsNewServicesFilledTabsGroup";
+export { default as ObjectsNewServicesFilledTabsGroupItem } from "./ObjectsNew/ObjectsNewServices/ObjectsNewServicesFilled/ObjectsNewServicesFilledTabsGroup/ObjectsNewServicesFilledTabsGroupItem";
 // ObjectsNewTerms
 export { default as ObjectsNewTermsWrapper } from "./ObjectsNew/ObjectsNewTerms/ObjectsNewTermsWrapper";
 export { default as ObjectsNewTerms } from "./ObjectsNew/ObjectsNewTerms/ObjectsNewTerms";

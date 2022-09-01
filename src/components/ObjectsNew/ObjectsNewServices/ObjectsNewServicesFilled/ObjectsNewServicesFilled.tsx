@@ -1,6 +1,10 @@
 import React from "react";
 
-import {ObjectsNewEditBtn} from "../../";
+import {
+    ObjectsNewEditBtn,
+    ObjectsNewServicesFilledGroup,
+    ObjectsNewServicesFilledTabsGroup,
+} from "../../../";
 
 interface ObjectsNewServicesFilledProps {
     services: any;
@@ -20,42 +24,23 @@ const ObjectsNewServicesFilled: React.FC<ObjectsNewServicesFilledProps> = ({
                     <ObjectsNewEditBtn hash="services" />
                 </div>
 
-                <div className="objects-new-filled-section-services-block-wrapper">
-                    {services.map((group: any, index: number) =>
-                        group.services.filter(
-                            (service: any) =>
-                                service.is_available || service.is_chargeable
-                        ).length ? (
-                            <div
-                                className="objects-new-filled-section-services-list"
-                                key={`objects-new-filled-section-services-list-${index}`}
-                            >
-                                <h3 className="objects-new-filled-section-services-list__title">
-                                    {group.group_name}
-                                </h3>
+                {document.documentElement.clientWidth > 600 ? (
+                    <div className="objects-new-filled-section-services-block-wrapper">
+                        {services.map((group: any, index: number) =>
+                            group.services.filter(
+                                (service: any) =>
+                                    service.is_available ||
+                                    service.is_chargeable
+                            ).length ? (
+                                <ObjectsNewServicesFilledGroup
+                                    {...group}
+                                    key={`objects-new-filled-section-services-list-${index}`}
+                                    index={index}
+                                />
+                            ) : null
+                        )}
 
-                                <ul className="objects-new-filled-section-services-list-ul">
-                                    {group.services.map(
-                                        (service: any, subindex: number) =>
-                                            service.is_available ||
-                                            service.is_chargeable ? (
-                                                <li
-                                                    className="objects-new-filled-section-services-list-ul__li"
-                                                    key={`objects-new-filled-section-services-list-${index}-ul__li-${subindex}`}
-                                                >
-                                                    {service.name}&nbsp;
-                                                    {service.is_chargeable ? (
-                                                        <span>(платно)</span>
-                                                    ) : null}
-                                                </li>
-                                            ) : null
-                                    )}
-                                </ul>
-                            </div>
-                        ) : null
-                    )}
-
-                    {/* <li className="objects-new-filled-section-services-list-ul__li">
+                        {/* <li className="objects-new-filled-section-services-list-ul__li">
                         Ресторан
                         <svg
                             viewBox="0 0 22 18"
@@ -72,7 +57,24 @@ const ObjectsNewServicesFilled: React.FC<ObjectsNewServicesFilledProps> = ({
                             />
                         </svg>
                     </li> */}
-                </div>
+                    </div>
+                ) : (
+                    <div className="objects-new-filled-section-services-block-tabs-wrapper">
+                        {services.map((group: any, index: number) =>
+                            group.services.filter(
+                                (service: any) =>
+                                    service.is_available ||
+                                    service.is_chargeable
+                            ).length ? (
+                                <ObjectsNewServicesFilledTabsGroup
+                                    {...group}
+                                    key={`object-page-section-services-list-${index}`}
+                                    index={index}
+                                />
+                            ) : null
+                        )}
+                    </div>
+                )}
             </div>
         </div>
     );

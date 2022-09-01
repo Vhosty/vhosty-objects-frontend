@@ -179,7 +179,7 @@
 	// interface
 	.btn-light
 		padding: 15px 35px
-		font-size: 20px
+		font-size: 18px
 
 	// header-transparent
 	.header-transparent
@@ -219,6 +219,18 @@
 
 							&.add-room-option
 								order: 1
+
+	// objects_new_filled
+	.objects-new-filled
+		&-section
+			&-terms
+				&-from-to
+					flex-direction: column
+
+					&-block-wrapper
+						width: 100%
+						margin-bottom: 25px
+
 
 	// footer
 	.footer
@@ -408,6 +420,19 @@
 				&__description
 					width: 100%
 
+	// objects_new_filled
+	.objects-new-filled
+		&-section
+			&-services
+				&-list
+					width: 50%
+
+					&:nth-child(3n+2)
+						padding-right: 0
+
+					&:nth-child(3n+3)
+						padding-right: 50px
+
 @media screen and ( max-width: 800px )
 	// home
 	.home
@@ -427,7 +452,7 @@
 				max-width: 100%
 
 				&__title
-					font-size: 20px
+					font-size: 18px
 
 			&-blocks-wrapper
 				display: none
@@ -443,7 +468,7 @@
 		// cooperation
 		&-cooperation
 			&__title
-				font-size: 20px
+				font-size: 18px
 
 				max-width: 100%
 
@@ -473,7 +498,52 @@
 
 							display: block
 
+	// objects_new_filled
+	.objects-new-filled
+		&-cover
+			&-text
+				&-info
+					&-btn
+						margin-top: 0
+
+		&-section
+			&-padding
+				padding: 30px
+
+			&-top
+				align-items: flex-start
+				flex-direction: column
+
+			&-text
+				&__edit
+					margin-top: 25px
+
+			&-room
+				&-block
+					flex-direction: column
+
+					&-subblock
+						&-info
+							&-text
+								margin: 0 0 0 25px
+
+						&-price
+							margin-top: 50px
+
+							flex-direction: row
+							text-align: left
+
 @media screen and ( max-width: 750px )
+	// header
+	.header
+		&-block
+			&-user
+				&__btn
+					display: none
+
+				&__btn-mobile
+					display: block
+
 	// home
 	.home
 		&-success-business
@@ -503,6 +573,26 @@
 
 				&__description
 					width: 100%
+
+	// objects-new-filled
+	.objects-new-filled
+		&-cover
+			&-text
+				width: 100%
+				order: 2
+				border-radius: 35px 35px 0px 0px
+
+			&-image
+				order: 1
+
+				&-btn-wrapper
+					flex-direction: column
+
+				&-btn
+					margin: 0 25px 50px 25px
+
+					&:last-child
+						margin: 0 25px
 
 @media screen and ( max-width: 700px )
 	// home
@@ -595,11 +685,10 @@
 							&-select
 								margin-top: 15px
 								margin-left: 0
-							
 
 					&-selects
 						flex-wrap: wrap
-						
+
 						&-pay
 							width: 100%
 
@@ -658,6 +747,46 @@
 								&__input
 									font-size: 14px
 
+	// objects_new_filled
+	.objects-new-filled
+		&-section
+			&-room
+				&-block
+					&-subblock
+						&-info
+							flex-direction: column
+
+							&-cover
+								width: 100%
+								height: 200px
+
+							&-text
+								margin: 25px 0 0 0
+
+						&-price
+							margin-top: 25px
+							flex-direction: column
+							align-items: center
+
+			&-terms
+				&-from-to
+					&-block
+						margin-left: 0
+
+					&-change-time
+						&-block
+							flex-direction: column
+
+							&__description
+								display: flex
+								justify-content: space-between
+
+								margin-bottom: 15px
+
+				&-payment
+					&-block
+						width: 100%
+
 	// footer
 	.footer
 		&-block
@@ -695,13 +824,6 @@
 		&-bg
 			background-position: center right
 
-	// header
-	.header
-		&-block
-			&-user
-				&__btn
-					display: none
-
 	// home
 	.home
 		&-main
@@ -725,7 +847,7 @@
 
 			&-list
 				&__title
-					font-size: 20px
+					font-size: 18px
 					margin-bottom: 25px
 
 				&-item
@@ -741,7 +863,7 @@
 
 			&-text
 				&__title
-					font-size: 20px
+					font-size: 18px
 					margin-bottom: 20px
 
 				&__description
@@ -758,7 +880,7 @@
 			margin-bottom: 75px
 
 			&__title
-				font-size: 20px
+				font-size: 18px
 				margin-bottom: 25px
 
 			&-img
@@ -780,7 +902,7 @@
 
 			&-text
 				&__title
-					font-size: 20px
+					font-size: 18px
 
 				&__description
 					font-size: 15px
@@ -805,7 +927,7 @@
 					margin-left: 15px
 
 					&__title
-						font-size: 20px
+						font-size: 18px
 
 					&__description
 						font-size: 15px
@@ -822,7 +944,7 @@
 			&-form
 				&-text
 					&__title
-						font-size: 20px
+						font-size: 18px
 
 					&__subtitle
 						font-size: 15px
@@ -1008,3 +1130,22 @@
 
 							&__input
 								font-size: 14px
+
+	// objects_new_filled
+	.objects-new-filled
+		&-section
+			&-top
+				&__title
+					font-size: 18px
+
+			&__description
+				font-size: 15px
+
+			&-services
+				&-list
+					&-tab
+						margin-top: 15px
+
+						&-top
+							&__title
+								font-size: 15px

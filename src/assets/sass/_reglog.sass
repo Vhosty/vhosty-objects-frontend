@@ -34,9 +34,6 @@
 
 		width: 500px
 
-		&.middle-width
-			width: 800px
-
 		+borderRadius
 
 		+openPopup
@@ -70,8 +67,6 @@
 
 	&-form
 		&-text
-			margin-bottom: 30px
-			
 			&__title
 				user-select: none
 
@@ -79,12 +74,8 @@
 				margin-bottom: 10px
 				font-size: 15px
 
-			&__description
-				margin-top: 10px
-				font-size: 15px
-
 		&__error
-			margin: 20px 0
+			margin-top: 20px
 
 			width: 100%
 			display: block
@@ -98,23 +89,10 @@
 			+open
 
 		&-block
+			margin-top: 20px
+
 			&-input
-				margin-bottom: 15px
-
-			&-inputs-row
-				display: flex
-				justify-content: space-between
-
-				&:first-child
-					margin-top: 30px
-
-				&-input
-					width: calc(50% - 15px)
-
-					margin-bottom: 30px
-
-					&:last-child
-						margin-bottom: 0
+				margin-bottom: 25px
 
 			&-recovery__link
 				margin-top: 30px
@@ -133,13 +111,8 @@
 					text-align: center
 
 				&__btn
-					display: block
-					margin: 20px auto 0 auto
-
+					margin-top: 20px
 					width: 100%
-
-					&.middle-width
-						width: 60%
 
 	&-logout
 		padding: 15px 0
@@ -147,7 +120,7 @@
 		text-align: center
 
 		&__title
-			font-size: 20px
+			font-size: 18px
 			color: $darkMainColor
 			margin-bottom: 20px
 
@@ -164,7 +137,7 @@
 				cursor: pointer
 				color: $mainColor
 				font-weight: 500
-				font-size: 20px
+				font-size: 18px
 				border: none
 				background-color: transparent
 
@@ -192,7 +165,7 @@
 
 			&__title
 				color: $darkMainColor
-				font-size: 20px
+				font-size: 18px
 
 			&__description
 				margin-top: 20px

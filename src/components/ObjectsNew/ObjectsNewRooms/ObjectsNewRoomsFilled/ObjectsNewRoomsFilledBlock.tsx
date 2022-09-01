@@ -1,4 +1,5 @@
 import React from "react";
+import NumberFormat from "react-number-format";
 
 import {ServiceIcon} from "../../../";
 
@@ -26,7 +27,9 @@ const ObjectsNewRoomsFilledBlock: React.FC<any> = ({
                     <div
                         className="objects-new-filled-section-room-block-subblock-info-cover"
                         style={{
-                            backgroundImage: `url('${images[0] && images[0].url}')`,
+                            backgroundImage: `url('${
+                                images[0] && images[0].url
+                            }')`,
                         }}
                     >
                         <p className="objects-new-filled-section-room-block-subblock-info-cover__count">
@@ -148,7 +151,25 @@ const ObjectsNewRoomsFilledBlock: React.FC<any> = ({
                 <div className="objects-new-filled-section-room-block-subblock-price">
                     <div className="objects-new-filled-section-room-block-subblock-price-block">
                         <h2 className="objects-new-filled-section-room-block-subblock-price-block__title">
-                            {price} ₽
+                            <NumberFormat
+                                value={price}
+                                displayType={"text"}
+                                thousandSeparator={" "}
+                                renderText={(formattedValue: string) => (
+                                    <>
+                                        {parseInt(
+                                            formattedValue.split(" ").join("")
+                                        ) >= 10000
+                                            ? formattedValue
+                                            : parseInt(
+                                                  formattedValue
+                                                      .split(" ")
+                                                      .join("")
+                                              )}
+                                    </>
+                                )}
+                            />{" "}
+                            ₽
                         </h2>
                     </div>
 
