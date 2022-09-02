@@ -1,6 +1,7 @@
 export interface UserReservsState {
 	isLoadedReservs: boolean,
 	reservs: [],
+	reservsCreatedCount: number
 }
 
 export enum UserReservsActionTypes {
@@ -15,7 +16,7 @@ interface setUserReservsIsLoadedReservs {
 
 interface setReservs {
 	type: UserReservsActionTypes.SET_USER_RESERVS
-	payload: any
+	payload: { data: any, countCreated: any }
 }
 
 export type UserReservsActions = setUserReservsIsLoadedReservs | setReservs

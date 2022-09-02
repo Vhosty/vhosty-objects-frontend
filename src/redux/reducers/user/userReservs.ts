@@ -3,6 +3,7 @@ import { UserReservsState, UserReservsActionTypes, UserReservsActions } from "..
 const initialState: UserReservsState = {
 	isLoadedReservs: false,
 	reservs: [],
+	reservsCreatedCount: 0,
 }
 
 const userReservs = (state = initialState, action: UserReservsActions) => {
@@ -16,7 +17,8 @@ const userReservs = (state = initialState, action: UserReservsActions) => {
 	if (action.type === UserReservsActionTypes.SET_USER_RESERVS) {
 		return {
 			...state,
-			reservs: action.payload
+			reservs: action.payload.data,
+			reservsCreatedCount: action.payload.countCreated
 		}
 	}
 

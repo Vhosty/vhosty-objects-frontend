@@ -12,10 +12,12 @@ import {fetchUserReservs} from "../../../redux/actions/user/userReservs";
 
 import {useTypedSelector} from "../../../hooks/useTypedSelector";
 
+import {checkDeclension} from "../../../functions/checkDeclension";
+
 const CabinetReserv: React.FC = () => {
     const dispatch = useDispatch();
 
-    const {reservs, isLoadedReservs} = useTypedSelector(
+    const {reservs, reservsCreatedCount, isLoadedReservs} = useTypedSelector(
         ({userReservs}) => userReservs
     );
 
@@ -27,7 +29,20 @@ const CabinetReserv: React.FC = () => {
         <div className="cabinet-block cabinet-block-reserv">
             <div className="cabinet-block-padding-top">
                 <div className="cabinet-block-text">
-                    <h2 className="cabinet-block-text__title">Бронирования</h2>
+                    <h2 className="cabinet-block-text__title cabinet-block-reserv-text__title">
+                        Бронирования{" "}
+                        {reservsCreatedCount ? (
+                            <span>
+                                {
+                                    checkDeclension(reservsCreatedCount, [
+                                        "новый",
+                                        "новых",
+                                        "новый",
+                                    ]).title
+                                }
+                            </span>
+                        ) : null}
+                    </h2>
                 </div>
 
                 {/* <CabinetReservFilters /> */}

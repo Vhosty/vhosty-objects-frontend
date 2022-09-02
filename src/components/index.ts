@@ -119,6 +119,9 @@ export { default as CabinetReservFiltersDate } from "./Cabinet/CabinetReserv/Cab
 export { default as CabinetReservEvents } from "./Cabinet/CabinetReserv/CabinetReservEvents/CabinetReservEvents";
 export { default as CabinetReservEventsPrint } from "./Cabinet/CabinetReserv/CabinetReservEvents/CabinetReservEventsPrint";
 export { default as CabinetReservEventsDownload } from "./Cabinet/CabinetReserv/CabinetReservEvents/CabinetReservEventsDownload";
+// CabinetReservModals
+export { default as CabinetReservModalsConfirm } from "./Cabinet/CabinetReserv/CabinetReservModals/CabinetReservModalsConfirm";
+export { default as CabinetReservModalsReject } from "./Cabinet/CabinetReserv/CabinetReservModals/CabinetReservModalsReject";
 // CabinetObjects
 export { default as CabinetObjects } from "./Cabinet/CabinetObjects/CabinetObjects";
 export { default as CabinetObjectsDeleteBtn } from "./Cabinet/CabinetObjects/CabinetObjectsDeleteBtn";

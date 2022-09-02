@@ -8,10 +8,13 @@ export enum ReglogStateTypes {
 	RECOVERY_PASSWORD = "recovery_password",
 	RECOVERY_PASSWORD_SUCCESS = "recovery_password_success",
 	RECOVERY_PASSWORD_CONFIRMED = "recovery_password_confirmed",
-	
+
 	LOGIN = "login",
 
 	CABINET_SETTING_CHANGE_PASSWORD = "cabinet_setting_change_password",
+
+	CABINET_RESERV_CONFIRM = "cabinet_reserv_confirm",
+	CABINET_RESERV_REJECT = "cabinet_reserv_reject",
 }
 
 export interface ReglogState {

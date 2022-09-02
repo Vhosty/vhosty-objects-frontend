@@ -11,11 +11,9 @@ const CabinetReservItemTitle: React.FC = () => {
                 Имя гостя
             </p>
 
-            <p className="cabinet-block-reserv-titles__item from">Заезд</p>
-
-            <p className="cabinet-block-reserv-titles__item to">Отъезд</p>
-
-            <p className="cabinet-block-reserv-titles__item status">Статус</p>
+            <p className="cabinet-block-reserv-titles__item from-to">
+                Заезд - отъезд
+            </p>
 
             <p className="cabinet-block-reserv-titles__item price">К оплате</p>
 
@@ -25,6 +23,10 @@ const CabinetReservItemTitle: React.FC = () => {
 
             <p className="cabinet-block-reserv-titles__item booking">
                 Бронирование
+            </p>
+
+            <p className="cabinet-block-reserv-titles__item confirmation">
+                Подтверждение
             </p>
         </div>
     );

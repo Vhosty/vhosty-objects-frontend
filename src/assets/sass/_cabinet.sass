@@ -491,6 +491,24 @@
 		&-reserv
 			padding-bottom: 50px
 
+			&-text
+				&__title
+					display: flex
+					align-items: flex-start
+
+					& > span
+						display: flex
+						justify-content: center
+						align-items: center
+						
+						height: 22px
+						margin-left: 10px
+						padding: 0 10px
+						font-size: 12px
+						color: $white
+						border-radius: 100px
+						background-color: $mainGreen
+
 			&-filters
 				padding: 30px 0
 
@@ -557,9 +575,6 @@
 					&.from, &.to
 						width: 100px
 
-					&.status
-						width: 60px
-
 					&.price
 						width: 70px
 
@@ -567,6 +582,9 @@
 						width: 70px
 
 					&.booking
+						width: 120px
+
+					&.confirmation
 						width: 120px
 
 			&-items-wrapper
@@ -588,6 +606,11 @@
 				position: relative
 
 				padding: 20px 30px
+
+				+transition
+
+				&.active
+					background-color: #E6F6F6
 
 				&::before
 					content: ""
@@ -683,20 +706,15 @@
 							font-size: 15px
 							color: $gray
 
-					&-from, &-to
+					&-from-to
 						width: 100px
 
 						&__title
+							margin-bottom: 15px
 							font-size: 15px
 
-					&-status
-						width: 60px
-
-						&__title
-							font-size: 15px
-
-							&.cancel
-								color: $darkMainRed
+							&:last-child
+								margin-bottom: 0
 
 					&-price
 						width: 70px
@@ -724,6 +742,29 @@
 
 						&__date
 							color: $gray
+							font-size: 15px
+
+					&-confirmation
+						width: 120px
+
+						&__btn
+							display: block
+							cursor: pointer
+							font-size: 15px
+							background-color: transparent
+							margin-bottom: 15px
+							text-decoration: underline
+
+							&:last-child
+								margin-bottom: 0
+
+							&.confirm
+								color: $darkMainGreen
+
+							&.reject
+								color: $darkMainRed
+
+						&__status
 							font-size: 15px
 
 		&-objects

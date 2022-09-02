@@ -2,6 +2,8 @@ import React from "react";
 import moment from "moment";
 import {Link} from "react-router-dom";
 
+import {checkDeclension} from "../../../functions/checkDeclension";
+
 const CabinetReservItem: React.FC<any> = ({
     adults,
     guest_name,
@@ -11,14 +13,22 @@ const CabinetReservItem: React.FC<any> = ({
     checkout_date,
     price,
     booked_at,
+    status,
+    booking_id,
+    booking_number,
+    background_images,
 }) => {
     return (
-        <div className="cabinet-block-reserv-item">
+        <div
+            className={`cabinet-block-reserv-item ${
+                status === "created" ? "active" : ""
+            }`}
+        >
             <div className="cabinet-block-reserv-item-block-object">
                 <div
                     className="cabinet-block-reserv-item-block-object-cover"
                     style={{
-                        backgroundImage: `url('https://images.unsplash.com/photo-1658595637559-6e026a2f7646?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80')`,
+                        backgroundImage: `url('${background_images[0].url}')`,
                     }}
                 >
                     <div className="cabinet-block-reserv-item-block-object-cover-icon">
@@ -63,25 +73,19 @@ const CabinetReservItem: React.FC<any> = ({
                     {guest_name}
                 </p>
                 <p className="cabinet-block-reserv-item-block-guests__subtitle">
-                    {adults} гостя
+                    {
+                        checkDeclension(adults, ["гость", "гостя", "гостей"])
+                            .title
+                    }
                 </p>
             </div>
 
-            <div className="cabinet-block-reserv-item-block-from">
-                <p className="cabinet-block-reserv-item-block-from__title">
+            <div className="cabinet-block-reserv-item-block-from-to">
+                <p className="cabinet-block-reserv-item-block-from-to__title">
                     {moment(checkin_date, "YYYY-MM-DD").format("DD MMM YYYY")}
                 </p>
-            </div>
-
-            <div className="cabinet-block-reserv-item-block-to">
-                <p className="cabinet-block-reserv-item-block-to__title">
+                <p className="cabinet-block-reserv-item-block-from-to__title">
                     {moment(checkout_date, "YYYY-MM-DD").format("DD MMM YYYY")}
-                </p>
-            </div>
-
-            <div className="cabinet-block-reserv-item-block-status">
-                <p className="cabinet-block-reserv-item-block-status__title">
-                    Создан
                 </p>
             </div>
 
@@ -99,11 +103,36 @@ const CabinetReservItem: React.FC<any> = ({
 
             <div className="cabinet-block-reserv-item-block-booking">
                 <p className="cabinet-block-reserv-item-block-booking__number">
-                    № 2372533808
+                    № {booking_number}
                 </p>
                 <p className="cabinet-block-reserv-item-block-booking__date">
                     {moment(booked_at).format("DD MMM YYYY")}
                 </p>
+            </div>
+
+            <div className="cabinet-block-reserv-item-block-confirmation">
+                {status === "created" ? (
+                    <>
+                        <Link
+                            to={`/cabinet/reserv?id=${booking_id}#cabinet_reserv_confirm`}
+                            className="cabinet-block-reserv-item-block-confirmation__btn confirm"
+                        >
+                            Подтвердить
+                        </Link>
+                        <Link
+                            to={`/cabinet/reserv?id=${booking_id}#cabinet_reserv_reject`}
+                            className="cabinet-block-reserv-item-block-confirmation__btn reject"
+                        >
+                            Отклонить
+                        </Link>
+                    </>
+                ) : (
+                    <p className="cabinet-block-reserv-item-block-confirmation__status">
+                        {status === "rejected"
+                            ? "Бронирование отклонено"
+                            : "Бронирование подтверждено"}
+                    </p>
+                )}
             </div>
         </div>
     );

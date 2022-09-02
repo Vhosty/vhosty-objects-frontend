@@ -12,6 +12,8 @@ import {
     RecoveryPasswordForm,
     RecoveryPasswordConfirmedForm,
     CabinetSettingChangePasswordForm,
+    CabinetReservModalsConfirm,
+    CabinetReservModalsReject,
 } from "../components/";
 
 import {ReglogStateTypes} from "../redux/types/IReglog";
@@ -173,8 +175,8 @@ const Reglog: React.FC = () => {
                         btnLink="/"
                         btnText="На главную"
                     />
-				) : null}
-				
+                ) : null}
+
                 {type === ReglogStateTypes.RECOVERY_PASSWORD ? (
                     <RecoveryPasswordForm onSubmit={onSubmitRecoveryPassword} />
                 ) : null}
@@ -199,6 +201,14 @@ const Reglog: React.FC = () => {
                     <CabinetSettingChangePasswordForm
                         onSubmit={cabinetSettingChangePasswordOnSubmit}
                     />
+                ) : null}
+
+                {type === ReglogStateTypes.CABINET_RESERV_CONFIRM ? (
+                    <CabinetReservModalsConfirm />
+                ) : null}
+
+                {type === ReglogStateTypes.CABINET_RESERV_REJECT ? (
+                    <CabinetReservModalsReject />
                 ) : null}
             </div>
         </section>

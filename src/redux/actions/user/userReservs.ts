@@ -22,8 +22,28 @@ export const fetchUserReservs = () => {
 
 			dispatch({
 				type: UserReservsActionTypes.SET_USER_RESERVS,
-				payload: data.results
+				payload: { data: data.results, countCreated: data.aggregated.created_count }
 			})
+		})
+	}
+}
+
+export const sendConfirmUserReservById = (id: string | null) => {
+	return async (dispatch: Dispatch<UserReservsActions>) => {
+		$api.post(`/hotels/employee/bookings/${id}`, {
+			status: "approved"
+		}).then(() => {
+			dispatch(fetchUserReservs() as any)
+		})
+	}
+}
+
+export const sendRejectUserReservById = (id: string | null) => {
+	return async (dispatch: Dispatch<UserReservsActions>) => {
+		$api.post(`/hotels/employee/bookings/${id}`, {
+			status: "rejected"
+		}).then(() => {
+			dispatch(fetchUserReservs() as any)
 		})
 	}
 }
