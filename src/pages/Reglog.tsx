@@ -93,10 +93,10 @@ const Reglog: React.FC = () => {
         );
     };
 
-    const registerOnSubmit = (data: any) => {
+    const onSubmitRegister = (data: any) => {
         const {name, surname, email, phone, password, repeat_password} = data;
 
-        dispatch(
+        return dispatch(
             sendRegister({
                 first_name: name,
                 last_name: surname,
@@ -150,7 +150,7 @@ const Reglog: React.FC = () => {
                 ) : null}
 
                 {type === ReglogStateTypes.REGISTER ? (
-                    <RegisterForm onSubmit={registerOnSubmit} />
+                    <RegisterForm onSubmit={onSubmitRegister} />
                 ) : null}
 
                 {type === ReglogStateTypes.REGISTER_SUCCESS ? (

@@ -18,7 +18,7 @@ const RenderTextarea: React.FC<RenderTextareaProps> = ({
                 placeholder={label}
                 className={`textarea__field ${touched && error ? "error" : ""}`}
             />
-
+			
             {touched && error && (
                 <span className="textarea__error">{error}</span>
             )}

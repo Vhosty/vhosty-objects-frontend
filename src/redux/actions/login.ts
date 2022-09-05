@@ -37,7 +37,6 @@ export const sendLogin = (data: Login) => {
 						type: LoginActionTypes.SET_LOGIN_ERROR_MESSAGE,
 						payload: LoginErrorMessageTypes.INCORRECT_EMAIL_OR_PASSWORD
 					})
-
 				}
 
 				throw new SubmissionError({

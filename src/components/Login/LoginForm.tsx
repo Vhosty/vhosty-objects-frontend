@@ -7,7 +7,7 @@ import {useTypedSelector} from "../../hooks/useTypedSelector";
 
 import {validate} from "./validate";
 
-import {RenderInput, PolicyCheckbox, LoginMessageError} from "../";
+import {RenderInput, LoginMessageError} from "../";
 
 const LoginForm: React.FC<{} & InjectedFormProps<{}, {}>> = ({
     handleSubmit,

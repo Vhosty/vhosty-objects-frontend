@@ -27,7 +27,7 @@ export const sendRegister = (data: sendRegisterData) => {
 			payload: true
 		})
 
-		axios.post(`${process.env.REACT_APP_API_DOMEN}/companies/employees/register`, data).then(({ data }) => {
+		return axios.post(`${process.env.REACT_APP_API_DOMEN}/companies/employees/register`, data).then(({ data }) => {
 			dispatch({
 				type: RegisterActionTypes.SET_REGISTER_IS_PENDING,
 				payload: false
@@ -44,7 +44,7 @@ export const sendRegister = (data: sendRegisterData) => {
 				payload: false,
 			});
 
-			if (errorMessage === "This email already is used") {
+			if (errorMessage === "Employee already exist") {
 				dispatch({
 					type: RegisterActionTypes.SET_REGISTER_ERROR_MESSAGE,
 					payload: RegisterErrorMessageTypes.IS_EMAIL_USED
