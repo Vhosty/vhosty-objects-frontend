@@ -176,11 +176,6 @@
 									width: 100%
 
 @media screen and ( max-width: 1000px )
-	// interface
-	.btn-light
-		padding: 15px 35px
-		font-size: 18px
-
 	// header-transparent
 	.header-transparent
 		&-bg
@@ -230,7 +225,6 @@
 					&-block-wrapper
 						width: 100%
 						margin-bottom: 25px
-
 
 	// footer
 	.footer
@@ -597,6 +591,18 @@
 @media screen and ( max-width: 700px )
 	// home
 	.home
+		// main
+		&-main
+			&-text
+				&-btn
+					&__register
+						margin-right: 0
+						display: block
+
+					&__login
+						margin-top: 25px
+						display: block
+
 		// services
 		&-services
 			&-list
@@ -663,11 +669,20 @@
 						&-input
 							width: 100%
 
+							&-title
+								&-message
+									width: 300px
+									bottom: 20px
+									left: auto
+									right: -80px
+
 	// objects_new
 	.objects-new
 		&-modal
 			&-content
 				&-terms
+					margin-top: 0
+
 					&-times
 						&-from-to
 							flex-direction: column
@@ -811,8 +826,7 @@
 @media screen and ( max-width: 500px )
 	// interface
 	.btn
-		padding: 20px
-		font-size: 17px
+		font-size: 15px
 
 	.btn-light
 		font-size: 15px
@@ -1118,6 +1132,10 @@
 			&-text
 				&__btn
 					font-size: 15px
+
+			&-icon
+				& > svg
+					width: 150px
 
 			&-verification
 				&-block

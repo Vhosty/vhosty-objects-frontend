@@ -8,7 +8,10 @@ const ObjectsNewRoomsFilled: React.FC = () => {
     const {itemByIdRooms} = useTypedSelector(({objects_new}) => objects_new);
 
     return (
-        <div className="objects-new-filled-section objects-new-filled-section-room">
+        <div
+            className="objects-new-filled-section objects-new-filled-section-room"
+            id="objects-new-filled-section-rooms"
+        >
             <div className="objects-new-filled-section-padding">
                 <div className="objects-new-filled-section-top marginBottom">
                     <h2 className="objects-new-filled-section-top__title ">

@@ -3,7 +3,10 @@ import {Link} from "react-router-dom";
 
 const ObjectsNewServices: React.FC = () => {
     return (
-        <div className="objects-new-block objects-new-block-services">
+        <div
+            className="objects-new-block objects-new-block-services"
+            id="objects-new-filled-section-services"
+        >
             <div className="objects-new-block-text">
                 <h2 className="objects-new-block-text__title">
                     Удобства и услуги
@@ -21,7 +24,7 @@ const ObjectsNewServices: React.FC = () => {
                 </Link>
             </div>
 
-            <div className="objects-new-block-icon">
+            <Link to="#services" className="objects-new-block-icon">
                 <svg
                     width="216"
                     height="166"
@@ -45,7 +48,7 @@ const ObjectsNewServices: React.FC = () => {
                         fillOpacity="0.2"
                     />
                 </svg>
-            </div>
+            </Link>
         </div>
     );
 };

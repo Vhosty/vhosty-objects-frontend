@@ -7,6 +7,8 @@ interface RadioProps extends WrappedFieldProps {
     value_init: string | number;
 
     small?: boolean;
+
+    disabled?: boolean;
 }
 
 const RadioProps: React.FC<RadioProps> = ({
@@ -14,11 +16,16 @@ const RadioProps: React.FC<RadioProps> = ({
     label,
     value_init,
     small,
+    disabled,
 }) => {
     const id = v4();
 
     return (
-        <div className={`radio ${small ? "small" : ""}`}>
+        <div
+            className={`radio ${small ? "small" : ""} ${
+                disabled ? "disabled" : ""
+            }`}
+        >
             <input
                 {...input}
                 type="radio"

@@ -9,7 +9,7 @@ const ObjectsNewTermsWrapper: React.FC = () => {
 
     return (
         <>
-            {itemByIdTerms.additional_info !== "" ? (
+            {itemByIdTerms.is_edit ? (
                 <ObjectsNewTermsFilled {...itemByIdTerms} />
             ) : (
                 <ObjectsNewTerms />

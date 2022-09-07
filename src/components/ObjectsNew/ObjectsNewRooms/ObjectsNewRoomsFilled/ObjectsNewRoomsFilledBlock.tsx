@@ -121,6 +121,7 @@ const ObjectsNewRoomsFilledBlock: React.FC<any> = ({
                             <ServiceIcon
                                 disabled={!food_is_included}
                                 marginBottom
+                                green
                             >
                                 <svg
                                     viewBox="0 0 13 15"
@@ -150,7 +151,7 @@ const ObjectsNewRoomsFilledBlock: React.FC<any> = ({
 
                 <div className="objects-new-filled-section-room-block-subblock-price">
                     <div className="objects-new-filled-section-room-block-subblock-price-block">
-                        <h2 className="objects-new-filled-section-room-block-subblock-price-block__title">
+                        <h3 className="objects-new-filled-section-room-block-subblock-price-block__title">
                             <NumberFormat
                                 value={price}
                                 displayType={"text"}
@@ -169,8 +170,8 @@ const ObjectsNewRoomsFilledBlock: React.FC<any> = ({
                                     </>
                                 )}
                             />{" "}
-                            ₽
-                        </h2>
+                            <span>₽</span>
+                        </h3>
                     </div>
 
                     <div className="objects-new-filled-section-room-block-subblock-price-block">

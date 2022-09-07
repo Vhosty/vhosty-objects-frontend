@@ -5,6 +5,7 @@ import {
     CabinetMainReservFilters,
     CabinetReservItemTitle,
     CabinetReservItem,
+    CabinetNull,
 } from "../../../";
 
 import {fetchUserReservs} from "../../../../redux/actions/user/userReservs";
@@ -29,16 +30,22 @@ const CabinetMainReserv: React.FC = () => {
             </div> */}
 
             {isLoadedReservs ? (
-                <div className="cabinet-block-main-reserv-items-wrapper">
-                    <CabinetReservItemTitle />
+                <>
+                    {reservs.length ? (
+                        <div className="cabinet-block-main-reserv-items-wrapper">
+                            <CabinetReservItemTitle />
 
-                    {reservs.map((reserv: any, index: number) => (
-                        <CabinetReservItem
-                            {...reserv}
-                            key={`cabinet-block-main-reserv-item-${index}`}
-                        />
-                    ))}
-                </div>
+                            {reservs.map((reserv: any, index: number) => (
+                                <CabinetReservItem
+                                    {...reserv}
+                                    key={`cabinet-block-main-reserv-item-${index}`}
+                                />
+                            ))}
+                        </div>
+                    ) : (
+                        <CabinetNull title="Нет гостей, выезжающих сегодня или завтра" />
+                    )}
+                </>
             ) : null}
         </div>
     );

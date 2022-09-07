@@ -14,7 +14,10 @@ const ObjectsNewServicesFilled: React.FC<ObjectsNewServicesFilledProps> = ({
     services,
 }) => {
     return (
-        <div className="objects-new-filled-section objects-new-filled-section-services">
+        <div
+            className="objects-new-filled-section objects-new-filled-section-services"
+            id="objects-new-filled-section-services"
+        >
             <div className="objects-new-filled-section-padding">
                 <div className="objects-new-filled-section-top">
                     <h2 className="objects-new-filled-section-top__title">

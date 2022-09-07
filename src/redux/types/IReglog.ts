@@ -11,6 +11,8 @@ export enum ReglogStateTypes {
 
 	LOGIN = "login",
 
+	LOGOUT = "logout",
+
 	CABINET_SETTING_CHANGE_PASSWORD = "cabinet_setting_change_password",
 
 	CABINET_RESERV_CONFIRM = "cabinet_reserv_confirm",

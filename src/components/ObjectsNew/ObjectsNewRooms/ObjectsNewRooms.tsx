@@ -3,7 +3,10 @@ import {Link} from "react-router-dom";
 
 const ObjectsNewRooms: React.FC = () => {
     return (
-        <div className="objects-new-block objects-new-block-rooms">
+        <div
+            className="objects-new-block objects-new-block-rooms"
+            id="objects-new-filled-section-rooms"
+        >
             <div className="objects-new-block-text">
                 <h2 className="objects-new-block-text__title">
                     Выбор доступного номера
@@ -13,12 +16,15 @@ const ObjectsNewRooms: React.FC = () => {
                     Вы можете создать номер и включить в опции/комплектацию как
                     еду, так и условия бронирований.
                 </p>
-                <Link to="#rooms" className="btn-line objects-new-block-text__btn">
+                <Link
+                    to="#rooms"
+                    className="btn-line objects-new-block-text__btn"
+                >
                     Создать номер
                 </Link>
             </div>
 
-            <div className="objects-new-block-icon">
+            <Link to="#rooms" className="objects-new-block-icon">
                 <svg
                     width="216"
                     height="129"
@@ -37,7 +43,7 @@ const ObjectsNewRooms: React.FC = () => {
                         fillOpacity="0.2"
                     />
                 </svg>
-            </div>
+            </Link>
         </div>
     );
 };

@@ -6,6 +6,7 @@ import {
     CabinetReservItem,
     CabinetReservFilters,
     CabinetReservEvents,
+    CabinetNull,
 } from "../../";
 
 import {fetchUserReservs} from "../../../redux/actions/user/userReservs";
@@ -51,16 +52,22 @@ const CabinetReserv: React.FC = () => {
             </div>
 
             {isLoadedReservs ? (
-                <div className="cabinet-block-reserv-items-wrapper">
-                    <CabinetReservItemTitle />
+                <>
+                    {reservs.length ? (
+                        <div className="cabinet-block-reserv-items-wrapper">
+                            <CabinetReservItemTitle />
 
-                    {reservs.map((reserv: any, index: number) => (
-                        <CabinetReservItem
-                            {...reserv}
-                            key={`cabinet-block-reserv-item-${index}`}
-                        />
-                    ))}
-                </div>
+                            {reservs.map((reserv: any, index: number) => (
+                                <CabinetReservItem
+                                    {...reserv}
+                                    key={`cabinet-block-reserv-item-${index}`}
+                                />
+                            ))}
+                        </div>
+                    ) : (
+                        <CabinetNull title="Нет бронирований" />
+                    )}
+                </>
             ) : null}
         </div>
     );

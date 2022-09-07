@@ -85,7 +85,7 @@ export const validate = (values: validateValues) => {
 	} else if (values.repeat_password.length < min) {
 		errors.repeat_password = `Не менее ${min} символов`;
 	} else if (values.repeat_password !== values.password) {
-		errors.repeat_password = `Пароли не равны`;
+		errors.repeat_password = `Не совпадают`;
 	}
 
 	if (!values.policyCheckbox) {

@@ -1,5 +1,6 @@
 import React from "react";
 import {useDispatch} from "react-redux";
+import {animateScroll as scroll} from "react-scroll";
 
 import {ObjectsNewModalsAbout} from "../../../";
 
@@ -16,6 +17,12 @@ const ObjectsNewModalsAboutWrapper: React.FC = () => {
         dispatch(
             updateObjectByIdAbout({...itemById, ...data}, itemById.id) as any
         );
+
+        const offset = document.getElementById(
+            "objects-new-filled-section-about"
+        )?.offsetTop;
+
+        scroll.scrollTo(offset ? offset - 150 : 0, {duration: 400});
     };
 
     return <ObjectsNewModalsAbout onSubmit={onSubmit} />;

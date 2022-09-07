@@ -6,6 +6,7 @@ import {
     CabinetObjectsDeleteBtn,
     CabinetObjectsItemTitles,
     CabinetObjectsItem,
+    CabinetNull,
 } from "../../";
 
 import {useTypedSelector} from "../../../hooks/useTypedSelector";
@@ -82,60 +83,66 @@ const CabinetObjects: React.FC = () => {
 
     return (
         <div className="cabinet-block cabinet-block-objects">
+            <div className="cabinet-block-padding-top">
+                <div className="cabinet-block-top">
+                    <div className="cabinet-block-top-text">
+                        <h2 className="cabinet-block-top-text__title">
+                            {
+                                checkDeclension(objects.length, [
+                                    "объект",
+                                    "объекта",
+                                    "объектов",
+                                ]).title
+                            }
+                        </h2>
+
+                        <p className="cabinet-block-top-text__subtitle">
+                            Объекты в Вашем администрировании.
+                        </p>
+                    </div>
+
+                    <button
+                        className="btn small cabinet-block-top__link"
+                        onClick={createObject}
+                    >
+                        Создать объявление
+                    </button>
+                </div>
+
+                {/* <CabinetObjectsFilters /> */}
+            </div>
+
             {isLoadedObjects ? (
                 <>
-                    <div className="cabinet-block-padding-top">
-                        <div className="cabinet-block-top">
-                            <div className="cabinet-block-top-text">
-                                <h2 className="cabinet-block-top-text__title">
-                                    {
-                                        checkDeclension(objects.length, [
-                                            "объект",
-                                            "объекта",
-                                            "объектов",
-                                        ]).title
-                                    }
-                                </h2>
+                    {objects.length ? (
+                        <div className="cabinet-block-objects-items-wrapper">
+                            <CabinetObjectsDeleteBtn />
 
-                                <p className="cabinet-block-top-text__subtitle">
-                                    Объекты в Вашем администрировании.
-                                </p>
-                            </div>
-
-                            <button
-                                className="btn small cabinet-block-top__link"
-                                onClick={createObject}
-                            >
-                                Создать объявление
-                            </button>
-                        </div>
-
-                        {/* <CabinetObjectsFilters /> */}
-                    </div>
-
-                    <div className="cabinet-block-objects-items-wrapper">
-                        <CabinetObjectsDeleteBtn />
-
-                        <CabinetObjectsItemTitles
-                            isAll={checkIsAll()}
-                            setFillObjectsDeleteIdsOnClick={
-                                setFillObjectsDeleteIdsOnClick
-                            }
-                        />
-
-                        {objects.map((object: any, index: any) => (
-                            <CabinetObjectsItem
-                                {...object}
-                                isSelected={
-                                    deleteIds[object.hotel.id] ? true : false
+                            <CabinetObjectsItemTitles
+                                isAll={checkIsAll()}
+                                setFillObjectsDeleteIdsOnClick={
+                                    setFillObjectsDeleteIdsOnClick
                                 }
-                                setObjectsDeleteIdsOnClick={
-                                    setObjectsDeleteIdsOnClick
-                                }
-                                key={`"cabinet-block-objects-item-${index}`}
                             />
-                        ))}
-                    </div>
+
+                            {objects.map((object: any, index: any) => (
+                                <CabinetObjectsItem
+                                    {...object}
+                                    isSelected={
+                                        deleteIds[object.hotel.id]
+                                            ? true
+                                            : false
+                                    }
+                                    setObjectsDeleteIdsOnClick={
+                                        setObjectsDeleteIdsOnClick
+                                    }
+                                    key={`"cabinet-block-objects-item-${index}`}
+                                />
+                            ))}
+                        </div>
+                    ) : (
+                        <CabinetNull title="Нет объектов" />
+                    )}
                 </>
             ) : null}
         </div>

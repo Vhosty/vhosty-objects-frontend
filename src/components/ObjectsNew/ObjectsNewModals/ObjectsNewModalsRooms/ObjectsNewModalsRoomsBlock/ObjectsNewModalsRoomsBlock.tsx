@@ -33,6 +33,10 @@ const ObjectsNewModalsRoomsBlock: React.FC<any> = ({fields}) => {
         fields.push({});
     };
 
+    const removeFields = (index: number) => {
+        if (index) fields.remove(index);
+    };
+
     return (
         <>
             {fields.map((room: any, index: number) => (
@@ -43,13 +47,11 @@ const ObjectsNewModalsRoomsBlock: React.FC<any> = ({fields}) => {
                     <p className="objects-new-modal-content-big-rooms-block__title">
                         Вариант размещения/номер №{index + 1}
                     </p>
-
                     <Field
                         component={ObjectsNewModalsRoomsBlockImages}
                         values={values[index]}
                         name={`${room}.images`}
                     />
-
                     <div className="objects-new-modal-content-big-rooms-block-row-inputs">
                         <ObjectsNewModalsRoomsBlockName room={room} />
 
@@ -75,7 +77,6 @@ const ObjectsNewModalsRoomsBlock: React.FC<any> = ({fields}) => {
 
                         <ObjectsNewModalsRoomsBlockPrice room={room} />
                     </div>
-
                     {/* <div className="objects-new-modal-content-big-rooms-block-options">
                         <FieldArray
                             component={ObjectsNewModalsRoomsBlockOptions}
@@ -83,6 +84,16 @@ const ObjectsNewModalsRoomsBlock: React.FC<any> = ({fields}) => {
                             values={values[index]}
                         />
                     </div> */}
+                    {index ? (
+                        <div
+                            className="objects-new-modal-content-big-rooms-block-delete"
+                            onClick={() => removeFields(index)}
+                        >
+                            <button className="objects-new-modal-content-big-rooms-block-delete__btn">
+                                Удалить вариант размещения
+                            </button>
+                        </div>
+                    ) : null}
                 </div>
             ))}
 

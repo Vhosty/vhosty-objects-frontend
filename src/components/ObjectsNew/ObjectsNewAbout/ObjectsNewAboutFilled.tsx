@@ -23,7 +23,10 @@ const ObjectsNewAboutFilled: React.FC<ObjectsNewAboutFilledProps> = ({
     }, [ObjectsNewFilledSectionAboutTextRef]);
 
     return (
-        <div className="objects-new-filled-section objects-new-filled-section-about">
+        <div
+            className="objects-new-filled-section objects-new-filled-section-about"
+            id="objects-new-filled-section-about"
+        >
             <div className="objects-new-filled-section-padding">
                 <div className="objects-new-filled-section-about-text">
                     <ObjectsNewBlockTextWrapper
@@ -33,7 +36,7 @@ const ObjectsNewAboutFilled: React.FC<ObjectsNewAboutFilledProps> = ({
                             className="objects-new-filled-section-about-text-wrapper"
                             ref={ObjectsNewFilledSectionAboutTextRef}
                         >
-                            <div className="objects-new-filled-section-top">
+                            <div className="objects-new-filled-section-top marginBottom">
                                 <h2 className="objects-new-filled-section-top__title">
                                     Об отеле
                                 </h2>

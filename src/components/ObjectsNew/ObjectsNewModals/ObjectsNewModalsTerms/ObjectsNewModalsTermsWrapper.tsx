@@ -1,5 +1,6 @@
 import React from "react";
 import {useDispatch} from "react-redux";
+import {animateScroll as scroll} from "react-scroll";
 
 import {ObjectsNewModalsTerms} from "../../../";
 
@@ -24,6 +25,12 @@ const ObjectsNewModalsTermsWrapper: React.FC = () => {
         };
 
         dispatch(updateObjectByIdTerms(newData, itemById.id) as any);
+
+        const offset = document.getElementById(
+            "objects-new-filled-section-terms"
+        )?.offsetTop;
+
+        scroll.scrollTo(offset ? offset - 150 : 0, {duration: 400});
     };
 
     return <ObjectsNewModalsTerms onSubmit={onSubmit} />;

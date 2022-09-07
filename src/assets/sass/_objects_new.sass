@@ -62,6 +62,22 @@
 
 				padding: 0
 
+			&-close
+				position: absolute
+
+				z-index: 15
+
+				top: 25px
+				right: 25px
+
+				cursor: pointer
+				opacity: 0.5
+
+				+transition
+
+				&:hover
+					opacity: 1
+
 			&-form
 				width: 100%
 
@@ -182,7 +198,7 @@
 			background-color: $white
 
 			width: 700px
-			height: calc( 100% - 50px )
+			max-height: 755px
 
 			+borderRadius
 			+openPopup
@@ -327,7 +343,7 @@
 
 									right: 15px
 									bottom: 10px
-									
+
 									& > svg
 										fill: $white
 										+transition
@@ -397,6 +413,25 @@
 
 							&-input
 								margin-right: 20px
+
+					&-delete
+						margin-top: 25px
+
+						width: 100%
+						display: flex
+						justify-content: flex-end
+
+						&__btn
+							cursor: pointer
+							background-color: transparent
+							color: $gray
+							font-size: 15px
+							text-decoration: underline
+
+							+transition
+
+							&:hover
+								color: $black
 
 					&-options
 						&-block
@@ -623,6 +658,10 @@
 
 			overflow: hidden
 
+			max-width: 1200px
+			width: 95%
+			margin: 0 auto
+
 			&-description
 				padding: 35px 50px
 
@@ -674,7 +713,7 @@
 					margin-top: 30px
 
 	&-additional-photos
-		margin: 50px 0
+		margin: 30px 0
 
 		position: relative
 		height: 180px

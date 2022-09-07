@@ -28,24 +28,30 @@ const HomeMain: React.FC = () => {
                                 loop
                             />
                         </h1>
-
                         <p className="description home-main-text__description">
                             Регистрация бесплатная и занимает 10 минут
                         </p>
-
                         {/* <Link
                             to="#request_register"
                             className="btn home-main-text__btn"
                         >
                             Отправить заявку
                         </Link> */}
+                        <div className="home-main-text-btn">
+                            <Link
+                                to="#register"
+                                className="btn home-main-text-btn__register"
+                            >
+                                Зарегистрироваться
+                            </Link>
 
-                        <Link
-                            to="#register"
-                            className="btn home-main-text__btn"
-                        >
-                            Зарегистрироваться
-                        </Link>
+                            <Link
+                                to="#login"
+                                className="btn-light home-main-text-btn__login"
+                            >
+                                Уже являюсь владельцем
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

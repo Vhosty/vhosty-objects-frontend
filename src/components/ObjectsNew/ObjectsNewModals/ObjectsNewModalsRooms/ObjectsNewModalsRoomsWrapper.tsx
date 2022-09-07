@@ -1,5 +1,6 @@
 import React from "react";
 import {useDispatch} from "react-redux";
+import {animateScroll as scroll} from "react-scroll";
 
 import {ObjectsNewModalsRooms} from "../../../";
 
@@ -24,7 +25,7 @@ const ObjectsNewModalsRoomsWrapper: React.FC = () => {
                 free_cancel_days: 30,
                 food_is_included: room.food_is_included,
                 // food_type: room.foodType,
-				food_type: "all_inclusive",
+                food_type: "all_inclusive",
                 square: 100,
                 room_type: room.type,
                 beds: [],
@@ -50,6 +51,12 @@ const ObjectsNewModalsRoomsWrapper: React.FC = () => {
                 );
             }
         });
+
+        const offset = document.getElementById(
+            "objects-new-filled-section-rooms"
+        )?.offsetTop;
+
+        scroll.scrollTo(offset ? offset - 150 : 0, {duration: 400});
     };
 
     return <ObjectsNewModalsRooms onSubmit={onSubmit} />;

@@ -13,12 +13,15 @@ const ObjectsNewFaq: React.FC = () => {
                     комфортнее вывести в отдельную вкладку Добавьте как вопросы,
                     так и ответы на них, чтобы дать гостям популярную информацию
                 </p>
-                <Link to="#faq" className="btn-line objects-new-block-text__btn">
+                <Link
+                    to="#faq"
+                    className="btn-line objects-new-block-text__btn"
+                >
                     Добавить вопросы и ответы
                 </Link>
             </div>
 
-            <div className="objects-new-block-icon">
+            <Link to="#faq" className="objects-new-block-icon">
                 <svg
                     width="216"
                     height="216"
@@ -37,7 +40,7 @@ const ObjectsNewFaq: React.FC = () => {
                         fillOpacity="0.2"
                     />
                 </svg>
-            </div>
+            </Link>
         </div>
     );
 };

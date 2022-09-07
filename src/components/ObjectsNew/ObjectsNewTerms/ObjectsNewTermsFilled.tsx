@@ -35,7 +35,10 @@ const ObjectsNewTermsFilled: React.FC<ObjectsNewTermsFilledProps> = ({
     };
 
     return (
-        <div className="objects-new-filled-section objects-new-filled-section-terms">
+        <div
+            className="objects-new-filled-section objects-new-filled-section-terms"
+            id="objects-new-filled-section-terms"
+        >
             <div className="objects-new-filled-section-padding">
                 <div className="objects-new-filled-section-top marginBottom">
                     <h2 className="objects-new-filled-section-top__title">

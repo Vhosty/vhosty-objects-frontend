@@ -10,7 +10,7 @@ interface ObjectsNewModalsServicesBlockItemProps
 
 const ObjectsNewModalsServicesBlockItem: React.FC<
     ObjectsNewModalsServicesBlockItemProps
-> = ({name, service}) => {
+> = ({name, service, is_disabled}) => {
     return (
         <div className="objects-new-modal-content-big-services-block-item">
             <p className="objects-new-modal-content-big-services-block-item__title">
@@ -44,6 +44,7 @@ const ObjectsNewModalsServicesBlockItem: React.FC<
                         label="Платно"
                         value_init="pay"
                         small
+                        disabled={is_disabled}
                     />
                 </div>
             </div>

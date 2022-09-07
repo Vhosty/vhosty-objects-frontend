@@ -9,6 +9,7 @@ import {
     ReglogSuccess,
     RequestRegisterForm,
     LoginForm,
+    Logout,
     RecoveryPasswordForm,
     RecoveryPasswordConfirmedForm,
     CabinetSettingChangePasswordForm,
@@ -42,6 +43,7 @@ const Reglog: React.FC = () => {
     const {closeAnimation, changeCloseAnimation, type} = useTypedSelector(
         ({reglog}) => reglog
     );
+    const {isLoadedUser} = useTypedSelector(({user}) => user);
 
     const PopupRef = React.useRef<HTMLDivElement>(null);
 
@@ -151,6 +153,10 @@ const Reglog: React.FC = () => {
 
                 {type === ReglogStateTypes.REGISTER ? (
                     <RegisterForm onSubmit={onSubmitRegister} />
+                ) : null}
+
+                {type === ReglogStateTypes.LOGOUT && isLoadedUser ? (
+                    <Logout />
                 ) : null}
 
                 {type === ReglogStateTypes.REGISTER_SUCCESS ? (
