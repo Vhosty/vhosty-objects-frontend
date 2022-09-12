@@ -28,13 +28,16 @@ const HeaderTransparent: React.FC<HeaderTransparentProps> = ({bgImage}) => {
                 <div className="header-transparent-block">
                     {/* <HeaderModal /> */}
 
-                    <Link to="/" className="header-transparent-block-logo">
+                    <a
+                        href="https://bookover.ru"
+                        className="header-transparent-block-logo"
+                    >
                         <img
                             src={LogoWhite}
                             alt="Bookover"
                             className="header-transparent-block-logo__image"
                         />
-                    </Link>
+                    </a>
                 </div>
 
                 {/* <HeaderTransparentSearch /> */}

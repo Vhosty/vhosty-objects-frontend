@@ -1,6 +1,5 @@
 import React from "react";
 import {WrappedFieldProps} from "redux-form";
-import TextareaAutosize from "react-textarea-autosize";
 
 interface RenderTextareaProps extends WrappedFieldProps {
     label: string;
@@ -13,12 +12,12 @@ const RenderTextarea: React.FC<RenderTextareaProps> = ({
 }) => {
     return (
         <div className="textarea">
-            <TextareaAutosize
+            <textarea
                 {...input}
                 placeholder={label}
                 className={`textarea__field ${touched && error ? "error" : ""}`}
             />
-			
+
             {touched && error && (
                 <span className="textarea__error">{error}</span>
             )}

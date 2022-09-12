@@ -2,6 +2,7 @@ import { UserState, UserActionTypes, UserActions } from '../../types/IUser';
 
 const initialState: UserState = {
 	isLoadedUser: false,
+	isPendingUser: true,
 
 	user: {
 		first_name: "",
@@ -23,6 +24,13 @@ const user = (state = initialState, action: UserActions) => {
 			...state,
 			isLoadedUser: true,
 			user: action.payload
+		}
+	}
+	
+	if (action.type === UserActionTypes.SET_USER_IS_PENDING) {
+		return {
+			...state,
+			isPendingUser: action.payload,
 		}
 	}
 

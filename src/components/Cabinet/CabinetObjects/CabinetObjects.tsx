@@ -7,6 +7,7 @@ import {
     CabinetObjectsItemTitles,
     CabinetObjectsItem,
     CabinetNull,
+    Loader,
 } from "../../";
 
 import {useTypedSelector} from "../../../hooks/useTypedSelector";
@@ -144,7 +145,9 @@ const CabinetObjects: React.FC = () => {
                         <CabinetNull title="Нет объектов" />
                     )}
                 </>
-            ) : null}
+            ) : (
+                <Loader />
+            )}
         </div>
     );
 };

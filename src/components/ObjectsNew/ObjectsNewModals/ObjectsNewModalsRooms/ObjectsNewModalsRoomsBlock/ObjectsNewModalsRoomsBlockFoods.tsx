@@ -23,8 +23,6 @@ const ObjectsNewModalsRoomsBlockFoods: React.FC<any> = ({room, values}) => {
         }
     }, []);
 
-    console.log(selectIsActive);
-
     return (
         <div className="objects-new-modal-content-big-rooms-block-row-inputs-foods-wrapper">
             <TitleIcon title="Питание" marginBottom>

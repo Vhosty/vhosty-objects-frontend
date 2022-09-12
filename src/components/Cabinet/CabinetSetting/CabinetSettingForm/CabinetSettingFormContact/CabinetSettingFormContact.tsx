@@ -31,7 +31,7 @@ const CabinetSettingFormContact: React.FC<{} & InjectedFormProps<{}, {}>> = ({
                 title="Данные аккаунта"
                 isEdit={isEdit}
                 setIsEdit={setIsEdit}
-                disabled={user.email_is_verified}
+                disabled={!user.email_is_verified}
             />
 
             <div className="cabinet-block-setting-form-block-inputs">

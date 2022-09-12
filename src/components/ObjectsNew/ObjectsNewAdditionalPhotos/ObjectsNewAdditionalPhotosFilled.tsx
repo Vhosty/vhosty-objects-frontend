@@ -45,16 +45,12 @@ const ObjectsNewAdditionalPhotosFilled: React.FC<
     const {itemById} = useTypedSelector(({objects_new}) => objects_new);
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const data = new FormData();
-
         if (e.target.files) {
-            data.append("uploading_file", e.target.files[0]);
-
             dispatch(
                 uploadObjectByIdAdditionalImage(
-                    data,
-                    itemById.id,
-                    itemById
+                    e.target.files,
+                    itemById,
+                    itemById.id
                 ) as any
             );
         }
@@ -127,7 +123,8 @@ const ObjectsNewAdditionalPhotosFilled: React.FC<
                         id="objects-new-filled-slider-images-item-add"
                         type="file"
                         accept=".png, .jpg, .jpeg"
-                        onChange={onChange}
+						onChange={onChange}
+						multiple
                     />
 
                     <svg

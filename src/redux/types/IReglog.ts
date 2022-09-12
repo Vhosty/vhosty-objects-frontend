@@ -1,4 +1,4 @@
-export enum ReglogStateTypes {
+export enum ReglogStateTypesNotLogin {
 	REGISTER = "register",
 	REGISTER_SUCCESS = "register_success",
 
@@ -10,7 +10,9 @@ export enum ReglogStateTypes {
 	RECOVERY_PASSWORD_CONFIRMED = "recovery_password_confirmed",
 
 	LOGIN = "login",
+}
 
+export enum ReglogStateTypesLogin {
 	LOGOUT = "logout",
 
 	CABINET_SETTING_CHANGE_PASSWORD = "cabinet_setting_change_password",
@@ -24,7 +26,7 @@ export interface ReglogState {
 	closeAnimation: boolean;
 	changeCloseAnimation: boolean;
 
-	type: ReglogStateTypes;
+	type: ReglogStateTypesNotLogin | ReglogStateTypesLogin;
 }
 
 export enum ReglogActionTypes {

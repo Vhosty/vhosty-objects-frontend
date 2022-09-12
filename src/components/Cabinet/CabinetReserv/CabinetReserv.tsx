@@ -7,6 +7,7 @@ import {
     CabinetReservFilters,
     CabinetReservEvents,
     CabinetNull,
+    Loader,
 } from "../../";
 
 import {fetchUserReservs} from "../../../redux/actions/user/userReservs";
@@ -68,7 +69,9 @@ const CabinetReserv: React.FC = () => {
                         <CabinetNull title="Нет бронирований" />
                     )}
                 </>
-            ) : null}
+            ) : (
+                <Loader />
+            )}
         </div>
     );
 };

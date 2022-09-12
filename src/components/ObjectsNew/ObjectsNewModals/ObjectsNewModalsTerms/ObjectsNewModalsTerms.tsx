@@ -70,7 +70,7 @@ const ObjectsNewModalsTerms: React.FC<{} & InjectedFormProps<{}, {}>> = ({
             ) : (
                 <ObjectsNewModalsBig
                     title="Условия размещения"
-                    description="Добавьте информацию о времени заезда и выезда, а также об условиях проживания, оплаты или иную полезную для гостей информацию."
+                    description="Добавьте информацию о времени заезда и выезда, а также об условиях проживания, оплаты"
                     fullWidth
                 >
                     <ObjectsNewModalsTermsContent

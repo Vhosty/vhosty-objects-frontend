@@ -2,6 +2,8 @@ import { User } from '../../models/IUser';
 
 export interface UserState {
 	isLoadedUser: boolean
+	isPendingUser: boolean
+
 	user: User,
 
 	isLoadedUserDocuments: boolean,
@@ -11,6 +13,7 @@ export interface UserState {
 export enum UserActionTypes {
 	SET_IS_LOADED_USER = "SET_IS_LOADED_USER",
 	SET_USER = "SET_USER",
+	SET_USER_IS_PENDING = "SET_USER_IS_PENDING",
 
 	SET_IS_LOADED_USER_DOCUMENTS = "SET_IS_LOADED_USER_DOCUMENTS",
 	SET_USER_DOCUMENTS = "SET_USER_DOCUMENTS",
@@ -26,9 +29,14 @@ interface setUser {
 	payload: User
 }
 
+interface setUserIsPending {
+	type: UserActionTypes.SET_USER_IS_PENDING
+	payload: boolean
+}
+
 interface setUserDocuments {
 	type: UserActionTypes.SET_USER_DOCUMENTS
 	payload: any
 }
 
-export type UserActions = setUser | setIsLoadedUser | setUserDocuments
+export type UserActions = setUser | setUserIsPending | setIsLoadedUser | setUserDocuments

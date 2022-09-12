@@ -17,7 +17,10 @@ import {
     CabinetReservModalsReject,
 } from "../components/";
 
-import {ReglogStateTypes} from "../redux/types/IReglog";
+import {
+    ReglogStateTypesNotLogin,
+    ReglogStateTypesLogin,
+} from "../redux/types/IReglog";
 
 import {
     setReglogOpen,
@@ -120,7 +123,11 @@ const Reglog: React.FC = () => {
             <div
                 className={`reglog-content ${
                     closeAnimation || changeCloseAnimation ? "close" : ""
-                } ${type === ReglogStateTypes.REGISTER ? "middle-width" : ""}`}
+                } ${
+                    type === ReglogStateTypesNotLogin.REGISTER
+                        ? "middle-width"
+                        : ""
+                }`}
                 ref={PopupRef}
             >
                 <div className="reglog-close" onClick={closeFunc}>
@@ -147,19 +154,19 @@ const Reglog: React.FC = () => {
                     </svg>
                 </div>
 
-                {type === ReglogStateTypes.LOGIN ? (
+                {type === ReglogStateTypesNotLogin.LOGIN ? (
                     <LoginForm onSubmit={onSubmitLogin} />
                 ) : null}
 
-                {type === ReglogStateTypes.REGISTER ? (
+                {type === ReglogStateTypesNotLogin.REGISTER ? (
                     <RegisterForm onSubmit={onSubmitRegister} />
                 ) : null}
 
-                {type === ReglogStateTypes.LOGOUT && isLoadedUser ? (
+                {type === ReglogStateTypesLogin.LOGOUT && isLoadedUser ? (
                     <Logout />
                 ) : null}
 
-                {type === ReglogStateTypes.REGISTER_SUCCESS ? (
+                {type === ReglogStateTypesNotLogin.REGISTER_SUCCESS ? (
                     <ReglogSuccess
                         topTitle="Регистрация нового объекта"
                         title="Проверьте почту!"
@@ -169,11 +176,11 @@ const Reglog: React.FC = () => {
                     />
                 ) : null}
 
-                {type === ReglogStateTypes.REQUEST_REGISTER ? (
+                {type === ReglogStateTypesNotLogin.REQUEST_REGISTER ? (
                     <RequestRegisterForm onSubmit={requestRegisterOnSubmit} />
                 ) : null}
 
-                {type === ReglogStateTypes.REQUEST_REGISTER_SUCCESS ? (
+                {type === ReglogStateTypesNotLogin.REQUEST_REGISTER_SUCCESS ? (
                     <ReglogSuccess
                         topTitle="Оставьте заявку"
                         title="Спасибо!"
@@ -183,11 +190,11 @@ const Reglog: React.FC = () => {
                     />
                 ) : null}
 
-                {type === ReglogStateTypes.RECOVERY_PASSWORD ? (
+                {type === ReglogStateTypesNotLogin.RECOVERY_PASSWORD ? (
                     <RecoveryPasswordForm onSubmit={onSubmitRecoveryPassword} />
                 ) : null}
 
-                {type === ReglogStateTypes.RECOVERY_PASSWORD_SUCCESS ? (
+                {type === ReglogStateTypesNotLogin.RECOVERY_PASSWORD_SUCCESS ? (
                     <ReglogSuccess
                         topTitle="Восстановить пароль"
                         title="Проверьте почту!"
@@ -197,23 +204,25 @@ const Reglog: React.FC = () => {
                     />
                 ) : null}
 
-                {type === ReglogStateTypes.RECOVERY_PASSWORD_CONFIRMED ? (
+                {type ===
+                ReglogStateTypesNotLogin.RECOVERY_PASSWORD_CONFIRMED ? (
                     <RecoveryPasswordConfirmedForm
                         onSubmit={onSubmitRecoveryPasswordConfirmed}
                     />
                 ) : null}
 
-                {type === ReglogStateTypes.CABINET_SETTING_CHANGE_PASSWORD ? (
+                {type ===
+                ReglogStateTypesLogin.CABINET_SETTING_CHANGE_PASSWORD ? (
                     <CabinetSettingChangePasswordForm
                         onSubmit={cabinetSettingChangePasswordOnSubmit}
                     />
                 ) : null}
 
-                {type === ReglogStateTypes.CABINET_RESERV_CONFIRM ? (
+                {type === ReglogStateTypesLogin.CABINET_RESERV_CONFIRM ? (
                     <CabinetReservModalsConfirm />
                 ) : null}
 
-                {type === ReglogStateTypes.CABINET_RESERV_REJECT ? (
+                {type === ReglogStateTypesLogin.CABINET_RESERV_REJECT ? (
                     <CabinetReservModalsReject />
                 ) : null}
             </div>
@@ -226,17 +235,37 @@ const ReglogWrapper: React.FC = () => {
     const dispatch = useDispatch();
 
     const {open} = useTypedSelector(({reglog}) => reglog);
+    const {isLoadedUser, isPendingUser} = useTypedSelector(({user}) => user);
 
     React.useEffect(() => {
         const type_hash: string = hash.split("#")[1];
 
-        if (Object.values(ReglogStateTypes).find((type) => type == type_hash)) {
-            dispatch(setReglogType(type_hash, open) as any);
-            dispatch(setReglogOpen());
-        } else {
-            dispatch(setReglogClose() as any);
+        if (!isPendingUser) {
+            if (isLoadedUser) {
+                if (
+                    Object.values(ReglogStateTypesLogin).find(
+                        (type) => type == type_hash
+                    )
+                ) {
+                    dispatch(setReglogType(type_hash, open) as any);
+                    dispatch(setReglogOpen());
+                } else {
+                    dispatch(setReglogClose() as any);
+                }
+            } else {
+                if (
+                    Object.values(ReglogStateTypesNotLogin).find(
+                        (type) => type == type_hash
+                    )
+                ) {
+                    dispatch(setReglogType(type_hash, open) as any);
+                    dispatch(setReglogOpen());
+                } else {
+                    dispatch(setReglogClose() as any);
+                }
+            }
         }
-    }, [hash, pathname]);
+    }, [hash, pathname, isLoadedUser, isPendingUser]);
 
     return <>{open ? <Reglog /> : null}</>;
 };

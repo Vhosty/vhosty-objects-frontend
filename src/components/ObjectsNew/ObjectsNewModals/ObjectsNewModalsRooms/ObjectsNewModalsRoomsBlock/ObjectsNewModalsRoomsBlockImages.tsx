@@ -42,11 +42,11 @@ const ObjectsNewModalsRoomsBlockImages: React.FC<
     }, []);
 
     const adaptFileEventToValue = (delegate: any) => (e: any) => {
-        if (e.target.files[0]) {
+        if (e.target.files) {
             if (values.images) {
-                delegate([...values.images, e.target.files[0]]);
+                delegate([...values.images, ...e.target.files]);
             } else {
-                delegate([e.target.files[0]]);
+                delegate([...e.target.files]);
             }
         }
     };
@@ -73,6 +73,7 @@ const ObjectsNewModalsRoomsBlockImages: React.FC<
                 type="file"
                 accept=".png, .jpg, .jpeg"
                 onChange={adaptFileEventToValue(onChange)}
+                multiple
             />
 
             <label

@@ -11,10 +11,25 @@ import $api from '../../../http';
 
 export const fetchUserAboutMe = () => {
 	return async (dispatch: Dispatch<UserActions>) => {
+		dispatch({
+			type: UserActionTypes.SET_USER_IS_PENDING,
+			payload: true
+		})
+
 		$api.get("/companies/about-me").then(({ data }) => {
 			dispatch({
 				type: UserActionTypes.SET_USER,
 				payload: data
+			})
+
+			dispatch({
+				type: UserActionTypes.SET_USER_IS_PENDING,
+				payload: false
+			})
+		}).catch(() => {
+			dispatch({
+				type: UserActionTypes.SET_USER_IS_PENDING,
+				payload: false
 			})
 		})
 	}
@@ -58,3 +73,8 @@ export const fetchUserDocuments = () => {
 		})
 	}
 }
+
+export const setUserIsPending = (status: boolean) => ({
+	type: UserActionTypes.SET_USER_IS_PENDING,
+	payload: status
+})

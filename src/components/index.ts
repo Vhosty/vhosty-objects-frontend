@@ -16,6 +16,7 @@ export { default as RenderCount } from "./Interface/RenderCount";
 export { default as ServiceIcon } from "./Interface/ServiceIcon";
 export { default as Tab } from "./Interface/Tab";
 export { default as Location } from "./Interface/Location";
+export { default as Loader } from "./Interface/Loader";
 export { default as PolicyCheckbox } from "./Interface/PolicyCheckbox";
 export { default as RenderTextarea } from "./Interface/RenderTextarea";
 export { default as Radio } from "./Interface/Radio";

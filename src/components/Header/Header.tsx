@@ -14,13 +14,13 @@ const Header: React.FC = () => {
         if (headerContentRef.current) {
             setHeight(headerContentRef.current.offsetHeight);
         }
-	}, [headerContentRef.current]);
-	
+    }, [headerContentRef.current]);
+
     return (
         <>
             <div
                 className="header-height"
-                style={{height: `${height-1}px`}}
+                style={{height: `${height - 1}px`}}
             ></div>
 
             <header className="header" ref={headerContentRef}>
@@ -29,13 +29,16 @@ const Header: React.FC = () => {
                         <div className="header-block">
                             <HeaderModal color />
 
-                            <Link to="/" className="header-block-logo">
+                            <a
+                                href="https://bookover.ru"
+                                className="header-block-logo"
+                            >
                                 <img
                                     src={LogoColor}
                                     alt="Bookover"
                                     className="header-block-logo__image"
                                 />
-                            </Link>
+                            </a>
                         </div>
 
                         <div className="header-block">

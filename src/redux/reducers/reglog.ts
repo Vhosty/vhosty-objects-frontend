@@ -1,5 +1,6 @@
 import {
-	ReglogStateTypes,
+	ReglogStateTypesNotLogin,
+	ReglogStateTypesLogin,
 	ReglogState,
 	ReglogActions,
 	ReglogActionTypes,
@@ -10,7 +11,7 @@ const initialState: ReglogState = {
 	closeAnimation: false,
 	changeCloseAnimation: false,
 
-	type: ReglogStateTypes.REGISTER,
+	type: ReglogStateTypesNotLogin.REGISTER,
 };
 
 const reglog = (state = initialState, action: ReglogActions) => {

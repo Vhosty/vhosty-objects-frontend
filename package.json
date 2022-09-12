@@ -26,7 +26,6 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.7",
-    "react-textarea-autosize": "^8.3.4",
     "react-typed": "^1.2.0",
     "redux": "^4.2.0",
     "redux-form": "^8.3.8",

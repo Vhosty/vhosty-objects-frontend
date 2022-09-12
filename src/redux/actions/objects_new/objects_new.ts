@@ -131,14 +131,22 @@ export const updateObjectByIdCoverText = (data: any, id: string) => {
 	}
 }
 
-export const uploadObjectByIdCoverImage = (data: FormData, id: string, objectsData: any) => {
+export const uploadObjectByIdCoverImage = (files: any, object: any, id: string) => {
 	return async (dispatch: Dispatch<ObjectsNewActions>) => {
-		$api.post(`/hotels/employee/upload`, data).then(({ data }) => {
-			$api.post(`/hotels/employee/hotels/${id}`, { ...objectsData, background_images: [...objectsData.background_images, { id: data.id }] }).then(({ data }) => {
-				dispatch({
-					type: ObjectsNewActionTypes.SET_OBJECT_NEW_ITEM_BY_ID,
-					payload: data
-				})
+		const images: { id: string }[] = []
+
+		await Promise.all(Object.keys(files).map(async (key: any) => {
+			const data = new FormData()
+
+			data.append("uploading_file", files[key]);
+
+			await $api.post(`/hotels/employee/upload`, data).then(({ data }) => images.push({ id: data.id }))
+		}))
+
+		$api.post(`/hotels/employee/hotels/${id}`, { ...object, background_images: [...object.background_images, ...images] }).then(({ data }) => {
+			dispatch({
+				type: ObjectsNewActionTypes.SET_OBJECT_NEW_ITEM_BY_ID,
+				payload: data
 			})
 		})
 	}
@@ -155,14 +163,22 @@ export const updateObjectByIdCoverImage = (data: any, id: string) => {
 	}
 }
 
-export const uploadObjectByIdAdditionalImage = (data: FormData, id: string, objectsData: any) => {
+export const uploadObjectByIdAdditionalImage = (files: any, object: any, id: string,) => {
 	return async (dispatch: Dispatch<ObjectsNewActions>) => {
-		$api.post(`/hotels/employee/upload`, data).then(({ data }) => {
-			$api.post(`/hotels/employee/hotels/${id}`, { ...objectsData, images: [...objectsData.images, { id: data.id }] }).then(({ data }) => {
-				dispatch({
-					type: ObjectsNewActionTypes.SET_OBJECT_NEW_ITEM_BY_ID,
-					payload: data
-				})
+		const images: { id: string }[] = []
+
+		await Promise.all(Object.keys(files).map(async (key: any) => {
+			const data = new FormData()
+
+			data.append("uploading_file", files[key]);
+
+			await $api.post(`/hotels/employee/upload`, data).then(({ data }) => images.push({ id: data.id }))
+		}))
+
+		$api.post(`/hotels/employee/hotels/${id}`, { ...object, images: [...object.images, ...images] }).then(({ data }) => {
+			dispatch({
+				type: ObjectsNewActionTypes.SET_OBJECT_NEW_ITEM_BY_ID,
+				payload: data
 			})
 		})
 	}

@@ -23,23 +23,26 @@ const ObjectsNewCoverImageFilled: React.FC<ObjectsNewCoverImageFilledProps> = ({
     const {itemById} = useTypedSelector(({objects_new}) => objects_new);
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const data = new FormData();
-
         if (e.target.files) {
-            data.append("uploading_file", e.target.files[0]);
-
             dispatch(
-                uploadObjectByIdCoverImage(data, itemById.id, itemById) as any
+                uploadObjectByIdCoverImage(
+                    e.target.files,
+                    itemById,
+                    itemById.id
+                ) as any
             );
         }
     };
 
     const deleteAllImages = () => {
         dispatch(
-            updateObjectByIdCoverImage(itemById.id, {
-                ...itemById,
-                background_images: [],
-            }) as any
+            updateObjectByIdCoverImage(
+                {
+                    ...itemById,
+                    background_images: [],
+                },
+                itemById.id
+            ) as any
         );
     };
 
@@ -72,6 +75,7 @@ const ObjectsNewCoverImageFilled: React.FC<ObjectsNewCoverImageFilledProps> = ({
                                     type="file"
                                     accept=".png, .jpg, .jpeg"
                                     onChange={onChange}
+                                    multiple
                                 />
                             ) : null}
 

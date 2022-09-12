@@ -10,14 +10,14 @@ const ObjectsNewCoverImage: React.FC = () => {
 
     const {itemById} = useTypedSelector(({objects_new}) => objects_new);
 
-    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const data = new FormData();
-
+    const onChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files) {
-            data.append("uploading_file", e.target.files[0]);
-
             dispatch(
-                uploadObjectByIdCoverImage(data, itemById.id, itemById) as any
+                uploadObjectByIdCoverImage(
+                    e.target.files,
+                    itemById,
+                    itemById.id
+                ) as any
             );
         }
     };
@@ -57,6 +57,7 @@ const ObjectsNewCoverImage: React.FC = () => {
                     type="file"
                     accept=".png, .jpg, .jpeg"
                     onChange={onChange}
+                    multiple
                 />
 
                 <label
