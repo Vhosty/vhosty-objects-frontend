@@ -97,7 +97,7 @@ const CabinetReservItem: React.FC<any> = ({
 
             <div className="cabinet-block-reserv-item-block-commission">
                 <p className="cabinet-block-reserv-item-block-commission__title">
-                    {(price / 100) * 14} ₽
+                    {Math.round((price / 100) * 14)} ₽
                 </p>
             </div>
 

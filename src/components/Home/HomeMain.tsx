@@ -4,9 +4,13 @@ import Typed from "react-typed";
 
 import {HeaderTransparent} from "../";
 
+import {useTypedSelector} from "../../hooks/useTypedSelector";
+
 import MainBg from "../../assets/images/main-bg.jpg";
 
 const HomeMain: React.FC = () => {
+    const {isLoadedUser} = useTypedSelector(({user}) => user);
+
     return (
         <section className="home">
             <div className="container">
@@ -39,14 +43,16 @@ const HomeMain: React.FC = () => {
                         </Link> */}
                         <div className="home-main-text-btn">
                             <Link
-                                to="#register"
+                                to={
+                                    isLoadedUser ? "/cabinet/main" : "#register"
+                                }
                                 className="btn home-main-text-btn__register"
                             >
                                 Зарегистрироваться
                             </Link>
 
                             <Link
-                                to="#login"
+                                to={isLoadedUser ? "/cabinet/main" : "#login"}
                                 className="btn-light home-main-text-btn__login"
                             >
                                 Уже являюсь владельцем

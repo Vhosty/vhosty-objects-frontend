@@ -290,7 +290,7 @@
 				width: 45%
 
 				// top: 50%
-				left: -50px
+				left: -20px
 
 				// transform: translateY(0)
 
@@ -568,6 +568,13 @@
 				&__description
 					width: 100%
 
+	// objects-new
+	.objects-new
+		&-modal
+			&-content
+				&-terms-about .textarea .textarea__field
+					height: 100px
+
 	// objects-new-filled
 	.objects-new-filled
 		&-cover
@@ -696,6 +703,10 @@
 	.objects-new
 		&-modal
 			&-content
+				&-text
+					&__title
+						font-size: 18px
+
 				&-terms
 					margin-top: 0
 
@@ -748,6 +759,32 @@
 					margin: 30px 0
 
 @media screen and ( max-width: 600px )
+	// header
+	.header
+		padding: 10px 0
+
+		&-block
+			&-menu-btn
+				width: 30px
+				height: 30px
+
+			&-logo
+				&__image
+					width: 110px
+
+			&__pass
+				display: none
+
+			&-user
+				&__btn
+					&-mobile
+						width: 30px
+						height: 30px
+
+						&::before
+							width: 30px
+							height: 30px
+
 	// home
 	.home
 		// feedbacks
@@ -854,6 +891,13 @@
 
 	.btn-light
 		font-size: 15px
+
+	.checkbox
+		&__label
+			align-items: flex-start
+			
+			&__text
+				font-size: 12px
 
 	// header-transparent
 	.header-transparent
