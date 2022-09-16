@@ -18,7 +18,7 @@ interface CabinetObjectsItemProps {
 }
 
 const CabinetObjectsItem: React.FC<CabinetObjectsItemProps> = ({
-    hotel: {address, background_image, booking_type, id, name, status},
+    hotel: {address, background_images, booking_type, id, name, status},
     room_categories,
     price_max,
     price_min,
@@ -49,7 +49,9 @@ const CabinetObjectsItem: React.FC<CabinetObjectsItemProps> = ({
                 <div
                     className="cabinet-block-objects-item-block-object-cover"
                     style={{
-                        backgroundImage: `url(${background_image})`,
+                        backgroundImage: `url(${
+                            background_images[0] && background_images[0].url
+                        })`,
                     }}
                 >
                     <div className="cabinet-block-objects-item-block-object-cover-icon">

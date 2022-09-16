@@ -28,7 +28,9 @@ const CabinetReservItem: React.FC<any> = ({
                 <div
                     className="cabinet-block-reserv-item-block-object-cover"
                     style={{
-                        backgroundImage: `url('${background_images[0].url}')`,
+                        backgroundImage: `url('${
+                            background_images[0] && background_images[0].url
+                        }')`,
                     }}
                 >
                     <div className="cabinet-block-reserv-item-block-object-cover-icon">

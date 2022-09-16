@@ -3,15 +3,17 @@ import {WrappedFieldProps} from "redux-form";
 
 interface RenderTextareaProps extends WrappedFieldProps {
     label: string;
+    height?: number;
 }
 
 const RenderTextarea: React.FC<RenderTextareaProps> = ({
     input,
     label,
     meta: {touched, error},
+    height,
 }) => {
     return (
-        <div className="textarea">
+        <div className="textarea" style={height ? {height: `${height}px`} : {}}>
             <textarea
                 {...input}
                 placeholder={label}

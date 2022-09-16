@@ -19,7 +19,7 @@ git clone https://github.com/Vhosty/vhosty-objects-frontend.git
 Переход в рабочий каталог.
 
 ```
-cd vhosty-frontend
+cd vhosty-objects-frontend
 ```
 
 Установка зависимостей

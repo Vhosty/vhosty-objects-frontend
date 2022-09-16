@@ -52,7 +52,8 @@ const ObjectsNewModalsAbout: React.FC<{} & InjectedFormProps<{}, {}>> = ({
                     <Field
                         component={RenderTextarea}
                         label="Например, год создания здания, принципы, описание местности"
-                        name="description"
+						name="description"
+						height={350}
                     />
                 </div>
             </ObjectsNewModalsSmall>
