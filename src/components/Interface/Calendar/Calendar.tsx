@@ -46,7 +46,7 @@ const Calendar: React.FC<CalendarProps> = ({isCheckedBefore}) => {
                             ? from.date.format("D MMMM (dd)")
                             : "Заезд"}
                     </span>
-                    <div className="calendar-period__line"></div>
+                    <div className="calendar-period-line"></div>
                     <span className="calendar-period__to">
                         {from.selected && !from.date.isSame(to.date, "days")
                             ? to.date.format("D MMMM (dd)")

@@ -14,7 +14,7 @@ import {
     CabinetObjects,
 } from "./components/";
 
-import {Home, Reglog, Cabinet, Confirmed, ObjectsNew} from "./pages";
+import {Home, Reglog, Cabinet, Confirmed, ObjectsNew, NotFound} from "./pages";
 
 import {fetchUserAboutMe, setUserIsPending} from "./redux/actions/user/user";
 
@@ -128,6 +128,8 @@ const App = () => {
                             )
                         }
                     />
+
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
 
                 {pathname.indexOf("/confirmed") !== -1 ? null : <Footer />}

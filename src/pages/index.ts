@@ -12,3 +12,9 @@ export { default as Confirmed } from "./Confirmed";
 
 // ObjectsNew
 export { default as ObjectsNew } from "./ObjectsNew";
+
+// NotFound
+export { default as NotFound } from "./NotFound";
+
+// Developing
+export { default as Developing } from "./Developing";
