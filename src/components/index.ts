@@ -137,6 +137,18 @@ export { default as CabinetObjectsFilters } from "./Cabinet/CabinetObjects/Cabin
 export { default as CabinetObjectsFiltersStatus } from "./Cabinet/CabinetObjects/CabinetObjectsFilters/CabinetObjectsFiltersStatus";
 export { default as CabinetObjectsFiltersSort } from "./Cabinet/CabinetObjects/CabinetObjectsFilters/CabinetObjectsFiltersSort";
 export { default as CabinetObjectsFiltersReserv } from "./Cabinet/CabinetObjects/CabinetObjectsFilters/CabinetObjectsFiltersReserv";
+// CabinetFinance
+export { default as CabinetFinance } from "./Cabinet/CabinetFinance/CabinetFinance";
+export { default as CabinetFinanceSummaryEvents } from "./Cabinet/CabinetFinance/CabinetFinanceSummaryEvents";
+// CabinetFinanceFilters
+export { default as CabinetFinanceFilters } from "./Cabinet/CabinetFinance/CabinetFinanceFilters/CabinetFinanceFilters";
+export { default as CabinetFinanceFiltersTypes } from "./Cabinet/CabinetFinance/CabinetFinanceFilters/CabinetFinanceFiltersTypes";
+export { default as CabinetFinanceFiltersCompany } from "./Cabinet/CabinetFinance/CabinetFinanceFilters/CabinetFinanceFiltersCompany";
+export { default as CabinetFinanceFiltersObject } from "./Cabinet/CabinetFinance/CabinetFinanceFilters/CabinetFinanceFiltersObject";
+export { default as CabinetFinanceFiltersCalendar } from "./Cabinet/CabinetFinance/CabinetFinanceFilters/CabinetFinanceFiltersCalendar";
+// CabinetFinanceDashboard
+export { default as CabinetFinanceDashboard } from "./Cabinet/CabinetFinance/CabinetFinanceDashboard/CabinetFinanceDashboard";
+export { default as CabinetFinanceDashboardCanvas } from "./Cabinet/CabinetFinance/CabinetFinanceDashboard/CabinetFinanceDashboardCanvas";
 
 // ObjectsNew
 export { default as ObjectsNewBlockTextWrapper } from "./ObjectsNew/ObjectsNewBlockTextWrapper";

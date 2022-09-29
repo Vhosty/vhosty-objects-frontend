@@ -18,7 +18,7 @@ const CabinetReservFiltersDate: React.FC = () => {
                 </svg>
             </TitleIcon>
 
-            <Calendar isCheckedBefore />
+            <Calendar title1="С" title2="По" isCheckedBefore />
         </div>
     );
 };

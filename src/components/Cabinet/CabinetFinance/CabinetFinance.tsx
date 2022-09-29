@@ -1,9 +1,11 @@
 import React from "react";
 
+import {CabinetFinanceFilters, CabinetFinanceDashboard, CabinetFinanceSummaryEvents} from "../../";
+
 const CabinetFinance: React.FC = () => {
     return (
         <div className="cabinet-block cabinet-block-finance">
-            <div className="cabinet-block-padding-top">
+            <div className="cabinet-block-padding">
                 <div className="cabinet-block-text">
                     <h2 className="cabinet-block-text__title">Финансы</h2>
 
@@ -12,6 +14,12 @@ const CabinetFinance: React.FC = () => {
                         счета
                     </p>
                 </div>
+
+                <CabinetFinanceFilters />
+
+				<CabinetFinanceDashboard />
+				
+				<CabinetFinanceSummaryEvents />
             </div>
         </div>
     );

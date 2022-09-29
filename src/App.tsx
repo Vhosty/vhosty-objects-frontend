@@ -12,6 +12,7 @@ import {
     CabinetSetting,
     CabinetReserv,
     CabinetObjects,
+    CabinetFinance,
 } from "./components/";
 
 import {Home, Reglog, Cabinet, Confirmed, ObjectsNew, NotFound} from "./pages";
@@ -55,12 +56,10 @@ const App = () => {
     return (
         <>
             <React.Suspense fallback={<></>}>
-                {pathname === "/" ||
-                pathname.indexOf("/cabinet") !== -1 ||
-                pathname === "/" ||
-                pathname.indexOf("/confirmed") !== -1 ? null : (
+                {pathname.indexOf("/objects") !== -1 ||
+                pathname.indexOf("/payment") !== -1 ? (
                     <Header />
-                )}
+                ) : null}
 
                 <Reglog />
 
@@ -108,10 +107,21 @@ const App = () => {
                     />
 
                     <Route
-                        path="/cabinet/objects"
+                        path="/cabinet/cabinet-objects"
                         element={
                             isRedirectUser ? (
                                 <Cabinet block={<CabinetObjects />} />
+                            ) : (
+                                <Navigate to="/" />
+                            )
+                        }
+                    />
+
+                    <Route
+                        path="/cabinet/finance"
+                        element={
+                            isRedirectUser ? (
+                                <Cabinet block={<CabinetFinance />} />
                             ) : (
                                 <Navigate to="/" />
                             )
