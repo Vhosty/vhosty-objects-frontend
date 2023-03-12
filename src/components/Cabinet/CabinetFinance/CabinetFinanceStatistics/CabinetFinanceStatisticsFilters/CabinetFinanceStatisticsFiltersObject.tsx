@@ -1,10 +1,10 @@
 import React from "react";
 
-import {TitleIcon, Select} from "../../../";
+import {TitleIcon, Select} from "../../../../";
 
-const CabinetFinanceFiltersObject: React.FC = () => {
+const CabinetFinanceStatisticsFiltersObject: React.FC = () => {
     return (
-        <div className="cabinet-block-finance-filters-more-selects-item">
+        <div className="cabinet-block-finance-statistics-filters-selects-item">
             <TitleIcon title="Объект" marginBottom>
                 <svg
                     width="20"
@@ -37,4 +37,4 @@ const CabinetFinanceFiltersObject: React.FC = () => {
     );
 };
 
-export default CabinetFinanceFiltersObject;
+export default CabinetFinanceStatisticsFiltersObject;

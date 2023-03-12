@@ -1,11 +1,11 @@
 import React from "react";
 
-import {TitleIcon, Select} from "../../../";
+import {TitleIcon, Select} from "../../../../";
 
-const CabinetFinanceFiltersCompany: React.FC = () => {
+const CabinetFinanceReservsFiltersObject: React.FC = () => {
     return (
-        <div className="cabinet-block-finance-filters-more-selects-item">
-            <TitleIcon title="Компания" marginBottom>
+        <div className="cabinet-block-finance-reservs-filters-selects-item">
+            <TitleIcon title="Объект" marginBottom>
                 <svg
                     width="20"
                     height="18"
@@ -32,13 +32,9 @@ const CabinetFinanceFiltersCompany: React.FC = () => {
                 </svg>
             </TitleIcon>
 
-            <Select
-                choices={[{key: "", title: "ИП Александрюшкина"}]}
-                border
-                small
-            />
+            <Select choices={[{key: "", title: "Все"}]} border small />
         </div>
     );
 };
 
-export default CabinetFinanceFiltersCompany;
+export default CabinetFinanceReservsFiltersObject;

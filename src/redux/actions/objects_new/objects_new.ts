@@ -358,3 +358,18 @@ export const updateObjectByIdFaqs = (data: any, id: string) => {
 		})
 	}
 }
+
+export const uploadObjectDocs = (data: any, itemById: any, id: string) => {
+	return async (dispatch: Dispatch<ObjectsNewActions>) => {
+		const data2 = new FormData()
+
+		data2.append("uploading_file", data);
+
+
+		$api.post(`/hotels/employee/upload`, data2).then(({ data }) => {
+			$api.post(`/hotels/employee/hotels/${id}`, { ...itemById, docs: data.id }).then(({ data }) => {
+				console.log(data)
+			})
+		})
+	}
+}

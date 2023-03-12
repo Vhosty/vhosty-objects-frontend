@@ -45,6 +45,7 @@ const CabinetObjects: React.FC = () => {
                 contacts: [],
                 stars: null,
                 status: null,
+                docs: "7cec72b7-cbb9-478a-ac1b-4fdbfcbe444e",
             }) as any
         );
     };

@@ -162,12 +162,12 @@ export const data = {
     ],
 };
 
-const CabinetFinanceDashboardCanvas: React.FC = () => {
+const CabinetFinanceStatisticsDashboardCanvas: React.FC = () => {
     return (
-        <div className="cabinet-block-finance-dashboard-canvas">
+        <div className="cabinet-block-finance-statistics-dashboard-canvas">
             <Line options={options} data={data} />
         </div>
     );
 };
 
-export default CabinetFinanceDashboardCanvas;
+export default CabinetFinanceStatisticsDashboardCanvas;

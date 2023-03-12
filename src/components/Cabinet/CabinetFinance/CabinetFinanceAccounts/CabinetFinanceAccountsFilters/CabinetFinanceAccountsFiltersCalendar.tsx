@@ -1,10 +1,10 @@
 import React from "react";
 
-import {TitleIcon, Calendar} from "../../../";
+import {TitleIcon, Calendar} from "../../../../";
 
-const CabinetFinanceFiltersCalendar: React.FC = () => {
+const CabinetFinanceAccountsFiltersCalendar: React.FC = () => {
     return (
-        <div className="cabinet-block-finance-filters-more-block">
+        <div className="cabinet-block-finance-accounts-filters-calendar">
             <TitleIcon title="Период" marginBottom>
                 <svg
                     width="18"
@@ -18,11 +18,11 @@ const CabinetFinanceFiltersCalendar: React.FC = () => {
                         fill="#00A0A0"
                     />
                 </svg>
-			</TitleIcon>
-			
-			<Calendar title1="С" title2="По" isCheckedBefore isHiddenCount />
+            </TitleIcon>
+
+            <Calendar title1="С" title2="По" isCheckedBefore isHiddenCount />
         </div>
     );
 };
 
-export default CabinetFinanceFiltersCalendar;
+export default CabinetFinanceAccountsFiltersCalendar;

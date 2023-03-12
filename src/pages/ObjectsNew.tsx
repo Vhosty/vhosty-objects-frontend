@@ -15,6 +15,7 @@ import {
     ObjectsNewTermsWrapper,
     ObjectsNewFaq,
     ObjectsNewVerification,
+    ObjectsNewDocument,
 } from "../components/";
 
 import {
@@ -83,6 +84,8 @@ const ObjectsNew: React.FC = () => {
                             {/* <ObjectsNewFaq /> */}
 
                             {/* <ObjectsNewVerification /> */}
+
+                            <ObjectsNewDocument />
                         </div>
                     </div>
                 </>

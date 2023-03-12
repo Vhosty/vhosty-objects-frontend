@@ -12,7 +12,9 @@ import {
     CabinetSetting,
     CabinetReserv,
     CabinetObjects,
-    CabinetFinance,
+    CabinetFinanceStatistics,
+    CabinetFinanceAccounts,
+    CabinetFinanceReservs,
 } from "./components/";
 
 import {Home, Reglog, Cabinet, Confirmed, ObjectsNew, NotFound} from "./pages";
@@ -118,10 +120,32 @@ const App = () => {
                     />
 
                     <Route
-                        path="/cabinet/finance"
+                        path="/cabinet/finance/accounts"
                         element={
                             isRedirectUser ? (
-                                <Cabinet block={<CabinetFinance />} />
+                                <Cabinet block={<CabinetFinanceAccounts />} />
+                            ) : (
+                                <Navigate to="/" />
+                            )
+                        }
+                    />
+
+                    <Route
+                        path="/cabinet/finance/reservs"
+                        element={
+                            isRedirectUser ? (
+                                <Cabinet block={<CabinetFinanceReservs />} />
+                            ) : (
+                                <Navigate to="/" />
+                            )
+                        }
+                    />
+
+                    <Route
+                        path="/cabinet/finance/statistics"
+                        element={
+                            isRedirectUser ? (
+                                <Cabinet block={<CabinetFinanceStatistics />} />
                             ) : (
                                 <Navigate to="/" />
                             )
